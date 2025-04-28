@@ -11,6 +11,8 @@ public class BrowseBody {
     public final Context context;
     @NotNull
     public final String browseId;
+    @NotNull
+    public final String playlistId;
     @Nullable
     public final String params;
 }
