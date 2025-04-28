@@ -8,11 +8,11 @@ import org.jetbrains.annotations.Nullable;
 public class NextBody implements RequestBody {
 
     @NotNull
-    public final Context context;
+    private final Context context;
     @NotNull
-    public final String videoId;
+    private final String videoId;
     @NotNull
-    public final String playlistId;
+    private final String playlistId;
     @Nullable
-    public final String params;
+    private final String params;
 }

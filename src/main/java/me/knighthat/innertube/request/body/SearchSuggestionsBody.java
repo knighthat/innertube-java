@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 public class SearchSuggestionsBody implements RequestBody {
 
     @NotNull
-    public final Context context;
+    private final Context context;
     @NotNull
-    public final String input;
+    private final String input;
 }
