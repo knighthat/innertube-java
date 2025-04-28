@@ -11,8 +11,8 @@ public class NextBody {
     public final Context context;
     @NotNull
     public final String videoId;
+    @NotNull
+    public final String playlistId;
     @Nullable
     public final String params;
-    @Nullable
-    public final String playlistId;
 }
