@@ -4,7 +4,7 @@ import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 
 @Data
-public class SearchBody {
+public class SearchBody implements RequestBody {
 
     @NotNull
     public final Context context;

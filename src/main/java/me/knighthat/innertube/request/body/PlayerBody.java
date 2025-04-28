@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @Data
-public class PlayerBody {
+public class PlayerBody implements RequestBody {
 
     @NotNull
     public final Context context;
