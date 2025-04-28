@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 public class PlayerBody {
 
     @NotNull
-    public final Context.Client client;
+    public final Context context;
     @NotNull
     public final String videoId;
     @Nullable

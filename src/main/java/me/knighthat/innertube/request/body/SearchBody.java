@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 public class SearchBody {
 
     @NotNull
-    public final Context.Client client;
+    public final Context context;
     @NotNull
     public final String input;
 }
