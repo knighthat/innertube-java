@@ -40,11 +40,6 @@
             <version>2.11.0</version>
         </dependency>
         <!--  HTTP request sender/handler -->
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>4.12.0</version>
-        </dependency>
 
         <!-- Test Engines -->
         <dependency>
@@ -61,8 +56,8 @@
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>mockwebserver</artifactId>
-            <version>${okhttp.version}</version>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
             <scope>test</scope>
         </dependency>
 

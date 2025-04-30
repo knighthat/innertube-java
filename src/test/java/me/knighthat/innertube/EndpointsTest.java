@@ -1,7 +1,6 @@
 package me.knighthat.innertube;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import me.knighthat.innertube.request.body.*;
 import okhttp3.*;
 import okhttp3.RequestBody;
@@ -23,16 +22,16 @@ class EndpointsTest {
     private static final Gson JSON = new Gson();
 
     private boolean post( String endpoint, me.knighthat.innertube.request.body.RequestBody body ) {
-        RequestBody reqBody = RequestBody.create( JSON.toJson( body ), Constants.APPLICATION_JSON );
+        RequestBody reqBody = RequestBody.create( JSON.toJson( body ), me.knighthat.Constants.APPLICATION_JSON );
 
-        HttpUrl url = HttpUrl.parse( Constants.YOUTUBE_MUSIC_HOST + "/" + endpoint )
+        HttpUrl url = HttpUrl.parse( me.knighthat.innertube.Constants.YOUTUBE_MUSIC_HOST + "/" + endpoint )
                              .newBuilder()
                              .addQueryParameter( "prettyPrint", "false" )
                              .build();
 
         Request request = new Request.Builder()
                                     .url( url )
-                                    .addHeader( "Content-Type", Constants.APPLICATION_JSON.type() )
+                                    .addHeader( "Content-Type", me.knighthat.Constants.APPLICATION_JSON.type() )
                                     .addHeader( "User-Agent", UserAgents.CHROME_WINDOWS )
                                     .post( reqBody )
                                     .build();
