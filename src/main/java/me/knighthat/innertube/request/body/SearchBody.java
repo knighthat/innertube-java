@@ -9,5 +9,5 @@ public class SearchBody implements RequestBody {
     @NotNull
     private final Context context;
     @NotNull
-    private final String  input;
+    private final String  query;
 }
