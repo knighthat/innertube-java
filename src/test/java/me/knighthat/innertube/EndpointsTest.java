@@ -13,38 +13,7 @@ import org.junit.jupiter.api.Test;
  * reachable given provided data is correct and adhere
  * to YTM standard.
  */
-class EndpointsTest {
-
-    @NotNull
-    private static final OkHttpClient CLIENT = new OkHttpClient();
-
-    @NotNull
-    private static final Gson JSON = new Gson();
-
-    private boolean post( String endpoint, me.knighthat.innertube.request.body.RequestBody body ) {
-        RequestBody reqBody = RequestBody.create( JSON.toJson( body ), me.knighthat.Constants.APPLICATION_JSON );
-
-        HttpUrl url = HttpUrl.parse( me.knighthat.innertube.Constants.YOUTUBE_MUSIC_HOST + "/" + endpoint )
-                             .newBuilder()
-                             .addQueryParameter( "prettyPrint", "false" )
-                             .build();
-
-        Request request = new Request.Builder()
-                                    .url( url )
-                                    .addHeader( "Content-Type", me.knighthat.Constants.APPLICATION_JSON.type() )
-                                    .addHeader( "User-Agent", UserAgents.CHROME_WINDOWS )
-                                    .post( reqBody )
-                                    .build();
-
-        try (
-                Response response = CLIENT.newCall( request ).execute()
-        ) {
-            return response.isSuccessful();
-        } catch ( Exception e ) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+class EndpointsTest implements HttpClient {
 
     @Test
     void testBrowseArtist() {
