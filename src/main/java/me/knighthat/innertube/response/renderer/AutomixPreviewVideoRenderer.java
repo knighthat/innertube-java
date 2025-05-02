@@ -1,6 +1,6 @@
 package me.knighthat.innertube.response.renderer;
 
-import me.knighthat.innertube.response.endpoint.Endpoint;
+import me.knighthat.innertube.response.Endpoint;
 
 public interface AutomixPreviewVideoRenderer {
 

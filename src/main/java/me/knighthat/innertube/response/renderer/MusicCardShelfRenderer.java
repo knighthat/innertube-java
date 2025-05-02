@@ -17,7 +17,6 @@ public interface MusicCardShelfRenderer {
 
     List<Content> getContents();
 
-
     interface Content {
 
         MessageRenderer getMessageRenderer();

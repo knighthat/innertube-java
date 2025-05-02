@@ -1,7 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import me.knighthat.innertube.response.Button;
 import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.button.Button;
 
 import java.util.List;
 

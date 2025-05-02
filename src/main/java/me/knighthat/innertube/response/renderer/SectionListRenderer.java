@@ -1,6 +1,8 @@
 package me.knighthat.innertube.response.renderer;
 
-import me.knighthat.innertube.response.Continuation;
+import me.knighthat.innertube.response.*;
+import me.knighthat.innertube.response.thumbnail.Thumbnail;
+import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
 
@@ -31,6 +33,107 @@ public interface SectionListRenderer {
         MusicPlaylistShelfRenderer getMusicPlaylistShelfRenderer();
 
         MusicCardShelfRenderer getMusicCardShelfRenderer();
+
+        interface MusicDescriptionShelfRenderer {
+
+            Runs getDescription();
+
+            Button getMoreButton();
+
+            String getTrackingParams();
+
+            String getShelfStyle();
+
+            Integer getMaxCollapsedLines();
+
+            Integer getMaxExpandedLines();
+
+            List<Command> getOnShowCommands();
+
+            Runs getFooter();
+
+            interface Command {
+
+                String getClickTrackingParams();
+
+                LogLyricEventCommand getLogLyricEventCommand();
+
+                interface LogLyricEventCommand {
+
+                    String getSerializedLyricInfo();
+                }
+            }
+        }
+
+        interface MusicTastebuilderShelfRenderer {
+
+            Thumbnail getThumbnail();
+
+            Runs getPrimaryText();
+
+            Runs getSecondaryText();
+
+            Button getButton();
+
+            interface Thumbnail {
+
+                MusicTastebuilderShelfThumbnailRenderer getMusicTastebuilderShelfThumbnailRenderer();
+
+                interface MusicTastebuilderShelfThumbnailRenderer {
+
+                    Thumbnails getThumbnail();
+                }
+            }
+        }
+
+        interface MusicResponsiveHeaderRenderer {
+
+            Thumbnail getThumbnail();
+
+            List<Button> getButtons();
+
+            Runs getTitle();
+
+            Runs getSubtitle();
+
+            String getTrackingParams();
+
+            Description getDescription();
+
+            Runs getStraplineTextOne();
+
+            Thumbnail getStraplineThumbnail();
+
+            List<Badge> getSubtitleBadge();
+
+            Runs getSecondSubtitle();
+
+            interface Button {
+
+                me.knighthat.innertube.response.Button.ToggleButtonRenderer getToggleButtonRenderer();
+
+                me.knighthat.innertube.response.Button.MusicPlayButtonRenderer getMusicPlayButtonRenderer();
+
+                Menu.MenuRenderer getMenuRenderer();
+            }
+
+            interface Description {
+
+                MusicDescriptionShelfRenderer getMusicDescriptionShelfRenderer();
+            }
+        }
+
+        interface GridRenderer {
+
+            List<Item> getItems();
+
+            String getTrackingParams();
+
+            interface Item {
+
+                MusicTwoRowItemRenderer getMusicTwoRowItemRenderer();
+            }
+        }
     }
 
     interface Header {

@@ -1,8 +1,5 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.innertube.response.button.Button;
-import me.knighthat.innertube.response.endpoint.Endpoint;
-import me.knighthat.innertube.response.menu.Menu;
 import me.knighthat.innertube.response.renderer.SectionListRenderer;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 

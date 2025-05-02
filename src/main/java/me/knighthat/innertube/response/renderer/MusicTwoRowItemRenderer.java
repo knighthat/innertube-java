@@ -1,10 +1,6 @@
 package me.knighthat.innertube.response.renderer;
 
-import me.knighthat.innertube.response.Badge;
-import me.knighthat.innertube.response.Overlay;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.endpoint.Endpoint;
-import me.knighthat.innertube.response.menu.Menu;
+import me.knighthat.innertube.response.*;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
 import java.util.List;

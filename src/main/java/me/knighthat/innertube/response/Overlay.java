@@ -1,7 +1,5 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.innertube.response.button.MusicPlayButtonRenderer;
-
 import java.util.List;
 
 public interface Overlay {
@@ -30,7 +28,7 @@ public interface Overlay {
 
         interface Content {
 
-            MusicPlayButtonRenderer getMusicPlayButtonRenderer();
+            Button.MusicPlayButtonRenderer getMusicPlayButtonRenderer();
         }
     }
 }

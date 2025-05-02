@@ -1,6 +1,5 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.innertube.response.endpoint.Endpoint;
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 public interface NextResponse {
