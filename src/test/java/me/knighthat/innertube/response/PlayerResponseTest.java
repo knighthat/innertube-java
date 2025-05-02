@@ -1,5 +1,6 @@
 package me.knighthat.innertube.response;
 
+import me.knighthat.impl.response.PlayerResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
 import me.knighthat.innertube.request.body.Context;
@@ -31,7 +32,7 @@ class PlayerResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            PlayerResponse converted = JSON.fromJson( reader, PlayerResponse.class );
+            PlayerResponse converted = JSON.fromJson( reader, PlayerResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();

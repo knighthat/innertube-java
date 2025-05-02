@@ -1,5 +1,6 @@
 package me.knighthat.innertube.response;
 
+import me.knighthat.impl.response.SearchSuggestionsResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
 import me.knighthat.innertube.request.body.Context;
@@ -31,7 +32,7 @@ class SearchSuggestionsResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            SearchSuggestionsResponse converted = JSON.fromJson( reader, SearchSuggestionsResponse.class );
+            SearchSuggestionsResponse converted = JSON.fromJson( reader, SearchSuggestionsResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();

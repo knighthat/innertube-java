@@ -1,5 +1,6 @@
 package me.knighthat.innertube.response;
 
+import me.knighthat.impl.response.BrowseResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
 import me.knighthat.innertube.request.body.BrowseBody;
@@ -31,7 +32,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -54,7 +55,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -77,7 +78,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -100,7 +101,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -123,7 +124,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -146,7 +147,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -169,7 +170,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -192,7 +193,7 @@ class BrowseResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            BrowseResponse converted = JSON.fromJson( reader, BrowseResponse.class );
+            BrowseResponse converted = JSON.fromJson( reader, BrowseResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();

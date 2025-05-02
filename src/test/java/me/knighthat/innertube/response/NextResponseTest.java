@@ -1,5 +1,6 @@
 package me.knighthat.innertube.response;
 
+import me.knighthat.impl.response.NextResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
 import me.knighthat.innertube.request.body.Context;
@@ -30,7 +31,7 @@ class NextResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            NextResponse converted = JSON.fromJson( reader, NextResponse.class );
+            NextResponse converted = JSON.fromJson( reader, NextResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
@@ -53,7 +54,7 @@ class NextResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            NextResponse converted = JSON.fromJson( reader, NextResponse.class );
+            NextResponse converted = JSON.fromJson( reader, NextResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();
