@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface Microformat {
 
-    MicroformatDataRenderer getMicroformatDataRenderer();
+    Renderer getMicroformatDataRenderer();
 
-    interface MicroformatDataRenderer {
+    interface Renderer {
 
         String getUrlCanonical();
 

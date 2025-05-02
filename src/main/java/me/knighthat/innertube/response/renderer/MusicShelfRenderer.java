@@ -28,9 +28,9 @@ public interface MusicShelfRenderer {
 
     interface ShelfDivider {
 
-        MusicShelfDividerRenderer getMusicShelfDividerRenderer();
+        Renderer getMusicShelfDividerRenderer();
 
-        interface MusicShelfDividerRenderer {
+        interface Renderer {
 
             Boolean getHidden();
         }

@@ -2,11 +2,11 @@ package me.knighthat.innertube.response;
 
 public interface Continuation {
 
-    NextContinuationData getNextContinuationData();
+    Data getNextContinuationData();
 
-    NextContinuationData getNextRadioContinuationData();
+    Data getNextRadioContinuationData();
 
-    interface NextContinuationData {
+    interface Data {
 
         String getContinuation();
 

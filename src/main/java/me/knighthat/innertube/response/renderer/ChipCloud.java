@@ -7,15 +7,15 @@ import me.knighthat.innertube.response.Runs;
 
 import java.util.List;
 
-public interface ChipCloudRenderer {
+public interface ChipCloud {
 
     List<Chip> getChips();
 
     interface Chip {
 
-        ChipCloudChipRenderer getChipCloudChipRenderer();
+        Renderer getChipCloudChipRenderer();
 
-        interface ChipCloudChipRenderer {
+        interface Renderer {
 
             Style getStyle();
 

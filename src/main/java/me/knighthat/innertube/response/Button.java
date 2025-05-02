@@ -1,18 +1,18 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.innertube.response.renderer.ChipCloudRenderer;
+import me.knighthat.innertube.response.renderer.ChipCloud;
 
 public interface Button {
 
-    ButtonRenderer getButtonRenderer();
+    Renderer getButtonRenderer();
 
-    ToggleButtonRenderer getToggleButtonRenderer();
+    Toggle getToggleButtonRenderer();
 
-    ChipCloudRenderer.Chip.ChipCloudChipRenderer getChipCloudChipRenderer();
+    ChipCloud.Chip.Renderer getChipCloudChipRenderer();
 
-    LikeButtonRenderer getLikeButtonRenderer();
+    Like getLikeButtonRenderer();
 
-    interface ButtonRenderer {
+    interface Renderer {
 
         String getStyle();
 
@@ -33,7 +33,7 @@ public interface Button {
         Accessibility getAccessibilityData();
     }
 
-    interface LikeButtonRenderer {
+    interface Like {
 
         Target getTarget();
 
@@ -53,7 +53,7 @@ public interface Button {
         }
     }
 
-    interface MusicPlayButtonRenderer {
+    interface MusicPlay {
 
         Endpoint getPlayNavigationEndpoint();
 
@@ -86,7 +86,7 @@ public interface Button {
         Accessibility getAccessibilityPauseData();
     }
 
-    interface ToggleButtonRenderer {
+    interface Toggle {
 
         Boolean getIsToggled();
 

@@ -36,9 +36,9 @@ public interface MusicResponsiveListItemRenderer {
 
     interface FlexColumn {
 
-        MusicResponsiveListItemFlexColumnRenderer getMusicResponsiveListItemFlexColumnRenderer();
+        Renderer getMusicResponsiveListItemFlexColumnRenderer();
 
-        interface MusicResponsiveListItemFlexColumnRenderer {
+        interface Renderer {
 
             Runs getText();
 
@@ -48,9 +48,9 @@ public interface MusicResponsiveListItemRenderer {
 
     interface FixedColumn {
 
-        MusicResponsiveListItemFixedColumnRenderer getMusicResponsiveListItemFixedColumnRenderer();
+        Renderer getMusicResponsiveListItemFixedColumnRenderer();
 
-        interface MusicResponsiveListItemFixedColumnRenderer {
+        interface Renderer {
 
             Runs getText();
 
@@ -69,23 +69,23 @@ public interface MusicResponsiveListItemRenderer {
 
     interface MultiSelectCheckbox {
 
-        CheckboxRenderer getCheckboxRenderer();
+        Renderer getCheckboxRenderer();
 
-        interface CheckboxRenderer {
+        interface Renderer {
 
-            OnSelectionChangeCommand getOnSelectionChangeCommand();
+            ChangeCommand getOnSelectionChangeCommand();
 
             String getCheckedState();
 
             String getTrackingParams();
 
-            interface OnSelectionChangeCommand {
+            interface ChangeCommand {
 
                 String getClickTrackingParams();
 
-                UpdateMultiSelectStateCommand getUpdateMultiSelectStateCommand();
+                UpdateCommand getUpdateMultiSelectStateCommand();
 
-                interface UpdateMultiSelectStateCommand {
+                interface UpdateCommand {
 
                     String getMultiSelectParams();
 

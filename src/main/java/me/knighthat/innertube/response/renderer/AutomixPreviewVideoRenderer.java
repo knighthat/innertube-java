@@ -8,9 +8,9 @@ public interface AutomixPreviewVideoRenderer {
 
     interface Content {
 
-        AutomixPlaylistVideoRenderer getAutomixPlaylistVideoRenderer();
+        Renderer getAutomixPlaylistVideoRenderer();
 
-        interface AutomixPlaylistVideoRenderer {
+        interface Renderer {
 
             Endpoint getNavigationEndpoint();
 

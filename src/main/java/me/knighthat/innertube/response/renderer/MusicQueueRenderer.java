@@ -38,6 +38,6 @@ public interface MusicQueueRenderer {
 
     interface SubHeaderChipCloud {
 
-        ChipCloudRenderer getChipCloudRenderer();
+        ChipCloud getChipCloudRenderer();
     }
 }

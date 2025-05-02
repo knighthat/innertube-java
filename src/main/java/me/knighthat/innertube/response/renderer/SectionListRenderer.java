@@ -110,11 +110,11 @@ public interface SectionListRenderer {
 
             interface Button {
 
-                me.knighthat.innertube.response.Button.ToggleButtonRenderer getToggleButtonRenderer();
+                me.knighthat.innertube.response.Button.Toggle getToggleButtonRenderer();
 
-                me.knighthat.innertube.response.Button.MusicPlayButtonRenderer getMusicPlayButtonRenderer();
+                me.knighthat.innertube.response.Button.MusicPlay getMusicPlayButtonRenderer();
 
-                Menu.MenuRenderer getMenuRenderer();
+                Menu.Renderer getMenuRenderer();
             }
 
             interface Description {
@@ -138,6 +138,6 @@ public interface SectionListRenderer {
 
     interface Header {
 
-        ChipCloudRenderer getChipCloudRenderer();
+        ChipCloud getChipCloudRenderer();
     }
 }

@@ -23,11 +23,11 @@ public interface PlaylistPanelRenderer {
 
     interface Content {
 
-        PlaylistPanelVideoRenderer getPlaylistPanelVideoRenderer();
+        VideoRenderer getPlaylistPanelVideoRenderer();
 
         AutomixPreviewVideoRenderer getAutomixPreviewVideoRenderer();
 
-        interface PlaylistPanelVideoRenderer {
+        interface VideoRenderer {
 
             Runs getTitle();
 

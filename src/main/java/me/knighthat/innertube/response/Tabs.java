@@ -11,9 +11,9 @@ public interface Tabs {
 
     interface Tab {
 
-        TabRenderer getTabRenderer();
+        Renderer getTabRenderer();
 
-        interface TabRenderer {
+        interface Renderer {
 
             Endpoint getEndpoint();
 

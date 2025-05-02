@@ -14,9 +14,9 @@ public interface SearchSuggestionsSectionRenderer {
 
         MusicResponsiveListItemRenderer getMusicResponsiveListItemRenderer();
 
-        SearchSuggestionRenderer getSearchSuggestionRenderer();
+        Renderer getSearchSuggestionRenderer();
 
-        interface SearchSuggestionRenderer {
+        interface Renderer {
 
             Runs getSuggestion();
 

@@ -2,9 +2,9 @@ package me.knighthat.innertube.response;
 
 public interface Badge {
 
-    MusicInlineBadgeRenderer getMusicInlineBadgeRenderer();
+    Renderer getMusicInlineBadgeRenderer();
 
-    interface MusicInlineBadgeRenderer {
+    interface Renderer {
 
         String getTrackingParams();
 

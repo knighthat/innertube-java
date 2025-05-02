@@ -6,33 +6,33 @@ public interface Endpoint {
 
     String getClickTrackingParams();
 
-    BrowseEndpoint getBrowseEndpoint();
+    Browse getBrowseEndpoint();
 
-    WatchEndpoint getWatchEndpoint();
+    Watch getWatchEndpoint();
 
-    ModalEndpoint getModalEndpoint();
+    Modal getModalEndpoint();
 
-    WatchPlaylistEndpoint getWatchPlaylistEndpoint();
+    WatchPlaylist getWatchPlaylistEndpoint();
 
-    QueueEndpoint.QueueAdd getQueueAddEndpoint();
+    Queue.QueueAdd getQueueAddEndpoint();
 
-    QueueEndpoint.QueueRemove getRemoveFromQueueEndpoint();
+    Queue.QueueRemove getRemoveFromQueueEndpoint();
 
-    LikeEndpoint getLikeEndpoint();
+    Like getLikeEndpoint();
 
-    ShareEntityEndpoint getShareEntityEndpoint();
+    ShareEntity getShareEntityEndpoint();
 
-    SearchEndpoint getSearchEndpoint();
+    Search getSearchEndpoint();
 
-    SignInEndpoint getSignInEndpoint();
+    SignIn getSignInEndpoint();
 
-    FeedbackEndpoint getFeedbackEndpoint();
+    Feedback getFeedbackEndpoint();
 
-    PlaylistEditEndpoint getPlaylistEditEndpoint();
+    PlaylistEdit getPlaylistEditEndpoint();
 
-    QueueUpdateCommand getQueueUpdateCommand();
+    QueueUpdate getQueueUpdateCommand();
 
-    interface BrowseEndpoint {
+    interface Browse {
 
         String getBrowseId();
 
@@ -51,12 +51,12 @@ public interface Endpoint {
         }
     }
 
-    interface FeedbackEndpoint {
+    interface Feedback {
 
         String getFeedbackToken();
     }
 
-    interface LikeEndpoint {
+    interface Like {
 
         String getStatus();
 
@@ -68,15 +68,15 @@ public interface Endpoint {
         }
     }
 
-    interface ModalEndpoint {
+    interface Modal {
 
-        Modal getModal();
+        Renderer getModal();
 
-        interface Modal {
+        interface Renderer {
 
-            ModalWithTitleAndButtonRenderer getModalWithTitleAndButtonRenderer();
+            TitleAndButtonRenderer getModalWithTitleAndButtonRenderer();
 
-            interface ModalWithTitleAndButtonRenderer {
+            interface TitleAndButtonRenderer {
 
                 Runs getTitle();
 
@@ -87,11 +87,11 @@ public interface Endpoint {
         }
     }
 
-    interface PlaylistEditEndpoint {
+    interface PlaylistEdit {
 
         String getPlaylistId();
 
-        List<PlaylistEditEndpoint.Action> getActions();
+        List<PlaylistEdit.Action> getActions();
 
         interface Action {
 
@@ -103,7 +103,7 @@ public interface Endpoint {
         }
     }
 
-    interface QueueEndpoint {
+    interface Queue {
 
         interface QueueAdd {
 
@@ -155,7 +155,7 @@ public interface Endpoint {
         }
     }
 
-    interface QueueUpdateCommand {
+    interface QueueUpdate {
 
         String getQueueUpdateSection();
 
@@ -167,30 +167,30 @@ public interface Endpoint {
 
             String getClickTrackingParams();
 
-            WatchEndpoint getWatchEndpoint();
+            Watch getWatchEndpoint();
         }
     }
 
-    interface SearchEndpoint {
+    interface Search {
 
         String getQuery();
 
         String getParams();
     }
 
-    interface ShareEntityEndpoint {
+    interface ShareEntity {
 
         String getSerializedShareEntity();
 
         String getSharePanelType();
     }
 
-    interface SignInEndpoint {
+    interface SignIn {
 
         Boolean getHack();
     }
 
-    interface WatchEndpoint {
+    interface Watch {
 
         String getVideoId();
 
@@ -233,7 +233,7 @@ public interface Endpoint {
         }
     }
 
-    interface WatchPlaylistEndpoint {
+    interface WatchPlaylist {
 
         String getPlaylistId();
 

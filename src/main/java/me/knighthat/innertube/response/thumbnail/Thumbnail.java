@@ -2,9 +2,9 @@ package me.knighthat.innertube.response.thumbnail;
 
 public interface Thumbnail {
 
-    MusicThumbnailRenderer getMusicThumbnailRenderer();
+    Renderer getMusicThumbnailRenderer();
 
-    interface MusicThumbnailRenderer {
+    interface Renderer {
 
         Thumbnails getThumbnail();
 

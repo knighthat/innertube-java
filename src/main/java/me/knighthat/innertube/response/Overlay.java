@@ -28,7 +28,7 @@ public interface Overlay {
 
         interface Content {
 
-            Button.MusicPlayButtonRenderer getMusicPlayButtonRenderer();
+            Button.MusicPlay getMusicPlayButtonRenderer();
         }
     }
 }

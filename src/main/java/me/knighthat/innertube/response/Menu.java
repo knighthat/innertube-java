@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface Menu {
 
-    MenuRenderer getMenuRenderer();
+    Renderer getMenuRenderer();
 
-    interface MenuRenderer {
+    interface Renderer {
 
         List<Item> getItems();
 
@@ -18,13 +18,13 @@ public interface Menu {
 
         interface Item {
 
-            MenuNavigationItemRenderer getMenuNavigationItemRenderer();
+            Navigation getMenuNavigationItemRenderer();
 
-            MenuServiceItemRenderer getMenuServiceItemRenderer();
+            Service getMenuServiceItemRenderer();
 
-            ToggleMenuServiceItemRenderer getToggleMenuServiceItemRenderer();
+            Toggle getToggleMenuServiceItemRenderer();
 
-            interface MenuNavigationItemRenderer {
+            interface Navigation {
 
                 Runs getText();
 
@@ -35,7 +35,7 @@ public interface Menu {
                 String getTrackingParams();
             }
 
-            interface MenuServiceItemRenderer {
+            interface Service {
 
                 Runs getText();
 
@@ -46,7 +46,7 @@ public interface Menu {
                 String getTrackingParams();
             }
 
-            interface ToggleMenuServiceItemRenderer {
+            interface Toggle {
 
                 Runs getDefaultText();
 
