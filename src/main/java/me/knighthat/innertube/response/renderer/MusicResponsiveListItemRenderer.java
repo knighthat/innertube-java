@@ -19,9 +19,9 @@ public interface MusicResponsiveListItemRenderer {
 
     Menu getMenu();
 
-    PlaylistItemData getPlaylistItemData();
-
     List<? extends Badge> getBadges();
+
+    PlaylistItemData getPlaylistItemData();
 
     String getFlexColumnDisplayStyle();
 

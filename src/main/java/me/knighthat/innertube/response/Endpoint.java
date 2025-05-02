@@ -198,11 +198,11 @@ public interface Endpoint {
 
         Integer getIndex();
 
+        String getParams();
+
         String getPlayerParams();
 
         String getUstreamerConfig();
-
-        String getParams();
 
         String getPlaylistSetVideoId();
 
