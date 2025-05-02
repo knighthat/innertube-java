@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ChipCloud {
 
-    List<Chip> getChips();
+    List<? extends Chip> getChips();
 
     interface Chip {
 

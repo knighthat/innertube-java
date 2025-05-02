@@ -6,7 +6,7 @@ public interface MusicPlaylistShelfRenderer {
 
     String getPlaylistId();
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     Integer getCollapsedItemCount();
 

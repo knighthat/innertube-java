@@ -33,7 +33,7 @@ public interface BrowseResponse {
 
         interface TwoColumnBrowseResultsRenderer {
 
-            List<Tabs.Tab> getTabs();
+            List<? extends Tabs.Tab> getTabs();
 
             SecondaryContents getSecondaryContents();
 

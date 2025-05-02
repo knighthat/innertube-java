@@ -8,7 +8,7 @@ public interface SearchSuggestionsResponse {
 
     ResponseContext getResponseContext();
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     String getTrackingParams();
 

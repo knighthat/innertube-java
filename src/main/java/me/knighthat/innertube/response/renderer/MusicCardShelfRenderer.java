@@ -15,7 +15,7 @@ public interface MusicCardShelfRenderer {
 
     Runs getSubtitle();
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     interface Content {
 

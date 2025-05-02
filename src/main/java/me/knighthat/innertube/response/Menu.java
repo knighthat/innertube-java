@@ -8,11 +8,11 @@ public interface Menu {
 
     interface Renderer {
 
-        List<Item> getItems();
+        List<? extends Item> getItems();
 
         String getTrackingParams();
 
-        List<Button> getTopLevelButtons();
+        List<? extends Button> getTopLevelButtons();
 
         Accessibility getAccessibility();
 

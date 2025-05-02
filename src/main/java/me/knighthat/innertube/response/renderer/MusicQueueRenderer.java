@@ -30,7 +30,7 @@ public interface MusicQueueRenderer {
 
             Runs getSubtitle();
 
-            List<Button> getButtons();
+            List<? extends Button> getButtons();
 
             String getTrackingParams();
         }

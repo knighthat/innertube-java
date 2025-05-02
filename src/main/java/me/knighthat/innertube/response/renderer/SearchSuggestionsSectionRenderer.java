@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SearchSuggestionsSectionRenderer {
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     interface Content {
 

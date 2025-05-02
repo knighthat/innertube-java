@@ -13,15 +13,15 @@ public interface MusicResponsiveListItemRenderer {
 
     Overlay getOverlay();
 
-    List<FlexColumn> getFlexColumns();
+    List<? extends FlexColumn> getFlexColumns();
 
-    List<FixedColumn> getFixedColumns();
+    List<? extends FixedColumn> getFixedColumns();
 
     Menu getMenu();
 
     PlaylistItemData getPlaylistItemData();
 
-    List<Badge> getBadges();
+    List<? extends Badge> getBadges();
 
     String getFlexColumnDisplayStyle();
 

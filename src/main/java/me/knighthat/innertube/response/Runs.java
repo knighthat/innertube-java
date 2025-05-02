@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Runs {
 
-    List<Run> getRuns();
+    List<? extends Run> getRuns();
 
     Accessibility getAccessibility();
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Tabs {
 
-    List<Tab> getTabs();
+    List<? extends Tab> getTabs();
 
     interface Tab {
 

@@ -61,9 +61,9 @@ public interface PlayerResponse {
 
         String getExpiresInSeconds();
 
-        List<Format> getFormats();
+        List<? extends Format> getFormats();
 
-        List<Format> getAdaptiveFormats();
+        List<? extends Format> getAdaptiveFormats();
 
         String getServerAbrStreamingUrl();
 

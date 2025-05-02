@@ -23,5 +23,5 @@ public interface MusicTwoRowItemRenderer {
 
     Overlay getThumbnailOverlay();
 
-    List<Badge> getSubtitleBadges();
+    List<? extends Badge> getSubtitleBadges();
 }

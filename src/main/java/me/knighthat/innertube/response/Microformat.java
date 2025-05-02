@@ -52,15 +52,15 @@ public interface Microformat {
 
         Boolean getFamilySafe();
 
-        List<String> getTags();
+        List<? extends String> getTags();
 
-        List<String> getAvailableCountries();
+        List<? extends String> getAvailableCountries();
 
         PageOwnerDetails getPageOwnerDetails();
 
         VideoDetails getVideoDetails();
 
-        List<Link> getLinkAlternates();
+        List<? extends Link> getLinkAlternates();
 
         String getViewCount();
 

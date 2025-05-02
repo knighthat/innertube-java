@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface PlaylistPanelRenderer {
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     String getPlaylistId();
 
     Boolean getIsInfinite();
 
-    List<Continuation> getContinuations();
+    List<? extends Continuation> getContinuations();
 
     String getTrackingParams();
 
@@ -45,7 +45,7 @@ public interface PlaylistPanelRenderer {
 
             Runs getShortBylineText();
 
-            List<Badge> getBadges();
+            List<? extends Badge> getBadges();
 
             String getTrackingParams();
 

@@ -91,7 +91,7 @@ public interface Endpoint {
 
         String getPlaylistId();
 
-        List<PlaylistEdit.Action> getActions();
+        List<? extends PlaylistEdit.Action> getActions();
 
         interface Action {
 
@@ -111,7 +111,7 @@ public interface Endpoint {
 
             String getQueueInsertPosition();
 
-            List<Command> getCommands();
+            List<? extends Command> getCommands();
 
             interface QueueTarget {
 
@@ -127,7 +127,7 @@ public interface Endpoint {
 
             String getVideoId();
 
-            List<Command> getCommands();
+            List<? extends Command> getCommands();
         }
 
         interface Command {

@@ -9,7 +9,7 @@ public interface MusicShelfRenderer {
 
     Runs getTitle();
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     String getTrackingParams();
 

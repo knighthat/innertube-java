@@ -10,7 +10,7 @@ public interface MusicCarouselShelfRenderer {
 
     Header getHeader();
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
     String getTrackingParams();
 

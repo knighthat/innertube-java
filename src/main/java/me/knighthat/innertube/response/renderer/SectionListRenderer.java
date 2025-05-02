@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface SectionListRenderer {
 
-    List<Content> getContents();
+    List<? extends Content> getContents();
 
-    List<Continuation> getContinuations();
+    List<? extends Continuation> getContinuations();
 
     String getTrackingParams();
 
@@ -48,7 +48,7 @@ public interface SectionListRenderer {
 
             Integer getMaxExpandedLines();
 
-            List<Command> getOnShowCommands();
+            List<? extends Command> getOnShowCommands();
 
             Runs getFooter();
 
@@ -90,7 +90,7 @@ public interface SectionListRenderer {
 
             Thumbnail getThumbnail();
 
-            List<Button> getButtons();
+            List<? extends Button> getButtons();
 
             Runs getTitle();
 
@@ -104,7 +104,7 @@ public interface SectionListRenderer {
 
             Thumbnail getStraplineThumbnail();
 
-            List<Badge> getSubtitleBadge();
+            List<? extends Badge> getSubtitleBadge();
 
             Runs getSecondSubtitle();
 
@@ -125,7 +125,7 @@ public interface SectionListRenderer {
 
         interface GridRenderer {
 
-            List<Item> getItems();
+            List<? extends Item> getItems();
 
             String getTrackingParams();
 
