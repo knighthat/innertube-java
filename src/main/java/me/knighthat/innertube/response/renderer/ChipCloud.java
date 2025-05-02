@@ -11,6 +11,10 @@ public interface ChipCloud {
 
     List<? extends Chip> getChips();
 
+    String getTrackingParams();
+
+    Boolean getHorizontalScrollable();
+
     interface Chip {
 
         Renderer getChipCloudChipRenderer();
@@ -30,6 +34,8 @@ public interface ChipCloud {
             Accessibility getAccessibilityData();
 
             Boolean getIsSelected();
+
+            Endpoint getOnDeselectedCommand();
 
             String getUniqueId();
 

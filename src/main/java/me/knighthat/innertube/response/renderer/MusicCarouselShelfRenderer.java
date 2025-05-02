@@ -26,6 +26,8 @@ public interface MusicCarouselShelfRenderer {
 
             Runs getTitle();
 
+            Runs getStrapline();
+
             Accessibility getAccessibilityData();
 
             String getHeaderStyle();

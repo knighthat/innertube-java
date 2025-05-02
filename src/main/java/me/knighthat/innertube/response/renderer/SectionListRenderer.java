@@ -73,7 +73,11 @@ public interface SectionListRenderer {
 
             Runs getSecondaryText();
 
-            Button getButton();
+            Button getActionButton();
+
+            Boolean getIsVisible();
+
+            String getTrackingParams();
 
             interface Thumbnail {
 
