@@ -10,7 +10,11 @@ import java.util.Locale;
 @Data
 public class Context {
 
-    public static final Context WEB_DEFAULT = new Context( Client.DEFAULT );
+    @NotNull
+    public static final Context WEB_DEFAULT = new Context( Client.WEB );
+
+    @NotNull
+    public static final Context IOS_DEFAULT = new Context( Client.IOS );
 
     @NotNull
     public final Client client;
@@ -19,7 +23,7 @@ public class Context {
     public static class Client {
 
         @NotNull
-        public static final Client DEFAULT = new Client(
+        public static final Client WEB = new Client(
                 "WEB_REMIX",
                 "1.20250416.01.00",
                 "DESKTOP",
@@ -29,6 +33,19 @@ public class Context {
                 UserAgents.CHROME_WINDOWS,
                 Constants.YOUTUBE_MUSIC_HOST,
                 67
+        );
+
+        @NotNull
+        public static final Client IOS = new Client(
+                "IOS",
+                "20.03.02",
+                "MOBILE",
+                Locale.getDefault().getLanguage(),
+                Locale.getDefault().getCountry(),
+                Constants.VISITOR_DATA,
+                UserAgents.IOS,
+                Constants.YOUTUBE_MUSIC_HOST,
+                5
         );
 
         /**
@@ -89,7 +106,7 @@ public class Context {
         public final String userAgent;
 
         /**
-         * Should be https://music.youtube.com in most cases
+         * Should be <a href="https://music.youtube.com">...</a> in most cases
          */
         @NotNull
         public final String referer;
