@@ -15,21 +15,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation(libs.com.google.code.gson.gson)
-    testImplementation(libs.org.junit.jupiter.junit.jupiter.api)
-    testImplementation(libs.org.junit.jupiter.junit.jupiter.engine)
-    testImplementation(libs.com.squareup.okhttp3.okhttp)
-    testImplementation(libs.com.squareup.okhttp3.logging.interceptor)
+    testImplementation(libs.gson)
+    testImplementation(libs.junit5.jupiter.api)
+    testImplementation(libs.junit5.jupiter.engine)
+    testImplementation(libs.okhttp3.okhttp)
+    testImplementation(libs.okhttp3.logging.interceptor)
 
-    compileOnly(libs.org.projectlombok.lombok)
-    annotationProcessor(libs.org.projectlombok.lombok)
-    testCompileOnly(libs.org.projectlombok.lombok)
-    testAnnotationProcessor(libs.org.projectlombok.lombok)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+    testCompileOnly(libs.lombok)
+    testAnnotationProcessor(libs.lombok)
 
-    compileOnly(libs.org.jetbrains.annotations)
-    annotationProcessor(libs.org.jetbrains.annotations)
-    testCompileOnly(libs.org.jetbrains.annotations)
-    testAnnotationProcessor(libs.org.jetbrains.annotations)
+    compileOnly(libs.jetbrains.annotations)
+    annotationProcessor(libs.jetbrains.annotations)
+    testCompileOnly(libs.jetbrains.annotations)
+    testAnnotationProcessor(libs.jetbrains.annotations)
 }
 
 group = "me.knighthat"
