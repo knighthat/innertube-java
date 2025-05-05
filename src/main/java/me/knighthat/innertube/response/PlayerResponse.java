@@ -71,6 +71,8 @@ public interface PlayerResponse {
 
             Short getItag();
 
+            String getUrl();
+
             String getMimeType();
 
             Integer getBitrate();

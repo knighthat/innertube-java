@@ -67,6 +67,7 @@ public class PlayerResponseImpl implements PlayerResponse {
         public static class FormatImpl implements Format {
 
             private final Short itag;
+            private final String url;
             private final String mimeType;
             private final Integer bitrate;
             private final Short width;
