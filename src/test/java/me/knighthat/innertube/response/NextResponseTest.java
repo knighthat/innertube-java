@@ -5,14 +5,15 @@ import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
 import me.knighthat.innertube.request.body.Context;
 import me.knighthat.innertube.request.body.NextBody;
-import okhttp3.*;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NextResponseTest implements HttpClient {
 

@@ -1,7 +1,6 @@
 package me.knighthat.impl.response;
 
 import lombok.Data;
-import me.knighthat.innertube.response.ResponseContext;
 import me.knighthat.innertube.response.SearchResponse;
 
 @Data

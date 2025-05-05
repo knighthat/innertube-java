@@ -1,9 +1,7 @@
 package me.knighthat.impl.response;
 
 import lombok.Data;
-import me.knighthat.innertube.response.Accessibility;
 import me.knighthat.innertube.response.Badge;
-import me.knighthat.innertube.response.Icon;
 
 @Data
 public class BadgeImpl implements Badge {

@@ -4,10 +4,6 @@ import lombok.Data;
 import me.knighthat.impl.response.EndpointImpl;
 import me.knighthat.impl.response.IconImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Icon;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.renderer.MusicResponsiveListItemRenderer;
 import me.knighthat.innertube.response.renderer.SearchSuggestionsSectionRenderer;
 
 import java.util.List;

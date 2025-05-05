@@ -4,8 +4,6 @@ import lombok.Data;
 import me.knighthat.impl.response.renderer.MusicQueueRendererImpl;
 import me.knighthat.impl.response.renderer.SectionListRendererImpl;
 import me.knighthat.innertube.response.Tabs;
-import me.knighthat.innertube.response.renderer.MusicQueueRenderer;
-import me.knighthat.innertube.response.renderer.SectionListRenderer;
 
 import java.util.List;
 

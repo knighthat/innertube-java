@@ -2,10 +2,7 @@ package me.knighthat.impl.response;
 
 import lombok.Data;
 import me.knighthat.impl.response.renderer.ChipCloudImpl;
-import me.knighthat.innertube.response.Accessibility;
 import me.knighthat.innertube.response.Button;
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.renderer.ChipCloud;
 
 @Data
 public class ButtonImpl implements Button {

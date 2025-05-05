@@ -3,9 +3,6 @@ package me.knighthat.impl.response.renderer;
 import lombok.Data;
 import me.knighthat.impl.response.EndpointImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.renderer.MusicResponsiveListItemRenderer;
 import me.knighthat.innertube.response.renderer.MusicShelfRenderer;
 
 import java.util.List;

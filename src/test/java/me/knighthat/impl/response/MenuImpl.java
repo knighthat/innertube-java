@@ -1,11 +1,7 @@
 package me.knighthat.impl.response;
 
 import lombok.Data;
-import me.knighthat.innertube.response.*;
-import me.knighthat.innertube.response.Button;
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Icon;
-import me.knighthat.innertube.response.Runs;
+import me.knighthat.innertube.response.Menu;
 
 import java.util.List;
 

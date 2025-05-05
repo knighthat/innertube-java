@@ -2,9 +2,7 @@ package me.knighthat.impl.response;
 
 import lombok.Data;
 import me.knighthat.impl.response.renderer.SearchSuggestionsSectionRendererImpl;
-import me.knighthat.innertube.response.ResponseContext;
 import me.knighthat.innertube.response.SearchSuggestionsResponse;
-import me.knighthat.innertube.response.renderer.SearchSuggestionsSectionRenderer;
 
 import java.util.List;
 

@@ -5,7 +5,6 @@ import me.knighthat.impl.response.AccessibilityImpl;
 import me.knighthat.impl.response.EndpointImpl;
 import me.knighthat.impl.response.IconImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.Endpoint;
 import me.knighthat.innertube.response.renderer.ChipCloud;
 
 import java.util.List;

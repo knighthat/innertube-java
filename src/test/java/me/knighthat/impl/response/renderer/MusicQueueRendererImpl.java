@@ -3,9 +3,6 @@ package me.knighthat.impl.response.renderer;
 import lombok.Data;
 import me.knighthat.impl.response.ButtonImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.Button;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.renderer.ChipCloud;
 import me.knighthat.innertube.response.renderer.MusicQueueRenderer;
 
 import java.util.List;

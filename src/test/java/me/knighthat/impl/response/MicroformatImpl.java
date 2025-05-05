@@ -3,9 +3,7 @@ package me.knighthat.impl.response;
 import lombok.Data;
 import me.knighthat.impl.response.thumbnail.ThumbnailsImpl;
 import me.knighthat.innertube.response.Microformat;
-import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
-import javax.swing.*;
 import java.util.List;
 
 @Data

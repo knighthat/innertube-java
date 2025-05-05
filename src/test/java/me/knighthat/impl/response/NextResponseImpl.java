@@ -3,7 +3,6 @@ package me.knighthat.impl.response;
 import lombok.Data;
 import me.knighthat.impl.response.thumbnail.ThumbnailsImpl;
 import me.knighthat.innertube.response.NextResponse;
-import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 @Data
 public class NextResponseImpl implements NextResponse {

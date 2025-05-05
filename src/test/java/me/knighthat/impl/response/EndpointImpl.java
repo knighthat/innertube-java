@@ -2,7 +2,6 @@ package me.knighthat.impl.response;
 
 import lombok.Data;
 import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Runs;
 
 import java.util.List;
 
