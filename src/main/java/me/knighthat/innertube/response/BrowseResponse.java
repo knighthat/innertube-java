@@ -5,7 +5,7 @@ import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
 import java.util.List;
 
-public interface BrowseResponse {
+public interface BrowseResponse extends Trackable {
 
     ResponseContext getResponseContext();
 
@@ -14,8 +14,6 @@ public interface BrowseResponse {
     Header getHeader();
 
     // Missing "frameworkUpdates"
-
-    String getTrackingParams();
 
     Integer getMaxAgeStoreSeconds();
 
@@ -50,7 +48,7 @@ public interface BrowseResponse {
 
         MusicHeaderRenderer getMusicHeaderRenderer();
 
-        interface MusicImmersiveHeaderRenderer {
+        interface MusicImmersiveHeaderRenderer extends Trackable {
 
             Runs getTitle();
 
@@ -62,8 +60,6 @@ public interface BrowseResponse {
 
             Thumbnail getThumbnail();
 
-            String getTrackingParams();
-
             Button getPlayButton();
 
             Button getStartRadioButton();
@@ -73,11 +69,9 @@ public interface BrowseResponse {
             Runs getMonthlyListenerCount();
         }
 
-        interface MusicHeaderRenderer {
+        interface MusicHeaderRenderer extends Trackable {
 
             Runs getTitle();
-
-            String getTrackingParams();
         }
     }
 }

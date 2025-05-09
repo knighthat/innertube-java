@@ -2,6 +2,7 @@ package me.knighthat.innertube.response.renderer;
 
 import me.knighthat.innertube.response.Button;
 import me.knighthat.innertube.response.Runs;
+import me.knighthat.innertube.response.Trackable;
 
 import java.util.List;
 
@@ -24,15 +25,13 @@ public interface MusicQueueRenderer {
 
         MusicQueueHeaderRenderer getMusicQueueHeaderRenderer();
 
-        interface MusicQueueHeaderRenderer {
+        interface MusicQueueHeaderRenderer extends Trackable {
 
             Runs getTitle();
 
             Runs getSubtitle();
 
             List<? extends Button> getButtons();
-
-            String getTrackingParams();
         }
     }
 

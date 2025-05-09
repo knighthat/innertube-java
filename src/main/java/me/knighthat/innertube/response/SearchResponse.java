@@ -1,12 +1,10 @@
 package me.knighthat.innertube.response;
 
-public interface SearchResponse {
+public interface SearchResponse extends Trackable {
 
     ResponseContext getResponseContext();
 
     Contents getContents();
-
-    String getTrackingParams();
 
     interface Contents {
 

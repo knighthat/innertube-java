@@ -6,13 +6,11 @@ import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
 
-public interface SectionListRenderer {
+public interface SectionListRenderer extends Trackable{
 
     List<? extends Content> getContents();
 
     List<? extends Continuation> getContinuations();
-
-    String getTrackingParams();
 
     Header getHeader();
 
@@ -34,13 +32,11 @@ public interface SectionListRenderer {
 
         MusicCardShelfRenderer getMusicCardShelfRenderer();
 
-        interface MusicDescriptionShelfRenderer {
+        interface MusicDescriptionShelfRenderer extends Trackable {
 
             Runs getDescription();
 
             Button getMoreButton();
-
-            String getTrackingParams();
 
             String getShelfStyle();
 
@@ -52,9 +48,7 @@ public interface SectionListRenderer {
 
             Runs getFooter();
 
-            interface Command {
-
-                String getClickTrackingParams();
+            interface Command extends ClickTrackable {
 
                 LogLyricEventCommand getLogLyricEventCommand();
 
@@ -65,7 +59,7 @@ public interface SectionListRenderer {
             }
         }
 
-        interface MusicTastebuilderShelfRenderer {
+        interface MusicTastebuilderShelfRenderer extends Trackable {
 
             Thumbnail getThumbnail();
 
@@ -76,8 +70,6 @@ public interface SectionListRenderer {
             Button getActionButton();
 
             Boolean getIsVisible();
-
-            String getTrackingParams();
 
             interface Thumbnail {
 
@@ -90,7 +82,7 @@ public interface SectionListRenderer {
             }
         }
 
-        interface MusicResponsiveHeaderRenderer {
+        interface MusicResponsiveHeaderRenderer extends Trackable {
 
             Thumbnail getThumbnail();
 
@@ -99,8 +91,6 @@ public interface SectionListRenderer {
             Runs getTitle();
 
             Runs getSubtitle();
-
-            String getTrackingParams();
 
             Description getDescription();
 
@@ -127,11 +117,9 @@ public interface SectionListRenderer {
             }
         }
 
-        interface GridRenderer {
+        interface GridRenderer extends Trackable {
 
             List<? extends Item> getItems();
-
-            String getTrackingParams();
 
             interface Item {
 

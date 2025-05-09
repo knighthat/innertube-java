@@ -2,15 +2,13 @@ package me.knighthat.innertube.response;
 
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
-public interface NextResponse {
+public interface NextResponse extends Trackable {
 
     ResponseContext getResponseContext();
 
     Contents getContents();
 
     Endpoint getCurrentVideoEndpoint();
-
-    String getTrackingParams();
 
     PlayerOverlays getPlayerOverlays();
 

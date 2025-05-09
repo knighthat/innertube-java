@@ -4,7 +4,7 @@ import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
 
-public interface PlayerResponse {
+public interface PlayerResponse extends Trackable {
 
     ResponseContext getResponseContext();
 
@@ -17,8 +17,6 @@ public interface PlayerResponse {
     PlayerConfig getPlayerConfig();
 
     Microformat getMicroformat();
-
-    String getTrackingParams();
 
     interface PlayabilityStatus {
 
@@ -38,9 +36,7 @@ public interface PlayerResponse {
 
             AudioOnlyPlayabilityRenderer getAudioOnlyPlayabilityRenderer();
 
-            interface AudioOnlyPlayabilityRenderer {
-
-                String getTrackingParams();
+            interface AudioOnlyPlayabilityRenderer extends Trackable {
 
                 String getAudioOnlyAvailability();
             }

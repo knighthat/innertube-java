@@ -5,7 +5,7 @@ import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
 import java.util.List;
 
-public interface MusicTwoRowItemRenderer {
+public interface MusicTwoRowItemRenderer extends Trackable {
 
     Thumbnail getThumbnailRenderer();
 
@@ -16,8 +16,6 @@ public interface MusicTwoRowItemRenderer {
     Runs getSubtitle();
 
     Endpoint getNavigationEndpoint();
-
-    String getTrackingParams();
 
     Menu getMenu();
 

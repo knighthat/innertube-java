@@ -2,9 +2,7 @@ package me.knighthat.innertube.response;
 
 import java.util.List;
 
-public interface Endpoint {
-
-    String getClickTrackingParams();
+public interface Endpoint extends ClickTrackable{
 
     Browse getBrowseEndpoint();
 
@@ -130,9 +128,7 @@ public interface Endpoint {
             List<? extends Command> getCommands();
         }
 
-        interface Command {
-
-            String getClickTrackingParams();
+        interface Command extends ClickTrackable {
 
             AddToToastAction getAddToToastAction();
 
@@ -144,11 +140,9 @@ public interface Endpoint {
 
                     Item.NotificationTextRenderer getNotificationTextRenderer();
 
-                    interface NotificationTextRenderer {
+                    interface NotificationTextRenderer extends Trackable{
 
                         Runs getSuccessResponseText();
-
-                        String getTrackingParams();
                     }
                 }
             }
@@ -163,9 +157,7 @@ public interface Endpoint {
 
         Boolean getDedupeAgainstLocalQueue();
 
-        interface FetchContentsCommand {
-
-            String getClickTrackingParams();
+        interface FetchContentsCommand extends ClickTrackable {
 
             Watch getWatchEndpoint();
         }

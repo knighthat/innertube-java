@@ -1,6 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
 import me.knighthat.innertube.response.Endpoint;
+import me.knighthat.innertube.response.Trackable;
 
 public interface AutomixPreviewVideoRenderer {
 
@@ -10,11 +11,9 @@ public interface AutomixPreviewVideoRenderer {
 
         Renderer getAutomixPlaylistVideoRenderer();
 
-        interface Renderer {
+        interface Renderer extends Trackable {
 
             Endpoint getNavigationEndpoint();
-
-            String getTrackingParams();
 
             String getAutomixMode();
         }

@@ -12,7 +12,7 @@ public interface Button {
 
     Like getLikeButtonRenderer();
 
-    interface Renderer {
+    interface Renderer extends Trackable{
 
         String getStyle();
 
@@ -26,20 +26,16 @@ public interface Button {
 
         Endpoint getNavigationEndpoint();
 
-        String getTrackingParams();
-
         Accessibility.Data getAccessibility();
 
         Accessibility getAccessibilityData();
     }
 
-    interface Like {
+    interface Like extends Trackable {
 
         Target getTarget();
 
         String getLikeStatus();
-
-        String getTrackingParams();
 
         Boolean getLikesAllowed();
 
@@ -53,11 +49,9 @@ public interface Button {
         }
     }
 
-    interface MusicPlay {
+    interface MusicPlay extends Trackable {
 
         Endpoint getPlayNavigationEndpoint();
-
-        String getTrackingParams();
 
         Icon getPlayIcon();
 
@@ -86,7 +80,7 @@ public interface Button {
         Accessibility getAccessibilityPauseData();
     }
 
-    interface Toggle {
+    interface Toggle extends Trackable {
 
         Boolean getIsToggled();
 
@@ -103,8 +97,6 @@ public interface Button {
         Endpoint getToggledServiceEndpoint();
 
         Runs getToggledText();
-
-        String getTrackingParams();
 
         Endpoint getDefaultNavigationEndpoint();
 

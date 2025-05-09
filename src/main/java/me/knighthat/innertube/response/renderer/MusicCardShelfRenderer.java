@@ -1,13 +1,12 @@
 package me.knighthat.innertube.response.renderer;
 
 import me.knighthat.innertube.response.Runs;
+import me.knighthat.innertube.response.Trackable;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
 import java.util.List;
 
-public interface MusicCardShelfRenderer {
-
-    String getTrackingParams();
+public interface MusicCardShelfRenderer extends Trackable {
 
     Thumbnail getThumbnail();
 
@@ -23,11 +22,9 @@ public interface MusicCardShelfRenderer {
 
         MusicResponsiveListItemRenderer getMusicResponsiveListItemRenderer();
 
-        interface MessageRenderer {
+        interface MessageRenderer extends Trackable {
 
             Runs getText();
-
-            String getTrackingParams();
 
             Style getStyle();
 

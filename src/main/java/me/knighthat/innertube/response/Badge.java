@@ -4,9 +4,7 @@ public interface Badge {
 
     Renderer getMusicInlineBadgeRenderer();
 
-    interface Renderer {
-
-        String getTrackingParams();
+    interface Renderer extends Trackable {
 
         Icon getIcon();
 

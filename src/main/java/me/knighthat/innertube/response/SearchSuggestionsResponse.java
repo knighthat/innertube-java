@@ -4,13 +4,11 @@ import me.knighthat.innertube.response.renderer.SearchSuggestionsSectionRenderer
 
 import java.util.List;
 
-public interface SearchSuggestionsResponse {
+public interface SearchSuggestionsResponse extends Trackable {
 
     ResponseContext getResponseContext();
 
     List<? extends Content> getContents();
-
-    String getTrackingParams();
 
     interface Content {
 

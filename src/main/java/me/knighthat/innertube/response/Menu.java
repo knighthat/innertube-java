@@ -6,11 +6,9 @@ public interface Menu {
 
     Renderer getMenuRenderer();
 
-    interface Renderer {
+    interface Renderer extends Trackable {
 
         List<? extends Item> getItems();
-
-        String getTrackingParams();
 
         List<? extends Button> getTopLevelButtons();
 
@@ -24,29 +22,25 @@ public interface Menu {
 
             Toggle getToggleMenuServiceItemRenderer();
 
-            interface Navigation {
+            interface Navigation extends Trackable {
 
                 Runs getText();
 
                 Icon getIcon();
 
                 Endpoint getNavigationEndpoint();
-
-                String getTrackingParams();
             }
 
-            interface Service {
+            interface Service extends Trackable {
 
                 Runs getText();
 
                 Icon getIcon();
 
                 Endpoint getServiceEndpoint();
-
-                String getTrackingParams();
             }
 
-            interface Toggle {
+            interface Toggle extends Trackable {
 
                 Runs getDefaultText();
 
@@ -59,8 +53,6 @@ public interface Menu {
                 Icon getToggledIcon();
 
                 Endpoint getToggledServiceEndpoint();
-
-                String getTrackingParams();
             }
         }
     }

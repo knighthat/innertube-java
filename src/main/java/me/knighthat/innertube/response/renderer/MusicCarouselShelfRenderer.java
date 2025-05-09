@@ -3,16 +3,15 @@ package me.knighthat.innertube.response.renderer;
 import me.knighthat.innertube.response.Accessibility;
 import me.knighthat.innertube.response.Button;
 import me.knighthat.innertube.response.Runs;
+import me.knighthat.innertube.response.Trackable;
 
 import java.util.List;
 
-public interface MusicCarouselShelfRenderer {
+public interface MusicCarouselShelfRenderer extends Trackable {
 
     Header getHeader();
 
     List<? extends Content> getContents();
-
-    String getTrackingParams();
 
     String getItemSize();
 
@@ -22,7 +21,7 @@ public interface MusicCarouselShelfRenderer {
 
         MusicCarouselShelfBasicHeaderRenderer getMusicCarouselShelfBasicHeaderRenderer();
 
-        interface MusicCarouselShelfBasicHeaderRenderer {
+        interface MusicCarouselShelfBasicHeaderRenderer extends Trackable {
 
             Runs getTitle();
 
@@ -33,8 +32,6 @@ public interface MusicCarouselShelfRenderer {
             String getHeaderStyle();
 
             Button getMoreContentButton();
-
-            String getTrackingParams();
         }
     }
 

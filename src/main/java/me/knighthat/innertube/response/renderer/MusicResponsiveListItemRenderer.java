@@ -5,9 +5,7 @@ import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
 import java.util.List;
 
-public interface MusicResponsiveListItemRenderer {
-
-    String getTrackingParams();
+public interface MusicResponsiveListItemRenderer extends Trackable {
 
     Thumbnail getThumbnail();
 
@@ -71,17 +69,13 @@ public interface MusicResponsiveListItemRenderer {
 
         Renderer getCheckboxRenderer();
 
-        interface Renderer {
+        interface Renderer extends Trackable {
 
             ChangeCommand getOnSelectionChangeCommand();
 
             String getCheckedState();
 
-            String getTrackingParams();
-
-            interface ChangeCommand {
-
-                String getClickTrackingParams();
+            interface ChangeCommand extends ClickTrackable {
 
                 UpdateCommand getUpdateMultiSelectStateCommand();
 

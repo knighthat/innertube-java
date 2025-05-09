@@ -6,10 +6,8 @@ public interface Continuation {
 
     Data getNextRadioContinuationData();
 
-    interface Data {
+    interface Data extends ClickTrackable {
 
         String getContinuation();
-
-        String getClickTrackingParams();
     }
 }

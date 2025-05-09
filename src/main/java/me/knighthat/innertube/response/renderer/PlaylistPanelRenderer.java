@@ -5,7 +5,7 @@ import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
 
-public interface PlaylistPanelRenderer {
+public interface PlaylistPanelRenderer extends Trackable {
 
     List<? extends Content> getContents();
 
@@ -14,8 +14,6 @@ public interface PlaylistPanelRenderer {
     Boolean getIsInfinite();
 
     List<? extends Continuation> getContinuations();
-
-    String getTrackingParams();
 
     Short getNumItemsToShow();
 
@@ -27,7 +25,7 @@ public interface PlaylistPanelRenderer {
 
         AutomixPreviewVideoRenderer getAutomixPreviewVideoRenderer();
 
-        interface VideoRenderer {
+        interface VideoRenderer extends Trackable {
 
             Runs getTitle();
 
@@ -46,8 +44,6 @@ public interface PlaylistPanelRenderer {
             Runs getShortBylineText();
 
             List<? extends Badge> getBadges();
-
-            String getTrackingParams();
 
             Menu getMenu();
 

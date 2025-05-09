@@ -13,7 +13,7 @@ public interface Tabs {
 
         Renderer getTabRenderer();
 
-        interface Renderer {
+        interface Renderer extends Trackable {
 
             Endpoint getEndpoint();
 
@@ -26,8 +26,6 @@ public interface Tabs {
             Icon getIcon();
 
             String getTabIdentifier();
-
-            String getTrackingParams();
 
             interface Content {
 

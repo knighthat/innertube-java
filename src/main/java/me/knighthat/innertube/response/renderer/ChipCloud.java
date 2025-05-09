@@ -4,14 +4,13 @@ import me.knighthat.innertube.response.Accessibility;
 import me.knighthat.innertube.response.Endpoint;
 import me.knighthat.innertube.response.Icon;
 import me.knighthat.innertube.response.Runs;
+import me.knighthat.innertube.response.Trackable;
 
 import java.util.List;
 
-public interface ChipCloud {
+public interface ChipCloud extends Trackable {
 
     List<? extends Chip> getChips();
-
-    String getTrackingParams();
 
     Boolean getHorizontalScrollable();
 
@@ -19,15 +18,13 @@ public interface ChipCloud {
 
         Renderer getChipCloudChipRenderer();
 
-        interface Renderer {
+        interface Renderer extends Trackable {
 
             Style getStyle();
 
             Runs getText();
 
             Endpoint getNavigationEndpoint();
-
-            String getTrackingParams();
 
             Icon getIcon();
 
