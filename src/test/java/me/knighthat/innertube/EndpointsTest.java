@@ -1,10 +1,6 @@
 package me.knighthat.innertube;
 
-import com.google.gson.Gson;
 import me.knighthat.innertube.request.body.*;
-import okhttp3.*;
-import okhttp3.RequestBody;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -71,7 +67,7 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testSearch() {
-        SearchBody searchBody = new SearchBody( Context.WEB_DEFAULT, "take me to church" );
+        SearchBody searchBody = new SearchBody( Context.WEB_DEFAULT, "take me to church", null );
         Assertions.assertTrue( post( Endpoints.BROWSE, searchBody ) );
     }
 
