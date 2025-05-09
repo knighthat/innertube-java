@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.*;
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
@@ -7,12 +9,14 @@ import java.util.List;
 
 public interface PlaylistPanelRenderer extends Trackable {
 
+    @NotNull
     List<? extends Content> getContents();
 
     String getPlaylistId();
 
     Boolean getIsInfinite();
 
+    @NotNull
     List<? extends Continuation> getContinuations();
 
     Short getNumItemsToShow();
@@ -43,6 +47,7 @@ public interface PlaylistPanelRenderer extends Trackable {
 
             Runs getShortBylineText();
 
+            @NotNull
             List<? extends Badge> getBadges();
 
             Menu getMenu();

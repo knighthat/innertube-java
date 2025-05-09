@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
@@ -52,14 +54,17 @@ public interface Microformat {
 
         Boolean getFamilySafe();
 
+        @NotNull
         List<? extends String> getTags();
 
+        @NotNull
         List<? extends String> getAvailableCountries();
 
         PageOwnerDetails getPageOwnerDetails();
 
         VideoDetails getVideoDetails();
 
+        @NotNull
         List<? extends Link> getLinkAlternates();
 
         String getViewCount();

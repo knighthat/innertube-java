@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public interface Overlay {
@@ -22,6 +24,7 @@ public interface Overlay {
 
             interface VerticalGradient {
 
+                @NotNull
                 List<String> getGradientLayerColors();
             }
         }

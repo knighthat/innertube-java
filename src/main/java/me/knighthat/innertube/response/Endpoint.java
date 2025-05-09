@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public interface Endpoint extends ClickTrackable{
@@ -89,6 +91,7 @@ public interface Endpoint extends ClickTrackable{
 
         String getPlaylistId();
 
+        @NotNull
         List<? extends PlaylistEdit.Action> getActions();
 
         interface Action {
@@ -109,6 +112,7 @@ public interface Endpoint extends ClickTrackable{
 
             String getQueueInsertPosition();
 
+            @NotNull
             List<? extends Command> getCommands();
 
             interface QueueTarget {
@@ -125,6 +129,7 @@ public interface Endpoint extends ClickTrackable{
 
             String getVideoId();
 
+            @NotNull
             List<? extends Command> getCommands();
         }
 

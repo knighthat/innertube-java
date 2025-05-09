@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public interface Menu {
@@ -8,8 +10,10 @@ public interface Menu {
 
     interface Renderer extends Trackable {
 
+        @NotNull
         List<? extends Item> getItems();
 
+        @NotNull
         List<? extends Button> getTopLevelButtons();
 
         Accessibility getAccessibility();

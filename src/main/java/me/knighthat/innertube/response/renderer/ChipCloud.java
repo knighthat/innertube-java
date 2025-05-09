@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.Accessibility;
 import me.knighthat.innertube.response.Endpoint;
 import me.knighthat.innertube.response.Icon;
@@ -10,6 +12,7 @@ import java.util.List;
 
 public interface ChipCloud extends Trackable {
 
+    @NotNull
     List<? extends Chip> getChips();
 
     Boolean getHorizontalScrollable();

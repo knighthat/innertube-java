@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.*;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
@@ -11,12 +13,15 @@ public interface MusicResponsiveListItemRenderer extends Trackable {
 
     Overlay getOverlay();
 
+    @NotNull
     List<? extends FlexColumn> getFlexColumns();
 
+    @NotNull
     List<? extends FixedColumn> getFixedColumns();
 
     Menu getMenu();
 
+    @NotNull
     List<? extends Badge> getBadges();
 
     PlaylistItemData getPlaylistItemData();

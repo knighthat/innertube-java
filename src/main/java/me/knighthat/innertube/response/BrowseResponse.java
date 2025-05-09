@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.renderer.SectionListRenderer;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 
@@ -31,6 +33,7 @@ public interface BrowseResponse extends Trackable {
 
         interface TwoColumnBrowseResultsRenderer {
 
+            @NotNull
             List<? extends Tabs.Tab> getTabs();
 
             SecondaryContents getSecondaryContents();

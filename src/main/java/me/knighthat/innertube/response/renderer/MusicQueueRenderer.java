@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.Button;
 import me.knighthat.innertube.response.Runs;
 import me.knighthat.innertube.response.Trackable;
@@ -31,6 +33,7 @@ public interface MusicQueueRenderer {
 
             Runs getSubtitle();
 
+            @NotNull
             List<? extends Button> getButtons();
         }
     }

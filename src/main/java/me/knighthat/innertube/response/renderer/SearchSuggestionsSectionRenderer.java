@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.Endpoint;
 import me.knighthat.innertube.response.Icon;
 import me.knighthat.innertube.response.Runs;
@@ -9,6 +11,7 @@ import java.util.List;
 
 public interface SearchSuggestionsSectionRenderer {
 
+    @NotNull
     List<? extends Content> getContents();
 
     interface Content {

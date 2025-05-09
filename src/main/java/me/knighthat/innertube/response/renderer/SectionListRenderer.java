@@ -1,15 +1,19 @@
 package me.knighthat.innertube.response.renderer;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.*;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
 
-public interface SectionListRenderer extends Trackable{
+public interface SectionListRenderer extends Trackable {
 
+    @NotNull
     List<? extends Content> getContents();
 
+    @NotNull
     List<? extends Continuation> getContinuations();
 
     Header getHeader();
@@ -44,6 +48,7 @@ public interface SectionListRenderer extends Trackable{
 
             Integer getMaxExpandedLines();
 
+            @NotNull
             List<? extends Command> getOnShowCommands();
 
             Runs getFooter();
@@ -86,6 +91,7 @@ public interface SectionListRenderer extends Trackable{
 
             Thumbnail getThumbnail();
 
+            @NotNull
             List<? extends Button> getButtons();
 
             Runs getTitle();
@@ -98,6 +104,7 @@ public interface SectionListRenderer extends Trackable{
 
             Thumbnail getStraplineThumbnail();
 
+            @NotNull
             List<? extends Badge> getSubtitleBadge();
 
             Runs getSecondSubtitle();
@@ -119,6 +126,7 @@ public interface SectionListRenderer extends Trackable{
 
         interface GridRenderer extends Trackable {
 
+            @NotNull
             List<? extends Item> getItems();
 
             interface Item {

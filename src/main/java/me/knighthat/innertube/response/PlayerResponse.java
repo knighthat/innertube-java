@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import org.jetbrains.annotations.NotNull;
+
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
 import java.util.List;
@@ -57,8 +59,10 @@ public interface PlayerResponse extends Trackable {
 
         String getExpiresInSeconds();
 
+        @NotNull
         List<? extends Format> getFormats();
 
+        @NotNull
         List<? extends Format> getAdaptiveFormats();
 
         String getServerAbrStreamingUrl();
