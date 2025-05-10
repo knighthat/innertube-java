@@ -1,5 +1,7 @@
 package me.knighthat.innertube.response;
 
+import java.util.List;
+
 import me.knighthat.innertube.response.renderer.ChipCloud;
 
 public interface Button {
@@ -12,7 +14,9 @@ public interface Button {
 
     Like getLikeButtonRenderer();
 
-    interface Renderer extends Trackable{
+    Subscribe getSubscribeButtonRenderer();
+
+    interface Renderer extends Trackable {
 
         String getStyle();
 
@@ -103,5 +107,40 @@ public interface Button {
         Accessibility getAccessibilityData();
 
         Accessibility getToggledAccessibilityData();
+    }
+
+    interface Subscribe extends Trackable {
+
+        Runs getSubscriberCountText();
+
+        Boolean getSubscribed();
+
+        Boolean getEnabled();
+
+        String getType();
+
+        String getChannelId();
+
+        Boolean getShowPreference();
+
+        Runs getSubscriberCountWithSubscribeText();
+
+        Runs getSubscribedButtonText();
+
+        Runs getUnsubscribedButtonText();
+
+        Runs getUnsubscribeButtonText();
+
+        List<? extends Endpoint> getServiceEndpoints();
+
+        Runs getLongSubscriberCountText();
+
+        Runs getShortSubscriberCountText();
+
+        Accessibility getSubscribeAccessibility();
+
+        Accessibility getUnsubscribeAccessibility();
+
+        Endpoint getSignInEndpoint();
     }
 }

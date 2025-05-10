@@ -55,6 +55,8 @@ public interface BrowseResponse extends Trackable {
 
             Runs getTitle();
 
+            Button getSubscriptionButton();
+
             Runs getDescription();
 
             Button getMoreButton();

@@ -49,6 +49,7 @@ public class BrowseResponseImpl implements BrowseResponse {
         public static class MusicImmersiveHeaderRendererImpl implements MusicImmersiveHeaderRenderer {
 
             private final RunsImpl     title;
+            private final ButtonImpl subscriptionButton;
             private final RunsImpl     description;
             private final ButtonImpl    moreButton;
             private final MenuImpl      menu;

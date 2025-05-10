@@ -1,5 +1,7 @@
 package me.knighthat.impl.response;
 
+import java.util.List;
+
 import lombok.Data;
 import me.knighthat.impl.response.renderer.ChipCloudImpl;
 import me.knighthat.innertube.response.Button;
@@ -11,6 +13,7 @@ public class ButtonImpl implements Button {
     private final ToggleImpl                  toggleButtonRenderer;
     private final ChipCloudImpl.ChipImpl.RendererImpl chipCloudChipRenderer;
     private final LikeImpl                    likeButtonRenderer;
+    private final SubscribeImpl subscribeButtonRenderer;
 
     @Data
     public static class RendererImpl implements Renderer {
@@ -78,5 +81,27 @@ public class ButtonImpl implements Button {
         private final EndpointImpl defaultNavigationEndpoint;
         private final AccessibilityImpl accessibilityData;
         private final AccessibilityImpl toggledAccessibilityData;
+    }
+
+    @Data
+    public static class SubscribeImpl implements Subscribe {
+
+        private final String trackingParams;
+        private final RunsImpl subscriberCountText;
+        private final Boolean subscribed;
+        private final Boolean enabled;
+        private final String type;
+        private final String channelId;
+        private final Boolean showPreference;
+        private final RunsImpl subscriberCountWithSubscribeText;
+        private final RunsImpl subscribedButtonText;
+        private final RunsImpl unsubscribedButtonText;
+        private final RunsImpl unsubscribeButtonText;
+        private final List<EndpointImpl> serviceEndpoints;
+        private final RunsImpl longSubscriberCountText;
+        private final RunsImpl shortSubscriberCountText;
+        private final AccessibilityImpl subscribeAccessibility;
+        private final AccessibilityImpl unsubscribeAccessibility;
+        private final EndpointImpl signInEndpoint;
     }
 }

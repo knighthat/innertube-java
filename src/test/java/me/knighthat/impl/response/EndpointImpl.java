@@ -1,33 +1,36 @@
 package me.knighthat.impl.response;
 
+import java.util.List;
+
 import lombok.Data;
 import me.knighthat.innertube.response.Endpoint;
-
-import java.util.List;
 
 @Data
 public class EndpointImpl implements Endpoint {
 
-    private final String     clickTrackingParams;
+    private final String clickTrackingParams;
     private final BrowseImpl browseEndpoint;
-    private final WatchImpl  watchEndpoint;
-    private final ModalImpl              modalEndpoint;
-    private final WatchPlaylistImpl      watchPlaylistEndpoint;
+    private final WatchImpl watchEndpoint;
+    private final ModalImpl modalEndpoint;
+    private final WatchPlaylistImpl watchPlaylistEndpoint;
     private final QueueImpl.QueueAddImpl queueAddEndpoint;
     private final QueueImpl.QueueRemoveImpl removeFromQueueEndpoint;
-    private final LikeImpl        likeEndpoint;
+    private final LikeImpl likeEndpoint;
     private final ShareEntityImpl shareEntityEndpoint;
-    private final SearchImpl   searchEndpoint;
-    private final SignInImpl   signInEndpoint;
+    private final SearchImpl searchEndpoint;
+    private final SignInImpl signInEndpoint;
     private final FeedbackImpl feedbackEndpoint;
     private final PlaylistEditImpl playlistEditEndpoint;
-    private final QueueUpdateImpl  queueUpdateCommand;
+    private final QueueUpdateImpl queueUpdateCommand;
+    private final SubscribeImpl subscribeEndpoint;
+    private final SubscribeImpl unsubscribeEndpoint;
+    private final SignalServiceImpl signalServiceEndpoint;
 
     @Data
     public static class BrowseImpl implements Browse {
 
         private final String browseId;
-        private final String                                    params;
+        private final String params;
         private final BrowseEndpointContextSupportedConfigsImpl browseEndpointContextSupportedConfigs;
 
         @Data
@@ -52,7 +55,7 @@ public class EndpointImpl implements Endpoint {
     @Data
     public static class LikeImpl implements Like {
 
-        private final String     status;
+        private final String status;
         private final TargetImpl target;
 
         @Data
@@ -76,7 +79,7 @@ public class EndpointImpl implements Endpoint {
             public static class TitleAndButtonRendererImpl implements TitleAndButtonRenderer {
 
                 private final RunsImpl title;
-                private final RunsImpl       content;
+                private final RunsImpl content;
                 private final ButtonImpl button;
             }
         }
@@ -85,7 +88,7 @@ public class EndpointImpl implements Endpoint {
     @Data
     public static class PlaylistEditImpl implements PlaylistEdit {
 
-        private final String           playlistId;
+        private final String playlistId;
         private final List<ActionImpl> actions;
 
         @Data
@@ -104,7 +107,7 @@ public class EndpointImpl implements Endpoint {
         public static class QueueAddImpl implements QueueAdd {
 
             private final QueueTargetImpl queueTarget;
-            private final String            queueInsertPosition;
+            private final String queueInsertPosition;
             private final List<CommandImpl> commands;
 
             @Data
@@ -119,14 +122,14 @@ public class EndpointImpl implements Endpoint {
         @Data
         public static class QueueRemoveImpl implements QueueRemove {
 
-            private final String            videoId;
+            private final String videoId;
             private final List<CommandImpl> commands;
         }
 
         @Data
         public static class CommandImpl implements Command {
 
-            private final String               clickTrackingParams;
+            private final String clickTrackingParams;
             private final AddToToastActionImpl addToToastAction;
 
             @Data
@@ -153,14 +156,14 @@ public class EndpointImpl implements Endpoint {
     @Data
     public static class QueueUpdateImpl implements QueueUpdate {
 
-        private final String                   queueUpdateSection;
+        private final String queueUpdateSection;
         private final FetchContentsCommandImpl fetchContentsCommand;
-        private final Boolean                  dedupeAgainstLocalQueue;
+        private final Boolean dedupeAgainstLocalQueue;
 
         @Data
         public static class FetchContentsCommandImpl implements FetchContentsCommand {
 
-            private final String    clickTrackingParams;
+            private final String clickTrackingParams;
             private final WatchImpl watchEndpoint;
         }
     }
@@ -194,8 +197,8 @@ public class EndpointImpl implements Endpoint {
         private final String params;
         private final String playerParams;
         private final String ustreamerConfig;
-        private final String                             playlistSetVideoId;
-        private final LoggingContextImpl                     loggingContext;
+        private final String playlistSetVideoId;
+        private final LoggingContextImpl loggingContext;
         private final WatchEndpointMusicSupportedConfigsImpl watchEndpointMusicSupportedConfigs;
 
         @Data
@@ -229,5 +232,48 @@ public class EndpointImpl implements Endpoint {
 
         private final String playlistId;
         private final String params;
+    }
+
+    @Data
+    public static class SubscribeImpl implements Subscribe {
+
+        private final List<String> channelIds;
+        private final String params;
+    }
+
+    @Data
+    public static class SignalServiceImpl implements SignalService {
+
+        private final String signal;
+        private final List<ActionImpl> actions;
+
+        @Data
+        public static class ActionImpl implements Action {
+
+            private final String clickTrackingParams;
+            private final OpenPopupImpl openPopupAction;
+
+            @Data
+            public static class OpenPopupImpl implements OpenPopup {
+
+                private final PopupImpl popup;
+                private final String popupType;
+
+                @Data
+                public static class PopupImpl implements Popup {
+
+                    private final RendererImpl confirmDialogRenderer;
+
+                    @Data
+                    public static class RendererImpl implements Renderer {
+
+                        private final String trackingParams;
+                        private final List<RunsImpl> dialogMessages;
+                        private final ButtonImpl confirmButton;
+                        private final ButtonImpl cancelButton;
+                    }
+                }
+            }
+        }
     }
 }

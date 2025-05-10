@@ -1,6 +1,7 @@
 package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -31,6 +32,12 @@ public interface Endpoint extends ClickTrackable{
     PlaylistEdit getPlaylistEditEndpoint();
 
     QueueUpdate getQueueUpdateCommand();
+
+    Subscribe getSubscribeEndpoint();
+
+    Subscribe getUnsubscribeEndpoint();
+
+    SignalService getSignalServiceEndpoint();
 
     interface Browse {
 
@@ -235,5 +242,49 @@ public interface Endpoint extends ClickTrackable{
         String getPlaylistId();
 
         String getParams();
+    }
+
+    interface Subscribe {
+
+        @NotNull
+        List<String> getChannelIds();
+
+        @Nullable
+        String getParams();
+    }
+
+    interface SignalService {
+
+        String getSignal();
+
+        @NotNull
+        List<? extends Action> getActions();
+
+        interface Action extends ClickTrackable {
+
+            OpenPopup getOpenPopupAction();
+
+            interface OpenPopup {
+
+                Popup getPopup();
+
+                String getPopupType();
+
+                interface Popup {
+
+                    Renderer getConfirmDialogRenderer();
+
+                    interface Renderer extends Trackable {
+
+                        @NotNull
+                        List<? extends Runs> getDialogMessages();
+
+                        Button getConfirmButton();
+
+                        Button getCancelButton();
+                    }
+                }
+            }
+        }
     }
 }
