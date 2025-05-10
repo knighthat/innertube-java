@@ -30,6 +30,8 @@ public interface Button {
 
         Endpoint getNavigationEndpoint();
 
+        Endpoint getServiceEndpoint();
+
         Accessibility.Data getAccessibility();
 
         Accessibility getAccessibilityData();

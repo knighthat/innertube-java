@@ -24,6 +24,7 @@ public class ButtonImpl implements Button {
         private final RunsImpl text;
         private final IconImpl icon;
         private final EndpointImpl navigationEndpoint;
+        private final EndpointImpl serviceEndpoint;
         private final String                     trackingParams;
         private final AccessibilityImpl.DataImpl accessibility;
         private final AccessibilityImpl          accessibilityData;
