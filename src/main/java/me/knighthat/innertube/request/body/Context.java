@@ -1,12 +1,13 @@
 package me.knighthat.innertube.request.body;
 
-import lombok.Data;
-import me.knighthat.innertube.Constants;
-import me.knighthat.innertube.UserAgents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
+
+import lombok.Data;
+import me.knighthat.innertube.Constants;
+import me.knighthat.innertube.UserAgents;
 
 @Data
 public class Context {
@@ -39,7 +40,8 @@ public class Context {
                 "",
                 "",
                 "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                Constants.ACCEPT_HEADERS
+                Constants.ACCEPT_HEADERS,
+                null
         );
 
         @NotNull
@@ -58,7 +60,8 @@ public class Context {
                 "iOS",
                 "17.4.1.21E237",
                 "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                Constants.ACCEPT_HEADERS
+                Constants.ACCEPT_HEADERS,
+                null
         );
 
         /**
@@ -173,5 +176,11 @@ public class Context {
          */
         @Nullable
         public final String acceptHeader;
+
+        /**
+         * Required for Android client.
+         */
+        @Nullable
+        public final Integer androidSdkVersion;
     }
 }
