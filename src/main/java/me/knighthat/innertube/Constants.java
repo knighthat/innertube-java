@@ -8,7 +8,10 @@ public class Constants {
     public static final String VISITOR_DATA = "CgtMN0FkbDFaWERfdyi8t4u7BjIKCgJWThIEGgAgWQ%3D%3D";
 
     @NotNull
-    public static final String YOUTUBE_MUSIC_HOST = "https://music.youtube.com";
+    public static final String YOUTUBE_MUSIC_URL = "https://music.youtube.com";
+
+    @NotNull
+    public static final String YOUTUBE_URL = "https://www.youtube.com";
 
     @NotNull
     public static final String ACCEPT_HEADERS = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";

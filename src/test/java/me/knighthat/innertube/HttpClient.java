@@ -1,9 +1,15 @@
 package me.knighthat.innertube;
 
 import com.google.gson.Gson;
-import okhttp3.*;
-import okhttp3.logging.HttpLoggingInterceptor;
+
 import org.jetbrains.annotations.NotNull;
+
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 
 public interface HttpClient {
 
@@ -16,7 +22,7 @@ public interface HttpClient {
     default Request makeRequest( String endpoint, me.knighthat.innertube.request.body.RequestBody body ) {
         RequestBody reqBody = RequestBody.create( JSON.toJson( body ), me.knighthat.Constants.APPLICATION_JSON );
 
-        HttpUrl url = HttpUrl.parse( me.knighthat.innertube.Constants.YOUTUBE_MUSIC_HOST + "/" + endpoint )
+        HttpUrl url = HttpUrl.parse(me.knighthat.innertube.Constants.YOUTUBE_MUSIC_URL + "/" + endpoint )
                              .newBuilder()
                              .addQueryParameter( "prettyPrint", "false" )
                              .build();
