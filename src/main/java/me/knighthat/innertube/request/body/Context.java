@@ -4,6 +4,7 @@ import lombok.Data;
 import me.knighthat.innertube.Constants;
 import me.knighthat.innertube.UserAgents;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
 
@@ -102,13 +103,13 @@ public class Context {
          * <p>
          * Use {@code UserAgents} for default values
          */
-        @NotNull
+        @Nullable
         public final String userAgent;
 
         /**
          * Should be <a href="https://music.youtube.com">...</a> in most cases
          */
-        @NotNull
+        @Nullable
         public final String referer;
 
         /**
