@@ -33,20 +33,32 @@ public class Context {
                 Constants.VISITOR_DATA,
                 UserAgents.CHROME_WINDOWS,
                 Constants.YOUTUBE_MUSIC_HOST,
-                67
+                67,
+                "",
+                "",
+                "",
+                "",
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                Constants.ACCEPT_HEADERS
         );
 
         @NotNull
         public static final Client IOS = new Client(
                 "IOS",
-                "20.03.02",
+                "20.14.2",
                 "MOBILE",
                 Locale.getDefault().getLanguage(),
                 Locale.getDefault().getCountry(),
                 Constants.VISITOR_DATA,
                 UserAgents.IOS,
                 Constants.YOUTUBE_MUSIC_HOST,
-                5
+                5,
+                "Apple",
+                "iPhone15,4",
+                "iOS",
+                "17.4.1.21E237",
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                Constants.ACCEPT_HEADERS
         );
 
         /**
@@ -119,5 +131,47 @@ public class Context {
          * {@code 67} is numeric format of "{@code DESKTOP}"
          */
         public final int xClientName;
+
+        /**
+         * Device's brand, shouldn't be {@code null}, but can be empty
+         */
+        @NotNull
+        public final String deviceMake;
+
+        /**
+         * Device's model, shouldn't be {@code null}, but can be empty
+         */
+        @NotNull
+        public final String deviceModel;
+
+        /**
+         * Device's operating system, commonly used to
+         * spook mobile devices.
+         * <p>
+         * Shouldn't be {@code null} but can be empty.
+         */
+        @NotNull
+        public final String osName;
+
+        /**
+         * Device's operating system's version, commonly used to
+         * spook mobile devices.
+         * <p>
+         * Shouldn't be {@code null} but can be empty.
+         */
+        @NotNull
+        public final String osVersion;
+
+        /**
+         * Usually {@code https://www.youtube.com/watch?v=$videoId}
+         */
+        @Nullable
+        public final String originalUrl;
+
+        /**
+         * For content-negotiation, not required, but nice to have
+         */
+        @Nullable
+        public final String acceptHeader;
     }
 }
