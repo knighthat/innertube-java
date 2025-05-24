@@ -19,6 +19,9 @@ public class Context {
     public static final Context IOS_DEFAULT = new Context( Client.IOS );
 
     @NotNull
+    public static final Context WEB_DEFAULT = new Context( Client.WEB );
+
+    @NotNull
     public final Client client;
 
     @Data
@@ -59,6 +62,26 @@ public class Context {
                 "iPhone15,4",
                 "iOS",
                 "17.4.1.21E237",
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                Constants.ACCEPT_HEADERS,
+                null
+        );
+
+        @NotNull
+        public static final Client WEB = new Client(
+                "WEB",
+                "2.20250523.01.00",
+                "DESKTOP",
+                Locale.getDefault().getLanguage(),
+                Locale.getDefault().getCountry(),
+                Constants.VISITOR_DATA,
+                UserAgents.CHROME_WINDOWS,
+                Constants.YOUTUBE_URL,
+                1,
+                "",
+                "",
+                "Windows",
+                "",
                 "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
                 Constants.ACCEPT_HEADERS,
                 null
