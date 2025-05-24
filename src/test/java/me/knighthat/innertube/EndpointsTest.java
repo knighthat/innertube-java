@@ -50,30 +50,30 @@ class EndpointsTest implements HttpClient {
     @Test
     void testNextSong() {
         NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "nZjTtuNR3Og", "", null );
-        Assertions.assertTrue( post( Endpoints.BROWSE, nextBody ) );
+        Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
     @Test
     void testNextPlaylist() {
         NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMnZjTtuNR3Og", "wAEB" );
-        Assertions.assertTrue( post( Endpoints.BROWSE, nextBody ) );
+        Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
     @Test
     void testPlayer() {
         PlayerBody playerBody = new PlayerBody( Context.WEB_REMIX_DEFAULT, "phLb_SoPBlA", null, true, true, null );
-        Assertions.assertTrue( post( Endpoints.BROWSE, playerBody ) );
+        Assertions.assertTrue( post( Endpoints.PLAYER, playerBody ) );
     }
 
     @Test
     void testSearch() {
         SearchBody searchBody = new SearchBody( Context.WEB_REMIX_DEFAULT, "take me to church", null );
-        Assertions.assertTrue( post( Endpoints.BROWSE, searchBody ) );
+        Assertions.assertTrue( post( Endpoints.SEARCH, searchBody ) );
     }
 
     @Test
     void testSearchSuggestion() {
         SearchSuggestionsBody searchSuggestionsBody = new SearchSuggestionsBody( Context.WEB_REMIX_DEFAULT, "figure 09" );
-        Assertions.assertTrue( post( Endpoints.BROWSE, searchSuggestionsBody ) );
+        Assertions.assertTrue( post( Endpoints.SEARCH_SUGGESTIONS, searchSuggestionsBody ) );
     }
 }
