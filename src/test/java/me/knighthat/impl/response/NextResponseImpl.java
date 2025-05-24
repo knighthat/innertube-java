@@ -10,13 +10,15 @@ public class NextResponseImpl implements NextResponse {
     private final ResponseContextImpl responseContext;
     private final ContentsImpl        contents;
     private final EndpointImpl        currentVideoEndpoint;
-    private final String             trackingParams;
-    private final PlayerOverlaysImpl playerOverlays;
+    private final String              trackingParams;
+    private final PlayerOverlaysImpl  playerOverlays;
 
     @Data
     public static class ContentsImpl implements Contents {
 
         private final SingleColumnMusicWatchNextResultsRendererImpl singleColumnMusicWatchNextResultsRenderer;
+
+        private final TwoColumnWatchNextResultsImpl twoColumnWatchNextResults;
 
         @Data
         public static class SingleColumnMusicWatchNextResultsRendererImpl implements SingleColumnMusicWatchNextResultsRenderer {
@@ -28,6 +30,12 @@ public class NextResponseImpl implements NextResponse {
 
                 private final TabsImpl watchNextTabbedResultsRenderer;
             }
+        }
+
+        @Data
+        public static class TwoColumnWatchNextResultsImpl implements TwoColumnWatchNextResults {
+
+            private final PrimaryResultsImpl results;
         }
     }
 

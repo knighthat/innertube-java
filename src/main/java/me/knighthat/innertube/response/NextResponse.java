@@ -16,6 +16,8 @@ public interface NextResponse extends Trackable {
 
         SingleColumnMusicWatchNextResultsRenderer getSingleColumnMusicWatchNextResultsRenderer();
 
+        TwoColumnWatchNextResults getTwoColumnWatchNextResults();
+
         interface SingleColumnMusicWatchNextResultsRenderer {
 
             TabbedRenderer getTabbedRenderer();
@@ -24,6 +26,11 @@ public interface NextResponse extends Trackable {
 
                 Tabs getWatchNextTabbedResultsRenderer();
             }
+        }
+
+        interface TwoColumnWatchNextResults {
+
+            PrimaryResults getResults();
         }
     }
 

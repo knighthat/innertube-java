@@ -7,12 +7,15 @@ import me.knighthat.innertube.response.Badge;
 public class BadgeImpl implements Badge {
 
     private final RendererImpl musicInlineBadgeRenderer;
+    private final RendererImpl metadataBadgeRenderer;
 
     @Data
     public static class RendererImpl implements Renderer {
 
-        private final String trackingParams;
-        private final IconImpl icon;
+        private final String            trackingParams;
+        private final IconImpl          icon;
+        private final String            style;
+        private final String            tooltip;
         private final AccessibilityImpl accessibilityData;
     }
 }

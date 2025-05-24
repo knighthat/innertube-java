@@ -48,8 +48,14 @@ class EndpointsTest implements HttpClient {
     }
 
     @Test
-    void testNextSong() {
+    void testNextSongOnWebRemix() {
         NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "nZjTtuNR3Og", "", null );
+        Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
+    }
+
+    @Test
+    void testNextSongOnWeb() {
+        NextBody nextBody = new NextBody( Context.WEB_DEFAULT, "nZjTtuNR3Og", "", null );
         Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
