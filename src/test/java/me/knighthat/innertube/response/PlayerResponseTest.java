@@ -22,7 +22,7 @@ class PlayerResponseTest implements HttpClient {
      */
     @Test
     void testFetchPlayer() {
-        PlayerBody playerBody = new PlayerBody( Context.WEB_DEFAULT, "phLb_SoPBlA", null );
+        PlayerBody playerBody = new PlayerBody( Context.WEB_REMIX_DEFAULT, "phLb_SoPBlA", null, true, true, null );
         Request request = makeRequest( Endpoints.PLAYER, playerBody );
 
         try (

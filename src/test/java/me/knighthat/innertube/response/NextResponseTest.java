@@ -22,7 +22,7 @@ class NextResponseTest implements HttpClient {
      */
     @Test
     void testFetchNextSong() {
-        NextBody nextBody = new NextBody( Context.WEB_DEFAULT, "nZjTtuNR3Og", "", "wAEB" );
+        NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "nZjTtuNR3Og", "", "wAEB" );
         Request request = makeRequest( Endpoints.NEXT, nextBody );
 
         try (
@@ -45,7 +45,7 @@ class NextResponseTest implements HttpClient {
      */
     @Test
     void testFetchNextPlaylist() {
-        NextBody nextBody = new NextBody( Context.WEB_DEFAULT, "", "RDAMVM10H_LmJsb4M", "" );
+        NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVM10H_LmJsb4M", "" );
         Request request = makeRequest( Endpoints.NEXT, nextBody );
 
         try (

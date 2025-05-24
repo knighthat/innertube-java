@@ -13,7 +13,7 @@ import me.knighthat.innertube.UserAgents;
 public class Context {
 
     @NotNull
-    public static final Context WEB_DEFAULT = new Context( Client.WEB );
+    public static final Context WEB_REMIX_DEFAULT = new Context( Client.WEB_REMIX );
 
     @NotNull
     public static final Context IOS_DEFAULT = new Context( Client.IOS );
@@ -25,7 +25,7 @@ public class Context {
     public static class Client {
 
         @NotNull
-        public static final Client WEB = new Client(
+        public static final Client WEB_REMIX = new Client(
                 "WEB_REMIX",
                 "1.20250416.01.00",
                 "DESKTOP",
