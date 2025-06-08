@@ -1,5 +1,7 @@
 package me.knighthat.impl.response.renderer;
 
+import java.util.List;
+
 import lombok.Data;
 import me.knighthat.impl.response.AccessibilityImpl;
 import me.knighthat.impl.response.EndpointImpl;
@@ -7,14 +9,13 @@ import me.knighthat.impl.response.IconImpl;
 import me.knighthat.impl.response.RunsImpl;
 import me.knighthat.innertube.response.renderer.ChipCloud;
 
-import java.util.List;
-
 @Data
 public class ChipCloudImpl implements ChipCloud {
 
     private final List<ChipImpl> chips;
-    private final String            trackingParams;
-    private final Boolean horizontalScrollable;
+    private final String         trackingParams;
+    private final Boolean        horizontalScrollable;
+    private final Integer        collapsedRowCount;
 
     @Data
     public static class ChipImpl implements Chip {
@@ -31,7 +32,7 @@ public class ChipCloudImpl implements ChipCloud {
             private final IconImpl          icon;
             private final AccessibilityImpl accessibilityData;
             private final Boolean           isSelected;
-            private final EndpointImpl          onDeselectedCommand;
+            private final EndpointImpl      onDeselectedCommand;
             private final String            uniqueId;
 
             @Data

@@ -17,6 +17,9 @@ public interface ChipCloud extends Trackable {
 
     Boolean getHorizontalScrollable();
 
+    @Nullable
+    Integer getCollapsedRowCount();
+
     interface Chip {
 
         Renderer getChipCloudChipRenderer();
