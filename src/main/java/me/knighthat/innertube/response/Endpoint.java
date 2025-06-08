@@ -165,7 +165,7 @@ public interface Endpoint extends ClickTrackable{
 
         String getQueueUpdateSection();
 
-        FetchContentsCommand getFetchContentsCommand();
+        Endpoint getFetchContentsCommand();
 
         Boolean getDedupeAgainstLocalQueue();
 

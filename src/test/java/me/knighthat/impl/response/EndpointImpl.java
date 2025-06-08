@@ -157,15 +157,8 @@ public class EndpointImpl implements Endpoint {
     public static class QueueUpdateImpl implements QueueUpdate {
 
         private final String queueUpdateSection;
-        private final FetchContentsCommandImpl fetchContentsCommand;
+        private final EndpointImpl fetchContentsCommand;
         private final Boolean dedupeAgainstLocalQueue;
-
-        @Data
-        public static class FetchContentsCommandImpl implements FetchContentsCommand {
-
-            private final String clickTrackingParams;
-            private final WatchImpl watchEndpoint;
-        }
     }
 
     @Data
