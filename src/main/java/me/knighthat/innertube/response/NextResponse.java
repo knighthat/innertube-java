@@ -5,10 +5,7 @@ import org.jetbrains.annotations.Nullable;
 
 import me.knighthat.innertube.response.thumbnail.Thumbnails;
 
-public interface NextResponse extends Trackable {
-
-    @NotNull
-    ResponseContext getResponseContext();
+public interface NextResponse extends Trackable, InnerTubeResponse {
 
     @NotNull
     Contents getContents();

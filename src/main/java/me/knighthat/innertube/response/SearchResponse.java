@@ -2,7 +2,7 @@ package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface SearchResponse extends Trackable {
+public interface SearchResponse extends Trackable, InnerTubeResponse {
 
     @NotNull
     ResponseContext getResponseContext();

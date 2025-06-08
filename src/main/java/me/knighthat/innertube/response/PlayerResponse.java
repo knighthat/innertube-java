@@ -7,10 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public interface PlayerResponse extends Trackable {
-
-    @NotNull
-    ResponseContext getResponseContext();
+public interface PlayerResponse extends Trackable, InnerTubeResponse {
 
     @NotNull
     PlayabilityStatus getPlayabilityStatus();

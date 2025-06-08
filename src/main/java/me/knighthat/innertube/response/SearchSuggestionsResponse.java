@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.renderer.SearchSuggestionsSectionRenderer
 
 import java.util.List;
 
-public interface SearchSuggestionsResponse extends Trackable {
+public interface SearchSuggestionsResponse extends Trackable, InnerTubeResponse {
 
     @NotNull
     ResponseContext getResponseContext();

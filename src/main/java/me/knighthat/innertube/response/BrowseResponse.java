@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public interface BrowseResponse extends Trackable {
+public interface BrowseResponse extends Trackable, InnerTubeResponse {
 
     @NotNull
     ResponseContext getResponseContext();
