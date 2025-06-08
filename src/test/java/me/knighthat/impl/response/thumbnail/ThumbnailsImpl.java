@@ -1,7 +1,7 @@
 package me.knighthat.impl.response.thumbnail;
 
 import lombok.Data;
-import me.knighthat.innertube.response.thumbnail.Thumbnails;
+import me.knighthat.innertube.response.Thumbnails;
 
 import java.util.List;
 

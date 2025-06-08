@@ -2,8 +2,6 @@ package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 
-import me.knighthat.innertube.response.renderer.SectionListRenderer;
-import me.knighthat.innertube.response.thumbnail.Thumbnail;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

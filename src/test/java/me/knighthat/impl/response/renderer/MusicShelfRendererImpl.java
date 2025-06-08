@@ -3,7 +3,7 @@ package me.knighthat.impl.response.renderer;
 import lombok.Data;
 import me.knighthat.impl.response.EndpointImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.renderer.MusicShelfRenderer;
+import me.knighthat.innertube.response.MusicShelfRenderer;
 
 import java.util.List;
 

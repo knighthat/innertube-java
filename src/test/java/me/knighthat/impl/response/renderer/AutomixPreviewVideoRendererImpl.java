@@ -2,7 +2,7 @@ package me.knighthat.impl.response.renderer;
 
 import lombok.Data;
 import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.renderer.AutomixPreviewVideoRenderer;
+import me.knighthat.innertube.response.AutomixPreviewVideoRenderer;
 
 @Data
 public class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {

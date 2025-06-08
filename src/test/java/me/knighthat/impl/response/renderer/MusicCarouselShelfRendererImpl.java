@@ -4,7 +4,7 @@ import lombok.Data;
 import me.knighthat.impl.response.AccessibilityImpl;
 import me.knighthat.impl.response.ButtonImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.renderer.MusicCarouselShelfRenderer;
+import me.knighthat.innertube.response.MusicCarouselShelfRenderer;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package me.knighthat.impl.response.thumbnail;
 
 import lombok.Data;
-import me.knighthat.innertube.response.thumbnail.Thumbnail;
+import me.knighthat.innertube.response.Thumbnail;
 
 @Data
 public class ThumbnailImpl implements Thumbnail {

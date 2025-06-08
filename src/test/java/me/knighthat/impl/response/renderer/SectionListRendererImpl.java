@@ -4,7 +4,7 @@ import lombok.Data;
 import me.knighthat.impl.response.*;
 import me.knighthat.impl.response.thumbnail.ThumbnailImpl;
 import me.knighthat.impl.response.thumbnail.ThumbnailsImpl;
-import me.knighthat.innertube.response.renderer.SectionListRenderer;
+import me.knighthat.innertube.response.SectionListRenderer;
 
 import java.util.List;
 

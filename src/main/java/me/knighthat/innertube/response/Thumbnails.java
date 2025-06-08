@@ -1,4 +1,4 @@
-package me.knighthat.innertube.response.thumbnail;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,10 +1,7 @@
-package me.knighthat.innertube.response.renderer;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 
-import me.knighthat.innertube.response.*;
-import me.knighthat.innertube.response.thumbnail.Thumbnail;
-import me.knighthat.innertube.response.thumbnail.Thumbnails;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

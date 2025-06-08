@@ -1,15 +1,9 @@
-package me.knighthat.innertube.response.renderer;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-
-import me.knighthat.innertube.response.Accessibility;
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Icon;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.Trackable;
 
 public interface ChipCloud extends Trackable {
 

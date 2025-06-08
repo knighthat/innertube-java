@@ -1,7 +1,7 @@
 package me.knighthat.impl.response.renderer;
 
 import lombok.Data;
-import me.knighthat.innertube.response.renderer.MusicPlaylistShelfRenderer;
+import me.knighthat.innertube.response.MusicPlaylistShelfRenderer;
 
 import java.util.List;
 

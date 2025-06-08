@@ -4,7 +4,7 @@ import lombok.Data;
 import me.knighthat.impl.response.EndpointImpl;
 import me.knighthat.impl.response.IconImpl;
 import me.knighthat.impl.response.RunsImpl;
-import me.knighthat.innertube.response.renderer.SearchSuggestionsSectionRenderer;
+import me.knighthat.innertube.response.SearchSuggestionsSectionRenderer;
 
 import java.util.List;
 

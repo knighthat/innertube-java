@@ -2,7 +2,6 @@ package me.knighthat.innertube.response;
 
 import java.util.List;
 
-import me.knighthat.innertube.response.renderer.ChipCloud;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

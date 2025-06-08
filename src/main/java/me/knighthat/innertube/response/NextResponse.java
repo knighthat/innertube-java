@@ -3,8 +3,6 @@ package me.knighthat.innertube.response;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import me.knighthat.innertube.response.thumbnail.Thumbnails;
-
 public interface NextResponse extends Trackable, InnerTubeResponse {
 
     @NotNull

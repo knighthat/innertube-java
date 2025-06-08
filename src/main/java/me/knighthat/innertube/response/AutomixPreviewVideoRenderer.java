@@ -1,9 +1,6 @@
-package me.knighthat.innertube.response.renderer;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
-
-import me.knighthat.innertube.response.Endpoint;
-import me.knighthat.innertube.response.Trackable;
 
 public interface AutomixPreviewVideoRenderer {
 

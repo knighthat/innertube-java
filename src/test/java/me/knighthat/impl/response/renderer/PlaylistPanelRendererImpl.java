@@ -3,7 +3,7 @@ package me.knighthat.impl.response.renderer;
 import lombok.Data;
 import me.knighthat.impl.response.*;
 import me.knighthat.impl.response.thumbnail.ThumbnailsImpl;
-import me.knighthat.innertube.response.renderer.PlaylistPanelRenderer;
+import me.knighthat.innertube.response.PlaylistPanelRenderer;
 
 import java.util.List;
 

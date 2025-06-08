@@ -1,11 +1,7 @@
-package me.knighthat.innertube.response.renderer;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 
-import me.knighthat.innertube.response.Accessibility;
-import me.knighthat.innertube.response.Button;
-import me.knighthat.innertube.response.Runs;
-import me.knighthat.innertube.response.Trackable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

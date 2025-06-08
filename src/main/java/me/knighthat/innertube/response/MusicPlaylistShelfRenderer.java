@@ -1,10 +1,8 @@
-package me.knighthat.innertube.response.renderer;
+package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import me.knighthat.innertube.response.Trackable;
 
 public interface MusicPlaylistShelfRenderer extends Trackable {
 

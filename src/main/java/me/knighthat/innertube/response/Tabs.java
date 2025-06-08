@@ -3,9 +3,6 @@ package me.knighthat.innertube.response;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import me.knighthat.innertube.response.renderer.MusicQueueRenderer;
-import me.knighthat.innertube.response.renderer.SectionListRenderer;
-
 import java.util.List;
 
 public interface Tabs {
