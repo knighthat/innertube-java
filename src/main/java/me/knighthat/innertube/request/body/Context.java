@@ -1,15 +1,14 @@
 package me.knighthat.innertube.request.body;
 
+import lombok.Value;
+import me.knighthat.innertube.Constants;
+import me.knighthat.innertube.UserAgents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
 
-import lombok.Data;
-import me.knighthat.innertube.Constants;
-import me.knighthat.innertube.UserAgents;
-
-@Data
+@Value
 public class Context {
 
     @NotNull
@@ -24,7 +23,7 @@ public class Context {
     @NotNull
     public final Client client;
 
-    @Data
+    @Value
     public static class Client {
 
         @NotNull

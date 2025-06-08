@@ -1,20 +1,19 @@
 package me.knighthat.innertube.request.body;
 
-import lombok.Data;
+import lombok.Value;
 import me.knighthat.innertube.SearchFilter;
-
 import org.intellij.lang.annotations.MagicConstant;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@Data
+@Value
 public class SearchBody implements RequestBody {
 
     @NotNull
-    private final Context context;
+    Context context;
     @NotNull
-    private final String  query;
+    String  query;
     @Nullable
     @MagicConstant(valuesFromClass = SearchFilter.class)
-    private final String params;
+    String  params;
 }

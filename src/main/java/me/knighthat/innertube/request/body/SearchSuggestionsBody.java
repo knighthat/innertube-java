@@ -1,13 +1,13 @@
 package me.knighthat.innertube.request.body;
 
-import lombok.Data;
+import lombok.Value;
 import org.jetbrains.annotations.NotNull;
 
-@Data
+@Value
 public class SearchSuggestionsBody implements RequestBody {
 
     @NotNull
-    private final Context context;
+    Context context;
     @NotNull
-    private final String input;
+    String  input;
 }

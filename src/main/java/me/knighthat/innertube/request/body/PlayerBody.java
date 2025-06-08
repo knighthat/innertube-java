@@ -1,26 +1,26 @@
 package me.knighthat.innertube.request.body;
 
-import lombok.Data;
+import lombok.Value;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@Data
+@Value
 public class PlayerBody implements RequestBody {
 
     @NotNull
-    private final Context context;
+    Context context;
 
     @NotNull
-    private final String videoId;
+    String videoId;
 
     @Nullable
-    private final String params;
+    String params;
 
     @Nullable
-    private final Boolean racyCheckOk;
+    Boolean racyCheckOk;
 
     @Nullable
-    private final Boolean contentCheckOk;
+    Boolean contentCheckOk;
 
     /**
      * Although optional, adding this reduces chances of
@@ -29,12 +29,12 @@ public class PlayerBody implements RequestBody {
      * A 12-character string is all required.
      */
     @Nullable
-    private final ServiceIntegrityDimensions serviceIntegrityDimensions;
+    ServiceIntegrityDimensions serviceIntegrityDimensions;
 
-    @Data
+    @Value
     public static class ServiceIntegrityDimensions {
 
         @NotNull
-        private final String poToken;
+        String poToken;
     }
 }
