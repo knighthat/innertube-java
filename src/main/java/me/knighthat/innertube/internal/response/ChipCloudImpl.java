@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.ChipCloud;
 import java.util.List;
 
 @Value
-public class ChipCloudImpl implements ChipCloud {
+class ChipCloudImpl implements ChipCloud {
 
     List<ChipImpl> chips;
     String         trackingParams;
@@ -14,12 +14,12 @@ public class ChipCloudImpl implements ChipCloud {
     Integer        collapsedRowCount;
 
     @Value
-    public static class ChipImpl implements Chip {
+    static class ChipImpl implements Chip {
 
         RendererImpl chipCloudChipRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             StyleImpl         style;
             RunsImpl          text;
@@ -32,7 +32,7 @@ public class ChipCloudImpl implements ChipCloud {
             String            uniqueId;
 
             @Value
-            public static class StyleImpl implements Style {
+            static class StyleImpl implements Style {
 
                 String styleType;
             }

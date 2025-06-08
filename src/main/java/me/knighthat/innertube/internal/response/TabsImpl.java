@@ -6,17 +6,17 @@ import me.knighthat.innertube.response.Tabs;
 import java.util.List;
 
 @Value
-public class TabsImpl implements Tabs {
+class TabsImpl implements Tabs {
 
     List<TabImpl> tabs;
 
     @Value
-    public static class TabImpl implements Tab {
+    static class TabImpl implements Tab {
 
         RendererImpl tabRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             EndpointImpl endpoint;
             String       title;
@@ -27,7 +27,7 @@ public class TabsImpl implements Tabs {
             String       trackingParams;
 
             @Value
-            public static class ContentImpl implements Content {
+            static class ContentImpl implements Content {
 
                 SectionListRendererImpl sectionListRenderer;
                 MusicQueueRendererImpl  musicQueueRenderer;

@@ -4,14 +4,14 @@ import lombok.Value;
 import me.knighthat.innertube.response.SearchResponse;
 
 @Value
-public class SearchResponseImpl implements SearchResponse {
+class SearchResponseImpl implements SearchResponse {
 
     ResponseContextImpl responseContext;
     ContentsImpl        contents;
     String              trackingParams;
 
     @Value
-    public static class ContentsImpl implements Contents {
+    static class ContentsImpl implements Contents {
 
         TabsImpl tabbedSearchResultsRenderer;
     }

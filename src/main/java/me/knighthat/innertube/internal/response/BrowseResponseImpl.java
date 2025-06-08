@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.BrowseResponse;
 import java.util.List;
 
 @Value
-public class BrowseResponseImpl implements BrowseResponse {
+class BrowseResponseImpl implements BrowseResponse {
 
     ResponseContextImpl responseContext;
     ContentsImpl        contents;
@@ -17,20 +17,20 @@ public class BrowseResponseImpl implements BrowseResponse {
     ThumbnailImpl       background;
 
     @Value
-    public static class ContentsImpl implements Contents {
+    static class ContentsImpl implements Contents {
 
         TabsImpl                           singleColumnBrowseResultsRenderer;
         TwoColumnBrowseResultsRendererImpl twoColumnBrowseResultsRenderer;
         SectionListRendererImpl            sectionListRenderer;
 
         @Value
-        public static class TwoColumnBrowseResultsRendererImpl implements TwoColumnBrowseResultsRenderer {
+        static class TwoColumnBrowseResultsRendererImpl implements TwoColumnBrowseResultsRenderer {
 
             List<TabsImpl.TabImpl> tabs;
             SecondaryContentsImpl  secondaryContents;
 
             @Value
-            public static class SecondaryContentsImpl implements SecondaryContents {
+            static class SecondaryContentsImpl implements SecondaryContents {
 
                 SectionListRendererImpl sectionListRenderer;
             }
@@ -38,13 +38,13 @@ public class BrowseResponseImpl implements BrowseResponse {
     }
 
     @Value
-    public static class HeaderImpl implements Header {
+    static class HeaderImpl implements Header {
 
         MusicImmersiveHeaderRendererImpl musicImmersiveHeaderRenderer;
         MusicHeaderRendererImpl          musicHeaderRenderer;
 
         @Value
-        public static class MusicImmersiveHeaderRendererImpl implements MusicImmersiveHeaderRenderer {
+        static class MusicImmersiveHeaderRendererImpl implements MusicImmersiveHeaderRenderer {
 
             RunsImpl      title;
             ButtonImpl    subscriptionButton;
@@ -60,7 +60,7 @@ public class BrowseResponseImpl implements BrowseResponse {
         }
 
         @Value
-        public static class MusicHeaderRendererImpl implements MusicHeaderRenderer {
+        static class MusicHeaderRendererImpl implements MusicHeaderRenderer {
 
             RunsImpl title;
             String   trackingParams;

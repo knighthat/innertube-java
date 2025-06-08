@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.Style;
 import java.util.List;
 
 @Value
-public class StyleImpl implements Style {
+class StyleImpl implements Style {
 
     Integer          startIndex;
     Integer          length;
@@ -14,17 +14,17 @@ public class StyleImpl implements Style {
     String           fontFamilyName;
 
     @Value
-    public static class RunExtensionImpl implements RunExtension {
+    static class RunExtensionImpl implements RunExtension {
 
         ColorMapExtensionImpl styleRunColorMapExtension;
 
         @Value
-        public static class ColorMapExtensionImpl implements ColorMapExtension {
+        static class ColorMapExtensionImpl implements ColorMapExtension {
 
             List<ColorImpl> colorMap;
 
             @Value
-            public static class ColorImpl implements ColorMap {
+            static class ColorImpl implements ColorMap {
 
                 String key;
                 Long   value;

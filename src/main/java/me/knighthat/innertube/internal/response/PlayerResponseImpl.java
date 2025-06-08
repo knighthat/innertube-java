@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.PlayerResponse;
 import java.util.List;
 
 @Value
-public class PlayerResponseImpl implements PlayerResponse {
+class PlayerResponseImpl implements PlayerResponse {
 
     ResponseContextImpl   responseContext;
     PlayabilityStatusImpl playabilityStatus;
@@ -17,7 +17,7 @@ public class PlayerResponseImpl implements PlayerResponse {
     String           trackingParams;
 
     @Value
-    public static class PlayabilityStatusImpl implements PlayabilityStatus {
+    static class PlayabilityStatusImpl implements PlayabilityStatus {
 
         String status;
         String reason;
@@ -27,12 +27,12 @@ public class PlayerResponseImpl implements PlayerResponse {
         String                   contextParams;
 
         @Value
-        public static class AudioOnlyPlayabilityImpl implements AudioOnlyPlayability {
+        static class AudioOnlyPlayabilityImpl implements AudioOnlyPlayability {
 
             AudioOnlyPlayabilityRendererImpl audioOnlyPlayabilityRenderer;
 
             @Value
-            public static class AudioOnlyPlayabilityRendererImpl implements AudioOnlyPlayabilityRenderer {
+            static class AudioOnlyPlayabilityRendererImpl implements AudioOnlyPlayabilityRenderer {
 
                 String trackingParams;
                 String audioOnlyAvailability;
@@ -40,12 +40,12 @@ public class PlayerResponseImpl implements PlayerResponse {
         }
 
         @Value
-        public static class MiniplayerImpl implements Miniplayer {
+        static class MiniplayerImpl implements Miniplayer {
 
             MiniplayerRendererImpl miniplayerRenderer;
 
             @Value
-            public static class MiniplayerRendererImpl implements MiniplayerRenderer {
+            static class MiniplayerRendererImpl implements MiniplayerRenderer {
 
                 String playbackMode;
             }
@@ -53,7 +53,7 @@ public class PlayerResponseImpl implements PlayerResponse {
     }
 
     @Value
-    public static class StreamingDataImpl implements StreamingData {
+    static class StreamingDataImpl implements StreamingData {
 
         String           expiresInSeconds;
         List<FormatImpl> formats;
@@ -61,7 +61,7 @@ public class PlayerResponseImpl implements PlayerResponse {
         String           serverAbrStreamingUrl;
 
         @Value
-        public static class FormatImpl implements Format {
+        static class FormatImpl implements Format {
 
             Short itag;
             String url;
@@ -88,14 +88,14 @@ public class PlayerResponseImpl implements PlayerResponse {
             String signatureCipher;
 
             @Value
-            public static class RangeImpl implements Range {
+            static class RangeImpl implements Range {
 
                 String start;
                 String end;
             }
 
             @Value
-            public static class ColorInfoImpl implements ColorInfo {
+            static class ColorInfoImpl implements ColorInfo {
 
                 String primaries;
                 String transferCharacteristics;
@@ -105,7 +105,7 @@ public class PlayerResponseImpl implements PlayerResponse {
     }
 
     @Value
-    public static class VideoDetailsImpl implements VideoDetails {
+    static class VideoDetailsImpl implements VideoDetails {
 
         String videoId;
         String title;
@@ -124,12 +124,12 @@ public class PlayerResponseImpl implements PlayerResponse {
     }
 
     @Value
-    public static class PlayerConfigImpl implements PlayerConfig {
+    static class PlayerConfigImpl implements PlayerConfig {
 
         AudioConfigImpl audioConfig;
 
         @Value
-        public static class AudioConfigImpl implements AudioConfig {
+        static class AudioConfigImpl implements AudioConfig {
 
             Float loudnessDb;
             Float perceptualLoudnessDb;

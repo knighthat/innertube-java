@@ -4,7 +4,7 @@ import lombok.Value;
 import me.knighthat.innertube.response.Icon;
 
 @Value
-public class IconImpl implements Icon {
+class IconImpl implements Icon {
 
     String iconType;
 }

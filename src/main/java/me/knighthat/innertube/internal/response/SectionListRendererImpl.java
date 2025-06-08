@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.SectionListRenderer;
 import java.util.List;
 
 @Value
-public class SectionListRendererImpl implements SectionListRenderer {
+class SectionListRendererImpl implements SectionListRenderer {
 
     List<ContentImpl>      contents;
     List<ContinuationImpl> continuations;
@@ -14,7 +14,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
     HeaderImpl             header;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         MusicDescriptionShelfRendererImpl  musicDescriptionShelfRenderer;
         MusicTastebuilderShelfRendererImpl musicTastebuilderShelfRenderer;
@@ -26,7 +26,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
         MusicCardShelfRendererImpl         musicCardShelfRenderer;
 
         @Value
-        public static class MusicDescriptionShelfRendererImpl implements MusicDescriptionShelfRenderer {
+        static class MusicDescriptionShelfRendererImpl implements MusicDescriptionShelfRenderer {
 
             RunsImpl          description;
             ButtonImpl        moreButton;
@@ -38,13 +38,13 @@ public class SectionListRendererImpl implements SectionListRenderer {
             RunsImpl          footer;
 
             @Value
-            public static class CommandImpl implements Command {
+            static class CommandImpl implements Command {
 
                 String                   clickTrackingParams;
                 LogLyricEventCommandImpl logLyricEventCommand;
 
                 @Value
-                public static class LogLyricEventCommandImpl implements LogLyricEventCommand {
+                static class LogLyricEventCommandImpl implements LogLyricEventCommand {
 
                     String serializedLyricInfo;
                 }
@@ -52,7 +52,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
         }
 
         @Value
-        public static class MusicTastebuilderShelfRendererImpl implements MusicTastebuilderShelfRenderer {
+        static class MusicTastebuilderShelfRendererImpl implements MusicTastebuilderShelfRenderer {
 
             ThumbnailImpl thumbnail;
             RunsImpl      primaryText;
@@ -62,12 +62,12 @@ public class SectionListRendererImpl implements SectionListRenderer {
             String        trackingParams;
 
             @Value
-            public static class ThumbnailImpl implements Thumbnail {
+            static class ThumbnailImpl implements Thumbnail {
 
                 MusicTastebuilderShelfThumbnailRendererImpl musicTastebuilderShelfThumbnailRenderer;
 
                 @Value
-                public static class MusicTastebuilderShelfThumbnailRendererImpl implements MusicTastebuilderShelfThumbnailRenderer {
+                static class MusicTastebuilderShelfThumbnailRendererImpl implements MusicTastebuilderShelfThumbnailRenderer {
 
                     ThumbnailsImpl thumbnail;
                 }
@@ -75,7 +75,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
         }
 
         @Value
-        public static class MusicResponsiveHeaderRendererImpl implements MusicResponsiveHeaderRenderer {
+        static class MusicResponsiveHeaderRendererImpl implements MusicResponsiveHeaderRenderer {
 
             ThumbnailImpl    thumbnail;
             List<ButtonImpl> buttons;
@@ -89,7 +89,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
             RunsImpl         secondSubtitle;
 
             @Value
-            public static class ButtonImpl implements Button {
+            static class ButtonImpl implements Button {
 
                 me.knighthat.innertube.internal.response.ButtonImpl.ToggleImpl    toggleButtonRenderer;
                 me.knighthat.innertube.internal.response.ButtonImpl.MusicPlayImpl musicPlayButtonRenderer;
@@ -97,20 +97,20 @@ public class SectionListRendererImpl implements SectionListRenderer {
             }
 
             @Value
-            public static class DescriptionImpl implements Description {
+            static class DescriptionImpl implements Description {
 
                 MusicDescriptionShelfRendererImpl musicDescriptionShelfRenderer;
             }
         }
 
         @Value
-        public static class GridRendererImpl implements GridRenderer {
+        static class GridRendererImpl implements GridRenderer {
 
             List<ItemImpl> items;
             String         trackingParams;
 
             @Value
-            public static class ItemImpl implements Item {
+            static class ItemImpl implements Item {
 
                 MusicTwoRowItemRendererImpl musicTwoRowItemRenderer;
             }
@@ -118,7 +118,7 @@ public class SectionListRendererImpl implements SectionListRenderer {
     }
 
     @Value
-    public static class HeaderImpl implements Header {
+    static class HeaderImpl implements Header {
 
         ChipCloudImpl chipCloudRenderer;
     }

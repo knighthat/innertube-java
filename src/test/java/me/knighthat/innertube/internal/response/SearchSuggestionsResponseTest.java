@@ -1,10 +1,10 @@
-package me.knighthat.innertube.response;
+package me.knighthat.innertube.internal.response;
 
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
-import me.knighthat.innertube.internal.response.PlayerResponseImpl;
 import me.knighthat.innertube.request.body.Context;
-import me.knighthat.innertube.request.body.PlayerBody;
+import me.knighthat.innertube.request.body.SearchSuggestionsBody;
+import me.knighthat.innertube.response.SearchSuggestionsResponse;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.junit.jupiter.api.Assertions;
@@ -15,15 +15,15 @@ import java.io.InputStreamReader;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class PlayerResponseTest implements HttpClient {
+class SearchSuggestionsResponseTest implements HttpClient {
 
     /**
-     * Fetch data from "player" endpoint and convert it into {@link PlayerResponse}
+     * Fetch data from "music/get_search_suggestions" endpoint and convert it into {@link SearchSuggestionsResponse}
      */
     @Test
-    void testFetchPlayer() {
-        PlayerBody playerBody = new PlayerBody( Context.WEB_REMIX_DEFAULT, "phLb_SoPBlA", null, true, true, null );
-        Request request = makeRequest( Endpoints.PLAYER, playerBody );
+    void testFetchSearchSuggestions() {
+        SearchSuggestionsBody searchBody = new SearchSuggestionsBody( Context.WEB_REMIX_DEFAULT, "take me to church" );
+        Request request = makeRequest( Endpoints.SEARCH_SUGGESTIONS, searchBody );
 
         try (
                 Response response = CLIENT.newCall( request ).execute() ;
@@ -32,7 +32,7 @@ class PlayerResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            PlayerResponse converted = JSON.fromJson( reader, PlayerResponseImpl.class );
+            SearchSuggestionsResponse converted = JSON.fromJson( reader, SearchSuggestionsResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();

@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.Button;
 import java.util.List;
 
 @Value
-public class ButtonImpl implements Button {
+class ButtonImpl implements Button {
 
     RendererImpl                        buttonRenderer;
     ToggleImpl                          toggleButtonRenderer;
@@ -15,7 +15,7 @@ public class ButtonImpl implements Button {
     SubscribeImpl                       subscribeButtonRenderer;
 
     @Value
-    public static class RendererImpl implements Renderer {
+    static class RendererImpl implements Renderer {
 
         String                     style;
         Boolean                    isDisabled;
@@ -30,7 +30,7 @@ public class ButtonImpl implements Button {
     }
 
     @Value
-    public static class LikeImpl implements Like {
+    static class LikeImpl implements Like {
 
         TargetImpl   target;
         String       likeStatus;
@@ -40,14 +40,14 @@ public class ButtonImpl implements Button {
         EndpointImpl likeCommand;
 
         @Value
-        public static class TargetImpl implements Target {
+        static class TargetImpl implements Target {
 
             String videoId;
         }
     }
 
     @Value
-    public static class MusicPlayImpl implements MusicPlay {
+    static class MusicPlayImpl implements MusicPlay {
 
         EndpointImpl      playNavigationEndpoint;
         String            trackingParams;
@@ -67,7 +67,7 @@ public class ButtonImpl implements Button {
     }
 
     @Value
-    public static class ToggleImpl implements Toggle {
+    static class ToggleImpl implements Toggle {
 
         Boolean           isToggled;
         Boolean           isDisabled;
@@ -84,7 +84,7 @@ public class ButtonImpl implements Button {
     }
 
     @Value
-    public static class SubscribeImpl implements Subscribe {
+    static class SubscribeImpl implements Subscribe {
 
         String             trackingParams;
         RunsImpl           subscriberCountText;

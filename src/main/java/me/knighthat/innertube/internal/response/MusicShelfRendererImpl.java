@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicShelfRenderer;
 import java.util.List;
 
 @Value
-public class MusicShelfRendererImpl implements MusicShelfRenderer {
+class MusicShelfRendererImpl implements MusicShelfRenderer {
 
     RunsImpl          title;
     List<ContentImpl> contents;
@@ -17,18 +17,18 @@ public class MusicShelfRendererImpl implements MusicShelfRenderer {
     Boolean           contentsMultiSelectable;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         MusicResponsiveListItemRendererImpl musicResponsiveListItemRenderer;
     }
 
     @Value
-    public static class ShelfDividerImpl implements ShelfDivider {
+    static class ShelfDividerImpl implements ShelfDivider {
 
         RendererImpl musicShelfDividerRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             Boolean hidden;
         }

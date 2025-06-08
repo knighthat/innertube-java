@@ -6,12 +6,12 @@ import me.knighthat.innertube.response.Microformat;
 import java.util.List;
 
 @Value
-public class MicroformatImpl implements Microformat {
+class MicroformatImpl implements Microformat {
 
     RendererImpl microformatDataRenderer;
 
     @Value
-    public static class RendererImpl implements Renderer {
+    static class RendererImpl implements Renderer {
 
         String               urlCanonical;
         String               title;
@@ -45,7 +45,7 @@ public class MicroformatImpl implements Microformat {
         String               uploadDate;
 
         @Value
-        public static class PageOwnerDetailsImpl implements PageOwnerDetails {
+        static class PageOwnerDetailsImpl implements PageOwnerDetails {
 
             String name;
             String externalChannelId;
@@ -53,7 +53,7 @@ public class MicroformatImpl implements Microformat {
         }
 
         @Value
-        public static class VideoDetailsImpl implements VideoDetails {
+        static class VideoDetailsImpl implements VideoDetails {
 
             String externalVideoId;
             String durationSeconds;
@@ -61,7 +61,7 @@ public class MicroformatImpl implements Microformat {
         }
 
         @Value
-        public static class LinkImpl implements Link {
+        static class LinkImpl implements Link {
 
             String hrefUrl;
             String title;

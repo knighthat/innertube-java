@@ -6,12 +6,12 @@ import me.knighthat.innertube.response.Menu;
 import java.util.List;
 
 @Value
-public class MenuImpl implements Menu {
+class MenuImpl implements Menu {
 
     RendererImpl menuRenderer;
 
     @Value
-    public static class RendererImpl implements Renderer {
+    static class RendererImpl implements Renderer {
 
         List<ItemImpl>    items;
         String            trackingParams;
@@ -19,14 +19,14 @@ public class MenuImpl implements Menu {
         AccessibilityImpl accessibility;
 
         @Value
-        public static class ItemImpl implements Item {
+        static class ItemImpl implements Item {
 
             EndpointItemImpl menuNavigationItemRenderer;
             EndpointItemImpl menuServiceItemRenderer;
             ToggleImpl       toggleMenuServiceItemRenderer;
 
             @Value
-            public static class EndpointItemImpl implements EndpointItem {
+            static class EndpointItemImpl implements EndpointItem {
 
                 RunsImpl     text;
                 IconImpl     icon;
@@ -36,7 +36,7 @@ public class MenuImpl implements Menu {
             }
 
             @Value
-            public static class ToggleImpl implements Toggle {
+            static class ToggleImpl implements Toggle {
 
                 RunsImpl     defaultText;
                 IconImpl     defaultIcon;

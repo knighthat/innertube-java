@@ -6,20 +6,20 @@ import me.knighthat.innertube.response.ResponseContext;
 import java.util.List;
 
 @Value
-public class ResponseContextImpl implements ResponseContext {
+class ResponseContextImpl implements ResponseContext {
 
     String                         visitorData;
     List<ServiceTrackingParamImpl> serviceTrackingParams;
     Integer                        maxAgeSeconds;
 
     @Value
-    public static class ServiceTrackingParamImpl implements ServiceTrackingParam {
+    static class ServiceTrackingParamImpl implements ServiceTrackingParam {
 
         String          service;
         List<ParamImpl> params;
 
         @Value
-        public static class ParamImpl implements Param {
+        static class ParamImpl implements Param {
 
             String key;
             String value;

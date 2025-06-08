@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicPlaylistShelfRenderer;
 import java.util.List;
 
 @Value
-public class MusicPlaylistShelfRendererImpl implements MusicPlaylistShelfRenderer {
+class MusicPlaylistShelfRendererImpl implements MusicPlaylistShelfRenderer {
 
     String            playlistId;
     List<ContentImpl> contents;
@@ -16,7 +16,7 @@ public class MusicPlaylistShelfRendererImpl implements MusicPlaylistShelfRendere
     String            targetId;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         MusicResponsiveListItemRendererImpl musicResponsiveListItemRenderer;
     }

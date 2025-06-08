@@ -6,13 +6,13 @@ import me.knighthat.innertube.response.Runs;
 import java.util.List;
 
 @Value
-public class RunsImpl implements Runs {
+class RunsImpl implements Runs {
 
     List<RunImpl>     runs;
     AccessibilityImpl accessibility;
 
     @Value
-    public static class RunImpl implements Run {
+    static class RunImpl implements Run {
 
         Boolean      bold;
         String       text;

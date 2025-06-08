@@ -4,12 +4,12 @@ import lombok.Value;
 import me.knighthat.innertube.response.Thumbnail;
 
 @Value
-public class ThumbnailImpl implements Thumbnail {
+class ThumbnailImpl implements Thumbnail {
 
     RendererImpl musicThumbnailRenderer;
 
     @Value
-    public static class RendererImpl implements Renderer {
+    static class RendererImpl implements Renderer {
 
         ThumbnailsImpl thumbnail;
         String         thumbnailCrop;

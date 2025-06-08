@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicTwoRowItemRenderer;
 import java.util.List;
 
 @Value
-public class MusicTwoRowItemRendererImpl implements MusicTwoRowItemRenderer {
+class MusicTwoRowItemRendererImpl implements MusicTwoRowItemRenderer {
 
     ThumbnailImpl   thumbnailRenderer;
     String          aspectRatio;

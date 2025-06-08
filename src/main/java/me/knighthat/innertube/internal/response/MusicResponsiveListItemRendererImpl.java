@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicResponsiveListItemRenderer;
 import java.util.List;
 
 @Value
-public class MusicResponsiveListItemRendererImpl implements MusicResponsiveListItemRenderer {
+class MusicResponsiveListItemRendererImpl implements MusicResponsiveListItemRenderer {
 
     String                  trackingParams;
     ThumbnailImpl           thumbnail;
@@ -24,13 +24,13 @@ public class MusicResponsiveListItemRendererImpl implements MusicResponsiveListI
 
 
     @Value
-    public static class ColumnImpl implements Colum {
+    static class ColumnImpl implements Colum {
 
         RendererImpl musicResponsiveListItemFlexColumnRenderer;
         RendererImpl musicResponsiveListItemFixedColumnRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             RunsImpl text;
             String   displayPriority;
@@ -39,32 +39,32 @@ public class MusicResponsiveListItemRendererImpl implements MusicResponsiveListI
     }
 
     @Value
-    public static class PlaylistItemDataImpl implements PlaylistItemData {
+    static class PlaylistItemDataImpl implements PlaylistItemData {
 
         String playlistSetVideoId;
         String videoId;
     }
 
     @Value
-    public static class MultiSelectCheckboxImpl implements MultiSelectCheckbox {
+    static class MultiSelectCheckboxImpl implements MultiSelectCheckbox {
 
         RendererImpl checkboxRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             ChangeCommandImpl onSelectionChangeCommand;
             String            checkedState;
             String            trackingParams;
 
             @Value
-            public static class ChangeCommandImpl implements ChangeCommand {
+            static class ChangeCommandImpl implements ChangeCommand {
 
                 String            clickTrackingParams;
                 UpdateCommandImpl updateMultiSelectStateCommand;
 
                 @Value
-                public static class UpdateCommandImpl implements UpdateCommand {
+                static class UpdateCommandImpl implements UpdateCommand {
 
                     String multiSelectParams;
                     String multiSelectItem;

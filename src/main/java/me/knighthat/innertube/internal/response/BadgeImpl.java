@@ -4,13 +4,13 @@ import lombok.Value;
 import me.knighthat.innertube.response.Badge;
 
 @Value
-public class BadgeImpl implements Badge {
+class BadgeImpl implements Badge {
 
     RendererImpl musicInlineBadgeRenderer;
     RendererImpl metadataBadgeRenderer;
 
     @Value
-    public static class RendererImpl implements Renderer {
+    static class RendererImpl implements Renderer {
 
         String            trackingParams;
         IconImpl          icon;

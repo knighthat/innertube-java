@@ -4,7 +4,7 @@ import lombok.Value;
 import me.knighthat.innertube.response.SimpleText;
 
 @Value
-public class SimpleTextImpl implements SimpleText {
+class SimpleTextImpl implements SimpleText {
 
     String            simpleText;
     AccessibilityImpl accessibility;

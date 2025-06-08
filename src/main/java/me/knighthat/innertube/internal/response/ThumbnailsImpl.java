@@ -6,12 +6,12 @@ import me.knighthat.innertube.response.Thumbnails;
 import java.util.List;
 
 @Value
-public class ThumbnailsImpl implements Thumbnails {
+class ThumbnailsImpl implements Thumbnails {
 
     List<ThumbnailImpl> thumbnails;
 
     @Value
-    public static class ThumbnailImpl implements Thumbnail {
+    static class ThumbnailImpl implements Thumbnail {
 
         String url;
         Short  width;

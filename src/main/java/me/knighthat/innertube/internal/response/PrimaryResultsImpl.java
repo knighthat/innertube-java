@@ -8,23 +8,23 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 @Value
-public class PrimaryResultsImpl implements PrimaryResults {
+class PrimaryResultsImpl implements PrimaryResults {
 
     ResultsImpl results;
 
     @Value
-    public static class ResultsImpl implements Results {
+    static class ResultsImpl implements Results {
 
         ContentsImpl contents;
 
         @Value
-        public static class ContentsImpl implements Contents {
+        static class ContentsImpl implements Contents {
 
             VideoPrimaryInfoRendererImpl   videoPrimaryInfoRenderer;
             VideoSecondaryInfoRendererImpl videoSecondaryInfoRenderer;
 
             @Value
-            public static class VideoPrimaryInfoRendererImpl implements VideoPrimaryInfoRenderer {
+            static class VideoPrimaryInfoRendererImpl implements VideoPrimaryInfoRenderer {
 
                 @NotNull String trackingParams;
                 RunsImpl       title;
@@ -34,12 +34,12 @@ public class PrimaryResultsImpl implements PrimaryResults {
                 SimpleTextImpl relativeDateText;
 
                 @Value
-                public static class ViewCountImpl implements ViewCount {
+                static class ViewCountImpl implements ViewCount {
 
                     VideoViewCountRendererImpl videoViewCountRenderer;
 
                     @Value
-                    public static class VideoViewCountRendererImpl implements VideoViewCountRenderer {
+                    static class VideoViewCountRendererImpl implements VideoViewCountRenderer {
 
                         SimpleTextImpl viewCount;
                         SimpleTextImpl shortViewCount;
@@ -49,7 +49,7 @@ public class PrimaryResultsImpl implements PrimaryResults {
             }
 
             @Value
-            public static class VideoSecondaryInfoRendererImpl implements VideoSecondaryInfoRenderer {
+            static class VideoSecondaryInfoRendererImpl implements VideoSecondaryInfoRenderer {
 
                 @NotNull String trackingParams;
                 OwnerImpl                                     owner;
@@ -65,7 +65,7 @@ public class PrimaryResultsImpl implements PrimaryResults {
                 @NotNull List<StyleImpl> headerRuns;
 
                 @Value
-                public static class OwnerImpl implements Owner {
+                static class OwnerImpl implements Owner {
 
                     ThumbnailImpl.RendererImpl videoOwnerRenderer;
                     ButtonImpl.SubscribeImpl   subscriptionButton;
@@ -75,12 +75,12 @@ public class PrimaryResultsImpl implements PrimaryResults {
                 }
 
                 @Value
-                public static class MetadataRowContainerImpl implements MetadataRowContainer {
+                static class MetadataRowContainerImpl implements MetadataRowContainer {
 
                     Renderer metadataRowContainerRenderer;
 
                     @Value
-                    public static class RendererImpl implements Renderer {
+                    static class RendererImpl implements Renderer {
 
                         @NotNull String trackingParams;
                         Integer collapsedItemCount;
@@ -88,24 +88,24 @@ public class PrimaryResultsImpl implements PrimaryResults {
                 }
 
                 @Value
-                public static class ClickableCommandImpl implements ClickableCommand {
+                static class ClickableCommandImpl implements ClickableCommand {
 
                     @NotNull String clickTrackingParams;
                     ExecutorImpl commandExecutorCommand;
 
                     @Value
-                    public static class ExecutorImpl implements Executor {
+                    static class ExecutorImpl implements Executor {
 
                         @NotNull List<CommandImpl> commands;
 
                         @Value
-                        public static class CommandImpl implements Command {
+                        static class CommandImpl implements Command {
 
                             @NotNull String clickTrackingParams;
                             ChangeEngagementPanelVisibilityActionImpl changeEngagementPanelVisibilityAction;
 
                             @Value
-                            public static class ChangeEngagementPanelVisibilityActionImpl implements ChangeEngagementPanelVisibilityAction {
+                            static class ChangeEngagementPanelVisibilityActionImpl implements ChangeEngagementPanelVisibilityAction {
 
                                 String targetId;
                                 String visibility;
@@ -115,7 +115,7 @@ public class PrimaryResultsImpl implements PrimaryResults {
                 }
 
                 @Value
-                public static class AttributedDescriptionImpl implements AttributedDescription {
+                static class AttributedDescriptionImpl implements AttributedDescription {
 
                     String content;
                     @NotNull List<StyleImpl> styleRuns;

@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.PlaylistPanelRenderer;
 import java.util.List;
 
 @Value
-public class PlaylistPanelRendererImpl implements PlaylistPanelRenderer {
+class PlaylistPanelRendererImpl implements PlaylistPanelRenderer {
 
     List<ContentImpl>      contents;
     String                 playlistId;
@@ -17,13 +17,13 @@ public class PlaylistPanelRendererImpl implements PlaylistPanelRenderer {
     ButtonImpl             shuffleToggleButton;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         VideoRendererImpl               playlistPanelVideoRenderer;
         AutomixPreviewVideoRendererImpl automixPreviewVideoRenderer;
 
         @Value
-        public static class VideoRendererImpl implements VideoRenderer {
+        static class VideoRendererImpl implements VideoRenderer {
 
             RunsImpl        title;
             RunsImpl        longBylineText;

@@ -1,10 +1,10 @@
-package me.knighthat.innertube.response;
+package me.knighthat.innertube.internal.response;
 
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
-import me.knighthat.innertube.internal.response.SearchResponseImpl;
 import me.knighthat.innertube.request.body.Context;
-import me.knighthat.innertube.request.body.SearchBody;
+import me.knighthat.innertube.request.body.PlayerBody;
+import me.knighthat.innertube.response.PlayerResponse;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.junit.jupiter.api.Assertions;
@@ -15,15 +15,15 @@ import java.io.InputStreamReader;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class SearchResponseTest implements HttpClient {
+class PlayerResponseTest implements HttpClient {
 
     /**
-     * Fetch data from "search" endpoint and convert it into {@link SearchResponse}
+     * Fetch data from "player" endpoint and convert it into {@link PlayerResponse}
      */
     @Test
-    void testFetchSearch() {
-        SearchBody searchBody = new SearchBody( Context.WEB_REMIX_DEFAULT, "take me to church", null );
-        Request request = makeRequest( Endpoints.SEARCH, searchBody );
+    void testFetchPlayer() {
+        PlayerBody playerBody = new PlayerBody( Context.WEB_REMIX_DEFAULT, "phLb_SoPBlA", null, true, true, null );
+        Request request = makeRequest( Endpoints.PLAYER, playerBody );
 
         try (
                 Response response = CLIENT.newCall( request ).execute() ;
@@ -32,7 +32,7 @@ class SearchResponseTest implements HttpClient {
         ) {
             assertTrue( response.isSuccessful() );
 
-            SearchResponse converted = JSON.fromJson( reader, SearchResponseImpl.class );
+            PlayerResponse converted = JSON.fromJson( reader, PlayerResponseImpl.class );
             System.out.println( JSON.toJson( converted ) );
         } catch ( Exception e ) {
             e.printStackTrace();

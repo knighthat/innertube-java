@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicQueueRenderer;
 import java.util.List;
 
 @Value
-public class MusicQueueRendererImpl implements MusicQueueRenderer {
+class MusicQueueRendererImpl implements MusicQueueRenderer {
 
     ContentImpl            content;
     Boolean                hack;
@@ -14,18 +14,18 @@ public class MusicQueueRendererImpl implements MusicQueueRenderer {
     SubHeaderChipCloudImpl subHeaderChipCloud;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         PlaylistPanelRendererImpl playlistPanelRenderer;
     }
 
     @Value
-    public static class HeaderImpl implements Header {
+    static class HeaderImpl implements Header {
 
         MusicQueueHeaderRendererImpl musicQueueHeaderRenderer;
 
         @Value
-        public static class MusicQueueHeaderRendererImpl implements MusicQueueHeaderRenderer {
+        static class MusicQueueHeaderRendererImpl implements MusicQueueHeaderRenderer {
 
             RunsImpl         title;
             RunsImpl         subtitle;
@@ -35,7 +35,7 @@ public class MusicQueueRendererImpl implements MusicQueueRenderer {
     }
 
     @Value
-    public static class SubHeaderChipCloudImpl implements SubHeaderChipCloud {
+    static class SubHeaderChipCloudImpl implements SubHeaderChipCloud {
 
         ChipCloudImpl chipCloudRenderer;
     }

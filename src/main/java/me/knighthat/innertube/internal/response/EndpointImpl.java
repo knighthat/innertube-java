@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.Endpoint;
 import java.util.List;
 
 @Value
-public class EndpointImpl implements Endpoint {
+class EndpointImpl implements Endpoint {
 
     String                    clickTrackingParams;
     BrowseImpl                browseEndpoint;
@@ -27,19 +27,19 @@ public class EndpointImpl implements Endpoint {
     SignalServiceImpl         signalServiceEndpoint;
 
     @Value
-    public static class BrowseImpl implements Browse {
+    static class BrowseImpl implements Browse {
 
         String                                    browseId;
         String                                    params;
         BrowseEndpointContextSupportedConfigsImpl browseEndpointContextSupportedConfigs;
 
         @Value
-        public static class BrowseEndpointContextSupportedConfigsImpl implements BrowseEndpointContextSupportedConfigs {
+        static class BrowseEndpointContextSupportedConfigsImpl implements BrowseEndpointContextSupportedConfigs {
 
             BrowseEndpointContextMusicConfigImpl browseEndpointContextMusicConfig;
 
             @Value
-            public static class BrowseEndpointContextMusicConfigImpl implements BrowseEndpointContextMusicConfig {
+            static class BrowseEndpointContextMusicConfigImpl implements BrowseEndpointContextMusicConfig {
 
                 String pageType;
             }
@@ -47,36 +47,36 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class FeedbackImpl implements Feedback {
+    static class FeedbackImpl implements Feedback {
 
         String feedbackToken;
     }
 
     @Value
-    public static class LikeImpl implements Like {
+    static class LikeImpl implements Like {
 
         String     status;
         TargetImpl target;
 
         @Value
-        public static class TargetImpl implements Target {
+        static class TargetImpl implements Target {
 
             String playlistId;
         }
     }
 
     @Value
-    public static class ModalImpl implements Modal {
+    static class ModalImpl implements Modal {
 
         RendererImpl modal;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             TitleAndButtonRendererImpl modalWithTitleAndButtonRenderer;
 
             @Value
-            public static class TitleAndButtonRendererImpl implements TitleAndButtonRenderer {
+            static class TitleAndButtonRendererImpl implements TitleAndButtonRenderer {
 
                 RunsImpl   title;
                 RunsImpl   content;
@@ -86,13 +86,13 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class PlaylistEditImpl implements PlaylistEdit {
+    static class PlaylistEditImpl implements PlaylistEdit {
 
         String           playlistId;
         List<ActionImpl> actions;
 
         @Value
-        public static class ActionImpl implements Action {
+        static class ActionImpl implements Action {
 
             String setVideoId;
             String action;
@@ -101,17 +101,17 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class QueueImpl implements Queue {
+    static class QueueImpl implements Queue {
 
         @Value
-        public static class QueueAddImpl implements QueueAdd {
+        static class QueueAddImpl implements QueueAdd {
 
             QueueTargetImpl   queueTarget;
             String            queueInsertPosition;
             List<CommandImpl> commands;
 
             @Value
-            public static class QueueTargetImpl implements QueueTarget {
+            static class QueueTargetImpl implements QueueTarget {
 
                 String       videoId;
                 String       playlistId;
@@ -120,30 +120,30 @@ public class EndpointImpl implements Endpoint {
         }
 
         @Value
-        public static class QueueRemoveImpl implements QueueRemove {
+        static class QueueRemoveImpl implements QueueRemove {
 
             String            videoId;
             List<CommandImpl> commands;
         }
 
         @Value
-        public static class CommandImpl implements Command {
+        static class CommandImpl implements Command {
 
             String               clickTrackingParams;
             AddToToastActionImpl addToToastAction;
 
             @Value
-            public static class AddToToastActionImpl implements AddToToastAction {
+            static class AddToToastActionImpl implements AddToToastAction {
 
                 ItemImpl item;
 
                 @Value
-                public static class ItemImpl implements Item {
+                static class ItemImpl implements Item {
 
                     NotificationTextRendererImpl notificationTextRenderer;
 
                     @Value
-                    public static class NotificationTextRendererImpl implements NotificationTextRenderer {
+                    static class NotificationTextRendererImpl implements NotificationTextRenderer {
 
                         RunsImpl successResponseText;
                         String   trackingParams;
@@ -154,7 +154,7 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class QueueUpdateImpl implements QueueUpdate {
+    static class QueueUpdateImpl implements QueueUpdate {
 
         String       queueUpdateSection;
         EndpointImpl fetchContentsCommand;
@@ -162,27 +162,27 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class SearchImpl implements Search {
+    static class SearchImpl implements Search {
 
         String query;
         String params;
     }
 
     @Value
-    public static class ShareEntityImpl implements ShareEntity {
+    static class ShareEntityImpl implements ShareEntity {
 
         String serializedShareEntity;
         String sharePanelType;
     }
 
     @Value
-    public static class SignInImpl implements SignIn {
+    static class SignInImpl implements SignIn {
 
         Boolean hack;
     }
 
     @Value
-    public static class WatchImpl implements Watch {
+    static class WatchImpl implements Watch {
 
         String                                 videoId;
         String                                 playlistId;
@@ -195,24 +195,24 @@ public class EndpointImpl implements Endpoint {
         WatchEndpointMusicSupportedConfigsImpl watchEndpointMusicSupportedConfigs;
 
         @Value
-        public static class LoggingContextImpl implements LoggingContext {
+        static class LoggingContextImpl implements LoggingContext {
 
             VssLoggingContextImpl vssLoggingContext;
 
             @Value
-            public static class VssLoggingContextImpl implements VssLoggingContext {
+            static class VssLoggingContextImpl implements VssLoggingContext {
 
                 String serializedContextData;
             }
         }
 
         @Value
-        public static class WatchEndpointMusicSupportedConfigsImpl implements WatchEndpointMusicSupportedConfigs {
+        static class WatchEndpointMusicSupportedConfigsImpl implements WatchEndpointMusicSupportedConfigs {
 
             WatchEndpointMusicConfigImpl watchEndpointMusicConfig;
 
             @Value
-            public static class WatchEndpointMusicConfigImpl implements WatchEndpointMusicConfig {
+            static class WatchEndpointMusicConfigImpl implements WatchEndpointMusicConfig {
 
                 Boolean hasPersistentPlaylistPanel;
                 String  musicVideoType;
@@ -221,44 +221,44 @@ public class EndpointImpl implements Endpoint {
     }
 
     @Value
-    public static class WatchPlaylistImpl implements WatchPlaylist {
+    static class WatchPlaylistImpl implements WatchPlaylist {
 
         String playlistId;
         String params;
     }
 
     @Value
-    public static class SubscribeImpl implements Subscribe {
+    static class SubscribeImpl implements Subscribe {
 
         List<String> channelIds;
         String       params;
     }
 
     @Value
-    public static class SignalServiceImpl implements SignalService {
+    static class SignalServiceImpl implements SignalService {
 
         String           signal;
         List<ActionImpl> actions;
 
         @Value
-        public static class ActionImpl implements Action {
+        static class ActionImpl implements Action {
 
             String        clickTrackingParams;
             OpenPopupImpl openPopupAction;
 
             @Value
-            public static class OpenPopupImpl implements OpenPopup {
+            static class OpenPopupImpl implements OpenPopup {
 
                 PopupImpl popup;
                 String    popupType;
 
                 @Value
-                public static class PopupImpl implements Popup {
+                static class PopupImpl implements Popup {
 
                     RendererImpl confirmDialogRenderer;
 
                     @Value
-                    public static class RendererImpl implements Renderer {
+                    static class RendererImpl implements Renderer {
 
                         String         trackingParams;
                         List<RunsImpl> dialogMessages;

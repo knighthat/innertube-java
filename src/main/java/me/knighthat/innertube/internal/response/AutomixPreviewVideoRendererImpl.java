@@ -5,17 +5,17 @@ import me.knighthat.innertube.response.AutomixPreviewVideoRenderer;
 import me.knighthat.innertube.response.Endpoint;
 
 @Value
-public class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {
+class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {
 
     ContentImpl content;
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         RendererImpl automixPlaylistVideoRenderer;
 
         @Value
-        public static class RendererImpl implements Renderer {
+        static class RendererImpl implements Renderer {
 
             Endpoint navigationEndpoint;
             String   trackingParams;

@@ -6,7 +6,7 @@ import me.knighthat.innertube.response.MusicCarouselShelfRenderer;
 import java.util.List;
 
 @Value
-public class MusicCarouselShelfRendererImpl implements MusicCarouselShelfRenderer {
+class MusicCarouselShelfRendererImpl implements MusicCarouselShelfRenderer {
 
     HeaderImpl        header;
     List<ContentImpl> contents;
@@ -15,12 +15,12 @@ public class MusicCarouselShelfRendererImpl implements MusicCarouselShelfRendere
     String            numItemsPerColumn;
 
     @Value
-    public static class HeaderImpl implements Header {
+    static class HeaderImpl implements Header {
 
         MusicCarouselShelfBasicHeaderRendererImpl musicCarouselShelfBasicHeaderRenderer;
 
         @Value
-        public static class MusicCarouselShelfBasicHeaderRendererImpl implements MusicCarouselShelfBasicHeaderRenderer {
+        static class MusicCarouselShelfBasicHeaderRendererImpl implements MusicCarouselShelfBasicHeaderRenderer {
 
             RunsImpl          title;
             RunsImpl          strapline;
@@ -32,7 +32,7 @@ public class MusicCarouselShelfRendererImpl implements MusicCarouselShelfRendere
     }
 
     @Value
-    public static class ContentImpl implements Content {
+    static class ContentImpl implements Content {
 
         MusicResponsiveListItemRendererImpl musicResponsiveListItemRenderer;
         MusicTwoRowItemRendererImpl         musicTwoRowItemRenderer;
