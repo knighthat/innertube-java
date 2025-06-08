@@ -10,19 +10,28 @@ public interface Style {
 
     Integer getLength();
 
-    Extension getStyleRunExtensions();
+    RunExtension getStyleRunExtensions();
 
     String getFontFamilyName();
 
-    interface Extension {
+    interface RunExtension {
 
-        @NotNull List<? extends Color> getColorMap();
+        @NotNull
+        ColorMapExtension getStyleRunColorMapExtension();
 
-        interface Color {
+        interface ColorMapExtension {
 
-            String getKey();
+            @NotNull
+            List<? extends ColorMap> getColorMap();
 
-            Long getValue();
+            interface ColorMap {
+
+                @NotNull
+                String getKey();
+
+                @NotNull
+                Long getValue();
+            }
         }
     }
 }
