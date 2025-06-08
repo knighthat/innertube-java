@@ -7,21 +7,19 @@ import me.knighthat.innertube.response.renderer.AutomixPreviewVideoRenderer;
 @Data
 public class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {
 
-    Content Content;
+    private final Content content;
 
     @Data
     public static class ContentImpl implements AutomixPreviewVideoRenderer.Content {
 
-        Renderer AutomixPlaylistVideoRenderer;
+        private final Renderer automixPlaylistVideoRenderer;
 
         @Data
         public static class Renderer implements AutomixPreviewVideoRenderer.Content.Renderer {
 
-            Endpoint NavigationEndpoint;
-
-            String TrackingParams;
-
-            String AutomixMode;
+            private final Endpoint navigationEndpoint;
+            private final String trackingParams;
+            private final String automixMode;
         }
     }
 }
