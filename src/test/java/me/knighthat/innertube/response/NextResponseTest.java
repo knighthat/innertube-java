@@ -1,8 +1,8 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.impl.response.NextResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
+import me.knighthat.innertube.internal.response.NextResponseImpl;
 import me.knighthat.innertube.request.body.Context;
 import me.knighthat.innertube.request.body.NextBody;
 import okhttp3.Request;

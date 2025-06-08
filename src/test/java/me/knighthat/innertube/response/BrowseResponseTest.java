@@ -1,8 +1,8 @@
 package me.knighthat.innertube.response;
 
-import me.knighthat.impl.response.BrowseResponseImpl;
 import me.knighthat.innertube.Endpoints;
 import me.knighthat.innertube.HttpClient;
+import me.knighthat.innertube.internal.response.BrowseResponseImpl;
 import me.knighthat.innertube.request.body.BrowseBody;
 import me.knighthat.innertube.request.body.Context;
 import okhttp3.Request;
