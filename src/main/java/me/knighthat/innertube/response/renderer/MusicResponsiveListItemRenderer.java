@@ -4,13 +4,16 @@ import org.jetbrains.annotations.NotNull;
 
 import me.knighthat.innertube.response.*;
 import me.knighthat.innertube.response.thumbnail.Thumbnail;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public interface MusicResponsiveListItemRenderer extends Trackable {
 
+    @Nullable
     Thumbnail getThumbnail();
 
+    @Nullable
     Overlay getOverlay();
 
     @NotNull
@@ -19,21 +22,28 @@ public interface MusicResponsiveListItemRenderer extends Trackable {
     @NotNull
     List<? extends Colum> getFixedColumns();
 
+    @NotNull
     Menu getMenu();
 
     @NotNull
     List<? extends Badge> getBadges();
 
+    @Nullable
     PlaylistItemData getPlaylistItemData();
 
+    @Nullable
     String getFlexColumnDisplayStyle();
 
+    @NotNull
     Endpoint getNavigationEndpoint();
 
+    @Nullable
     String getItemHeight();
 
+    @Nullable
     Runs getIndex();
 
+    @Nullable
     MultiSelectCheckbox getMultiSelectCheckbox();
 
     interface Colum {
@@ -46,13 +56,16 @@ public interface MusicResponsiveListItemRenderer extends Trackable {
 
         interface Renderer {
 
-            @NotNull
+            @Nullable
             Runs getText();
 
+            @NotNull
             String getDisplayPriority();
 
+            @Nullable
             String getSize();
         }
+
     }
 
     interface PlaylistItemData {

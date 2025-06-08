@@ -81,7 +81,8 @@ public interface PrimaryResults {
 
                     SimpleText getSubscriberCountText();
 
-                    @NotNull List<? extends Badge> getBadges();
+                    @NotNull
+                    List<? extends Badge> getBadges();
 
                     interface VideoOwnerRenderer {
 

@@ -7,52 +7,73 @@ import java.util.List;
 
 public interface Endpoint extends ClickTrackable{
 
+    @Nullable
     Browse getBrowseEndpoint();
 
+    @Nullable
     Watch getWatchEndpoint();
 
+    @Nullable
     Modal getModalEndpoint();
 
+    @Nullable
     WatchPlaylist getWatchPlaylistEndpoint();
 
+    @Nullable
     Queue.QueueAdd getQueueAddEndpoint();
 
+    @Nullable
     Queue.QueueRemove getRemoveFromQueueEndpoint();
 
+    @Nullable
     Like getLikeEndpoint();
 
+    @Nullable
     ShareEntity getShareEntityEndpoint();
 
+    @Nullable
     Search getSearchEndpoint();
 
+    @Nullable
     SignIn getSignInEndpoint();
 
+    @Nullable
     Feedback getFeedbackEndpoint();
 
+    @Nullable
     PlaylistEdit getPlaylistEditEndpoint();
 
+    @Nullable
     QueueUpdate getQueueUpdateCommand();
 
+    @Nullable
     Subscribe getSubscribeEndpoint();
 
+    @Nullable
     Subscribe getUnsubscribeEndpoint();
 
+    @Nullable
     SignalService getSignalServiceEndpoint();
 
     interface Browse {
 
+        @NotNull
         String getBrowseId();
 
+        @Nullable
         String getParams();
 
+        @Nullable
         BrowseEndpointContextSupportedConfigs getBrowseEndpointContextSupportedConfigs();
 
         interface BrowseEndpointContextSupportedConfigs {
 
+            @NotNull
             BrowseEndpointContextMusicConfig getBrowseEndpointContextMusicConfig();
 
             interface BrowseEndpointContextMusicConfig {
 
+                @NotNull
                 String getPageType();
             }
         }
@@ -60,35 +81,44 @@ public interface Endpoint extends ClickTrackable{
 
     interface Feedback {
 
+        @NotNull
         String getFeedbackToken();
     }
 
     interface Like {
 
+        @NotNull
         String getStatus();
 
+        @NotNull
         Target getTarget();
 
         interface Target {
 
+            @NotNull
             String getPlaylistId();
         }
     }
 
     interface Modal {
 
+        @NotNull
         Renderer getModal();
 
         interface Renderer {
 
+            @NotNull
             TitleAndButtonRenderer getModalWithTitleAndButtonRenderer();
 
             interface TitleAndButtonRenderer {
 
+                @NotNull
                 Runs getTitle();
 
+                @NotNull
                 Runs getContent();
 
+                @NotNull
                 Button getButton();
             }
         }
@@ -96,6 +126,7 @@ public interface Endpoint extends ClickTrackable{
 
     interface PlaylistEdit {
 
+        @NotNull
         String getPlaylistId();
 
         @NotNull
@@ -103,10 +134,13 @@ public interface Endpoint extends ClickTrackable{
 
         interface Action {
 
+            @NotNull
             String getSetVideoId();
 
+            @NotNull
             String getAction();
 
+            @NotNull
             String getRemovedVideoId();
         }
     }
@@ -115,8 +149,10 @@ public interface Endpoint extends ClickTrackable{
 
         interface QueueAdd {
 
+            @NotNull
             QueueTarget getQueueTarget();
 
+            @NotNull
             String getQueueInsertPosition();
 
             @NotNull
@@ -124,16 +160,20 @@ public interface Endpoint extends ClickTrackable{
 
             interface QueueTarget {
 
+                @Nullable
                 String getVideoId();
 
+                @NotNull
                 String getPlaylistId();
 
+                @NotNull
                 Endpoint getOnEmptyQueue();
             }
         }
 
         interface QueueRemove {
 
+            @NotNull
             String getVideoId();
 
             @NotNull
@@ -142,18 +182,22 @@ public interface Endpoint extends ClickTrackable{
 
         interface Command extends ClickTrackable {
 
+            @NotNull
             AddToToastAction getAddToToastAction();
 
             interface AddToToastAction {
 
+                @NotNull
                 Item getItem();
 
                 interface Item {
 
+                    @NotNull
                     Item.NotificationTextRenderer getNotificationTextRenderer();
 
                     interface NotificationTextRenderer extends Trackable{
 
+                        @NotNull
                         Runs getSuccessResponseText();
                     }
                 }
@@ -163,75 +207,92 @@ public interface Endpoint extends ClickTrackable{
 
     interface QueueUpdate {
 
+        @NotNull
         String getQueueUpdateSection();
 
+        @NotNull
         Endpoint getFetchContentsCommand();
 
+        @NotNull
         Boolean getDedupeAgainstLocalQueue();
-
-        interface FetchContentsCommand extends ClickTrackable {
-
-            Watch getWatchEndpoint();
-        }
     }
 
     interface Search {
 
+        @NotNull
         String getQuery();
 
+        @Nullable
         String getParams();
     }
 
     interface ShareEntity {
 
+        @NotNull
         String getSerializedShareEntity();
 
+        @NotNull
         String getSharePanelType();
     }
 
     interface SignIn {
 
+        @NotNull
         Boolean getHack();
     }
 
     interface Watch {
 
+        @NotNull
         String getVideoId();
 
+        @Nullable
         String getPlaylistId();
 
+        @Nullable
         Integer getIndex();
 
+        @Nullable
         String getParams();
 
+        @Nullable
         String getPlayerParams();
 
+        @Nullable
         String getUstreamerConfig();
 
+        @Nullable
         String getPlaylistSetVideoId();
 
+        @Nullable
         LoggingContext getLoggingContext();
 
+        @Nullable
         WatchEndpointMusicSupportedConfigs getWatchEndpointMusicSupportedConfigs();
 
         interface LoggingContext {
 
+            @NotNull
             LoggingContext.VssLoggingContext getVssLoggingContext();
 
             interface VssLoggingContext {
 
+                @NotNull
                 String getSerializedContextData();
             }
         }
 
         interface WatchEndpointMusicSupportedConfigs {
 
+            @NotNull
             WatchEndpointMusicConfig getWatchEndpointMusicConfig();
 
             interface WatchEndpointMusicConfig {
 
+                @Nullable
                 Boolean getHasPersistentPlaylistPanel();
 
+                @NotNull
                 String getMusicVideoType();
             }
         }
@@ -239,8 +300,10 @@ public interface Endpoint extends ClickTrackable{
 
     interface WatchPlaylist {
 
+        @Nullable
         String getPlaylistId();
 
+        @Nullable
         String getParams();
     }
 
@@ -255,6 +318,7 @@ public interface Endpoint extends ClickTrackable{
 
     interface SignalService {
 
+        @NotNull
         String getSignal();
 
         @NotNull
@@ -262,16 +326,20 @@ public interface Endpoint extends ClickTrackable{
 
         interface Action extends ClickTrackable {
 
+            @NotNull
             OpenPopup getOpenPopupAction();
 
             interface OpenPopup {
 
+                @NotNull
                 Popup getPopup();
 
+                @NotNull
                 String getPopupType();
 
                 interface Popup {
 
+                    @NotNull
                     Renderer getConfirmDialogRenderer();
 
                     interface Renderer extends Trackable {
@@ -279,8 +347,10 @@ public interface Endpoint extends ClickTrackable{
                         @NotNull
                         List<? extends Runs> getDialogMessages();
 
+                        @Nullable
                         Button getConfirmButton();
 
+                        @Nullable
                         Button getCancelButton();
                     }
                 }

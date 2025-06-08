@@ -1,11 +1,13 @@
 package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public interface Menu {
 
+    @NotNull
     Renderer getMenuRenderer();
 
     interface Renderer extends Trackable {
@@ -16,6 +18,7 @@ public interface Menu {
         @NotNull
         List<? extends Button> getTopLevelButtons();
 
+        @Nullable
         Accessibility getAccessibility();
 
         interface Item {
@@ -26,6 +29,7 @@ public interface Menu {
             @Nullable
             EndpointItem getMenuServiceItemRenderer();
 
+            @Nullable
             Toggle getToggleMenuServiceItemRenderer();
 
             interface EndpointItem extends Trackable {
@@ -38,9 +42,6 @@ public interface Menu {
 
                 @Nullable
                 Endpoint getNavigationEndpoint();
-            }
-
-            interface Service extends Trackable {
 
                 @Nullable
                 Endpoint getServiceEndpoint();
@@ -48,16 +49,22 @@ public interface Menu {
 
             interface Toggle extends Trackable {
 
+                @NotNull
                 Runs getDefaultText();
 
+                @NotNull
                 Icon getDefaultIcon();
 
+                @NotNull
                 Endpoint getDefaultServiceEndpoint();
 
+                @NotNull
                 Runs getToggledText();
 
+                @NotNull
                 Icon getToggledIcon();
 
+                @NotNull
                 Endpoint getToggledServiceEndpoint();
             }
         }

@@ -11,10 +11,13 @@ public interface Thumbnails {
 
     interface Thumbnail {
 
+        @NotNull
         String getUrl();
 
+        @NotNull
         Short getWidth();
 
+        @NotNull
         Short getHeight();
     }
 }

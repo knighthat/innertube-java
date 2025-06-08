@@ -6,12 +6,16 @@ import java.util.List;
 
 public interface Style {
 
+    @NotNull
     Integer getStartIndex();
 
+    @NotNull
     Integer getLength();
 
+    @NotNull
     RunExtension getStyleRunExtensions();
 
+    @NotNull
     String getFontFamilyName();
 
     interface RunExtension {

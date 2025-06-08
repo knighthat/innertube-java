@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface SearchSuggestionsResponse extends Trackable {
 
+    @NotNull
     ResponseContext getResponseContext();
 
     @NotNull
@@ -15,6 +16,7 @@ public interface SearchSuggestionsResponse extends Trackable {
 
     interface Content {
 
+        @NotNull
         SearchSuggestionsSectionRenderer getSearchSuggestionsSectionRenderer();
     }
 }
