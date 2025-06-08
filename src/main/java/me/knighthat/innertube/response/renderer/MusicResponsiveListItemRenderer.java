@@ -14,10 +14,10 @@ public interface MusicResponsiveListItemRenderer extends Trackable {
     Overlay getOverlay();
 
     @NotNull
-    List<? extends FlexColumn> getFlexColumns();
+    List<? extends Colum> getFlexColumns();
 
     @NotNull
-    List<? extends FixedColumn> getFixedColumns();
+    List<? extends Colum> getFixedColumns();
 
     Menu getMenu();
 
@@ -36,25 +36,17 @@ public interface MusicResponsiveListItemRenderer extends Trackable {
 
     MultiSelectCheckbox getMultiSelectCheckbox();
 
+    interface Colum {
 
-    interface FlexColumn {
-
+        @Nullable
         Renderer getMusicResponsiveListItemFlexColumnRenderer();
 
-        interface Renderer {
-
-            Runs getText();
-
-            String getDisplayPriority();
-        }
-    }
-
-    interface FixedColumn {
-
+        @Nullable
         Renderer getMusicResponsiveListItemFixedColumnRenderer();
 
         interface Renderer {
 
+            @NotNull
             Runs getText();
 
             String getDisplayPriority();

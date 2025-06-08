@@ -13,8 +13,8 @@ public class MusicResponsiveListItemRendererImpl implements MusicResponsiveListI
     private final String                  trackingParams;
     private final ThumbnailImpl           thumbnail;
     private final OverlayImpl             overlay;
-    private final List<FlexColumnImpl>    flexColumns;
-    private final List<FixedColumnImpl>   fixedColumns;
+    private final List<ColumnImpl>        flexColumns;
+    private final List<ColumnImpl>        fixedColumns;
     private final MenuImpl                menu;
     private final List<BadgeImpl>         badges;
     private final PlaylistItemDataImpl    playlistItemData;
@@ -26,21 +26,9 @@ public class MusicResponsiveListItemRendererImpl implements MusicResponsiveListI
 
 
     @Data
-    public static class FlexColumnImpl implements FlexColumn {
+    public static class ColumnImpl implements Colum {
 
         private final RendererImpl musicResponsiveListItemFlexColumnRenderer;
-
-        @Data
-        public static class RendererImpl implements Renderer {
-
-            private final RunsImpl text;
-            private final String   displayPriority;
-        }
-    }
-
-    @Data
-    public static class FixedColumnImpl implements FixedColumn {
-
         private final RendererImpl musicResponsiveListItemFixedColumnRenderer;
 
         @Data
