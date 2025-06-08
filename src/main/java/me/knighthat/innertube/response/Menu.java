@@ -20,27 +20,29 @@ public interface Menu {
 
         interface Item {
 
-            Navigation getMenuNavigationItemRenderer();
+            @Nullable
+            EndpointItem getMenuNavigationItemRenderer();
 
-            Service getMenuServiceItemRenderer();
+            @Nullable
+            EndpointItem getMenuServiceItemRenderer();
 
             Toggle getToggleMenuServiceItemRenderer();
 
-            interface Navigation extends Trackable {
+            interface EndpointItem extends Trackable {
 
+                @NotNull
                 Runs getText();
 
+                @NotNull
                 Icon getIcon();
 
+                @Nullable
                 Endpoint getNavigationEndpoint();
             }
 
             interface Service extends Trackable {
 
-                Runs getText();
-
-                Icon getIcon();
-
+                @Nullable
                 Endpoint getServiceEndpoint();
             }
 
