@@ -5,6 +5,10 @@ import org.jetbrains.annotations.Nullable;
 
 public interface Badge {
 
+    // START: Static fields/functions
+    @NotNull String EXPLICIT = "MUSIC_EXPLICIT_BADGE";
+    // END: Static fields/functions
+
     @Nullable
     Renderer getMusicInlineBadgeRenderer();
 
