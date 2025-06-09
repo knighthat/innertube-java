@@ -64,14 +64,14 @@ public interface Endpoint extends ClickTrackable{
         String getParams();
 
         @Nullable
-        BrowseEndpointContextSupportedConfigs getBrowseEndpointContextSupportedConfigs();
+        Context getBrowseEndpointContextSupportedConfigs();
 
-        interface BrowseEndpointContextSupportedConfigs {
+        interface Context {
 
             @NotNull
-            BrowseEndpointContextMusicConfig getBrowseEndpointContextMusicConfig();
+            MusicConfig getBrowseEndpointContextMusicConfig();
 
-            interface BrowseEndpointContextMusicConfig {
+            interface MusicConfig {
 
                 @NotNull
                 String getPageType();

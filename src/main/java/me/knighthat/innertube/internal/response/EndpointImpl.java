@@ -29,17 +29,17 @@ class EndpointImpl implements Endpoint {
     @Value
     static class BrowseImpl implements Browse {
 
-        String                                    browseId;
-        String                                    params;
-        BrowseEndpointContextSupportedConfigsImpl browseEndpointContextSupportedConfigs;
+        String      browseId;
+        String      params;
+        ContextImpl browseEndpointContextSupportedConfigs;
 
         @Value
-        static class BrowseEndpointContextSupportedConfigsImpl implements BrowseEndpointContextSupportedConfigs {
+        static class ContextImpl implements Context {
 
-            BrowseEndpointContextMusicConfigImpl browseEndpointContextMusicConfig;
+            MusicConfigImpl browseEndpointContextMusicConfig;
 
             @Value
-            static class BrowseEndpointContextMusicConfigImpl implements BrowseEndpointContextMusicConfig {
+            static class MusicConfigImpl implements MusicConfig {
 
                 String pageType;
             }
