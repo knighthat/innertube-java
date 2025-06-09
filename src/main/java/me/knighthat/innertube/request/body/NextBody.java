@@ -9,9 +9,9 @@ public class NextBody implements RequestBody {
 
     @NotNull
     Context context;
-    @NotNull
+    @Nullable
     String  videoId;
-    @NotNull
+    @Nullable
     String  playlistId;
     @Nullable
     String  params;

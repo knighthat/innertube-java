@@ -9,9 +9,9 @@ public class BrowseBody implements RequestBody {
 
     @NotNull
     Context context;
-    @NotNull
+    @Nullable
     String  browseId;
-    @NotNull
+    @Nullable
     String  playlistId;
     @Nullable
     String  params;
