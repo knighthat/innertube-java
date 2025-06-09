@@ -35,7 +35,7 @@ dependencies {
 group = "me.knighthat"
 version = "0.0.1"
 description = "Unofficial YouTube's Innertube API Written in Java"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 publishing {
     publications.create<MavenPublication>("maven") {
