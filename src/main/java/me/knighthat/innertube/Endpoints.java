@@ -4,16 +4,21 @@ import org.jetbrains.annotations.NotNull;
 
 public class Endpoints {
 
-    private Endpoints() {}
+    // START: Static fields/functions
+    @NotNull
+    private static final String YOUTUBEI = "youtubei/v1";
 
     @NotNull
-    public static final String BROWSE = "youtubei/v1/browse";
+    public static final String BROWSE             = YOUTUBEI + "/browse";
     @NotNull
-    public static final String NEXT = "youtubei/v1/next";
+    public static final String NEXT               = YOUTUBEI + "/next";
     @NotNull
-    public static final String PLAYER = "youtubei/v1/player";
+    public static final String PLAYER             = YOUTUBEI + "/player";
     @NotNull
-    public static final String SEARCH = "youtubei/v1/search";
+    public static final String SEARCH             = YOUTUBEI + "/search";
     @NotNull
-    public static final String SEARCH_SUGGESTIONS = "youtubei/v1/music/get_search_suggestions";
+    public static final String SEARCH_SUGGESTIONS = YOUTUBEI + "/music/get_search_suggestions";
+    // END: Static fields/functions
+
+    private Endpoints() { }
 }
