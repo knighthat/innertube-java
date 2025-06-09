@@ -2,7 +2,6 @@ package me.knighthat.innertube.internal.response;
 
 import lombok.Value;
 import me.knighthat.innertube.response.AutomixPreviewVideoRenderer;
-import me.knighthat.innertube.response.Endpoint;
 
 @Value
 class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {
@@ -17,9 +16,9 @@ class AutomixPreviewVideoRendererImpl implements AutomixPreviewVideoRenderer {
         @Value
         static class RendererImpl implements Renderer {
 
-            Endpoint navigationEndpoint;
-            String   trackingParams;
-            String   automixMode;
+            EndpointImpl navigationEndpoint;
+            String       trackingParams;
+            String       automixMode;
         }
     }
 }
