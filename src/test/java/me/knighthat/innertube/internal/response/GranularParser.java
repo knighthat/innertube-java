@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import me.knighthat.innertube.response.MusicResponsiveListItemRenderer;
+import me.knighthat.innertube.response.MusicTwoRowItemRenderer;
 import me.knighthat.innertube.response.PlaylistPanelRenderer;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +26,10 @@ public class GranularParser {
 
     public static PlaylistPanelRenderer.Content.VideoRenderer playlistPanelVideoRenderer( @NotNull InputStreamReader reader ) throws JsonSyntaxException {
         return GSON.fromJson( reader, PlaylistPanelRendererImpl.ContentImpl.VideoRendererImpl.class );
+    }
+
+    public static MusicTwoRowItemRenderer musicTwoRowItemRenderer( @NotNull InputStreamReader reader ) throws JsonSyntaxException {
+        return GSON.fromJson( reader, MusicTwoRowItemRendererImpl.class );
     }
 // END: Static fields/functions
 }
