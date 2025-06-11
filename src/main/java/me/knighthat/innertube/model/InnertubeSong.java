@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Value
 public class InnertubeSong implements Identifiable, Visual {
@@ -70,6 +71,32 @@ public class InnertubeSong implements Identifiable, Visual {
         assert !results.isEmpty();
 
         return results;
+    }
+
+    /**
+     * Extract duration text from both columns
+     */
+    private static @NotNull Optional<String> extractDuration( @NotNull MusicResponsiveListItemRenderer renderer ) {
+        return Stream.concat(
+                             renderer.getFlexColumns()
+                                     .stream()
+                                     .map( MusicResponsiveListItemRenderer.Colum::getMusicResponsiveListItemFlexColumnRenderer ),
+                             renderer.getFixedColumns()
+                                     .stream()
+                                     .map( MusicResponsiveListItemRenderer.Colum::getMusicResponsiveListItemFixedColumnRenderer )
+                     )
+                     .flatMap( colRenderer -> {
+                         if ( colRenderer == null || colRenderer.getText() == null )
+                             return Stream.empty();
+
+                         return colRenderer.getText()
+                                           .getRuns()
+                                           .stream();
+                     } )
+                     .map( Runs.Run::getText )
+                     .filter( text -> DURATION_PATTERN.matcher( text )
+                                                      .matches() )
+                     .findFirst();
     }
 // END: Static fields/functions
 
@@ -183,20 +210,7 @@ public class InnertubeSong implements Identifiable, Visual {
                             .getThumbnails()
             );
         this.thumbnails = thumbnails;
-        // Some payload doesn't contain duration, this will look for it
-        // and return empty string if it doesn't find anything
-        String durationText = "";
-        for ( MusicResponsiveListItemRenderer.Colum fixedCol : renderer.getFixedColumns() ) {
-            MusicResponsiveListItemRenderer.Colum.Renderer colRenderer = fixedCol.getMusicResponsiveListItemFixedColumnRenderer();
-            if ( colRenderer == null || colRenderer.getText() == null )
-                continue;
-
-            String text = ItemUtils.getFirstText( colRenderer.getText() );
-            if ( DURATION_PATTERN.matcher( text )
-                                 .matches() )
-                durationText = text;
-        }
-        this.durationText = durationText;
+        this.durationText = extractDuration( renderer ).orElse( "" );
         this.explicit = ItemUtils.containsExplicitBadge( renderer.getBadges() );
         this.album = artistsAndAlbum.pop();
         this.authors = new ArrayList<>( artistsAndAlbum );
