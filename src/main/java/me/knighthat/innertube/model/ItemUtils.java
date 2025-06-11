@@ -31,6 +31,13 @@ class ItemUtils {
                      );
     }
 
+    static @NotNull @Unmodifiable List<Thumbnails.Thumbnail> extractThumbnail( @Nullable Thumbnail thumbnail ) {
+        return thumbnail == null ? Collections.emptyList()
+                : Collections.unmodifiableList( thumbnail.getMusicThumbnailRenderer()
+                                                         .getThumbnail()
+                                                         .getThumbnails() );
+    }
+
     /**
      * Extract album and artists from provided {@link Runs.Run}.
      * <p>

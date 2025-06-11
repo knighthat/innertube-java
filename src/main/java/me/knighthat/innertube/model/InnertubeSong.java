@@ -1,7 +1,6 @@
 package me.knighthat.innertube.model;
 
 import lombok.Value;
-import me.knighthat.innertube.PageType;
 import me.knighthat.innertube.response.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -150,17 +149,7 @@ public class InnertubeSong implements Identifiable, Visual {
         this.name = titleRun.getText();
         this.watchEndpoint = titleRun.getNavigationEndpoint()
                                      .getWatchEndpoint();
-        // Album's songs don't have thumbnail by default,
-        // if no thumbnail detected, an empty list will be assigned
-        List<Thumbnails.Thumbnail> thumbnails = Collections.emptyList();
-        if ( renderer.getThumbnail() != null )
-            thumbnails = Collections.unmodifiableList(
-                    renderer.getThumbnail()
-                            .getMusicThumbnailRenderer()
-                            .getThumbnail()
-                            .getThumbnails()
-            );
-        this.thumbnails = thumbnails;
+        this.thumbnails = ItemUtils.extractThumbnail( renderer.getThumbnail() );
         this.durationText = extractDuration( renderer ).orElse( "" );
         this.explicit = ItemUtils.containsExplicitBadge( renderer.getBadges() );
         this.album = artistsAndAlbum.pop();
