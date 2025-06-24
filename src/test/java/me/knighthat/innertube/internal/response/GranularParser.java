@@ -3,6 +3,7 @@ package me.knighthat.innertube.internal.response;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
+import me.knighthat.innertube.response.BrowseResponse;
 import me.knighthat.innertube.response.MusicResponsiveListItemRenderer;
 import me.knighthat.innertube.response.MusicTwoRowItemRenderer;
 import me.knighthat.innertube.response.PlaylistPanelRenderer;
@@ -30,6 +31,10 @@ public class GranularParser {
 
     public static MusicTwoRowItemRenderer musicTwoRowItemRenderer( @NotNull InputStreamReader reader ) throws JsonSyntaxException {
         return GSON.fromJson( reader, MusicTwoRowItemRendererImpl.class );
+    }
+
+    public static BrowseResponse.Contents.TwoColumnBrowseResultsRenderer twoColumnBrowseResultsRenderer( @NotNull InputStreamReader reader ) {
+        return GSON.fromJson( reader, BrowseResponseImpl.ContentsImpl.TwoColumnBrowseResultsRendererImpl.class );
     }
 // END: Static fields/functions
 }

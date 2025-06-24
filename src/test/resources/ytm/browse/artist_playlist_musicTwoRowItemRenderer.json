@@ -1,0 +1,432 @@
+{
+  "thumbnailRenderer": {
+    "musicThumbnailRenderer": {
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://lh3.googleusercontent.com/TsMNRNsA4YgUkf3YLydNO9OjkSOk8a2N8T4dhR-0jWFZjjTQkISto8WQoXtF3e4iWnBvd3E64lK6oQ=w226-h226-l90-rj",
+            "width": 226,
+            "height": 226
+          },
+          {
+            "url": "https://lh3.googleusercontent.com/TsMNRNsA4YgUkf3YLydNO9OjkSOk8a2N8T4dhR-0jWFZjjTQkISto8WQoXtF3e4iWnBvd3E64lK6oQ=w544-h544-l90-rj",
+            "width": 544,
+            "height": 544
+          }
+        ]
+      },
+      "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+      "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL",
+      "trackingParams": "CJkCEIS_AiITCJDA2ITu4o0DFUma5QcdWUoafQ=="
+    }
+  },
+  "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+  "title": {
+    "runs": [
+      {
+        "text": "Presenting Kendrick Lamar",
+        "navigationEndpoint": {
+          "clickTrackingParams": "CIsCEKCzAhgAIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+          "browseEndpoint": {
+            "browseId": "VLRDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+            "browseEndpointContextSupportedConfigs": {
+              "browseEndpointContextMusicConfig": {
+                "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "subtitle": {
+    "runs": [
+      {
+        "text": "Playlist"
+      },
+      {
+        "text": " • "
+      },
+      {
+        "text": "YouTube Music"
+      }
+    ]
+  },
+  "navigationEndpoint": {
+    "clickTrackingParams": "CIsCEKCzAhgAIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+    "browseEndpoint": {
+      "browseId": "VLRDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+      "browseEndpointContextSupportedConfigs": {
+        "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+        }
+      }
+    }
+  },
+  "trackingParams": "CIsCEKCzAhgAIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+  "menu": {
+    "menuRenderer": {
+      "items": [
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Shuffle play"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "MUSIC_SHUFFLE"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CJgCEJrzBRgAIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "watchPlaylistEndpoint": {
+                "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+                "params": "wAEB8gECGAE%3D"
+              }
+            },
+            "trackingParams": "CJgCEJrzBRgAIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Start radio"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "MIX"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CJcCEJvzBRgBIhMIkMDYhO7ijQMVSZrlBx1ZShp9mgEEEMPYAg==",
+              "watchPlaylistEndpoint": {
+                "playlistId": "RDAMPLRDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+                "params": "wAEB"
+              }
+            },
+            "trackingParams": "CJcCEJvzBRgBIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "menuServiceItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Play next"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "QUEUE_PLAY_NEXT"
+            },
+            "serviceEndpoint": {
+              "clickTrackingParams": "CJUCEL7uBRgCIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "queueAddEndpoint": {
+                "queueTarget": {
+                  "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+                  "onEmptyQueue": {
+                    "clickTrackingParams": "CJUCEL7uBRgCIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                    "watchEndpoint": {
+                      "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI"
+                    }
+                  }
+                },
+                "queueInsertPosition": "INSERT_AFTER_CURRENT_VIDEO",
+                "commands": [
+                  {
+                    "clickTrackingParams": "CJUCEL7uBRgCIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                    "addToToastAction": {
+                      "item": {
+                        "notificationTextRenderer": {
+                          "successResponseText": {
+                            "runs": [
+                              {
+                                "text": "Playlist will play next"
+                              }
+                            ]
+                          },
+                          "trackingParams": "CJYCEMrHAyITCJDA2ITu4o0DFUma5QcdWUoafQ=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "trackingParams": "CJUCEL7uBRgCIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "menuServiceItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Add to queue"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "ADD_TO_REMOTE_QUEUE"
+            },
+            "serviceEndpoint": {
+              "clickTrackingParams": "CJMCEPvvBRgDIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "queueAddEndpoint": {
+                "queueTarget": {
+                  "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+                  "onEmptyQueue": {
+                    "clickTrackingParams": "CJMCEPvvBRgDIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                    "watchEndpoint": {
+                      "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI"
+                    }
+                  }
+                },
+                "queueInsertPosition": "INSERT_AT_END",
+                "commands": [
+                  {
+                    "clickTrackingParams": "CJMCEPvvBRgDIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                    "addToToastAction": {
+                      "item": {
+                        "notificationTextRenderer": {
+                          "successResponseText": {
+                            "runs": [
+                              {
+                                "text": "Playlist added to queue"
+                              }
+                            ]
+                          },
+                          "trackingParams": "CJQCEMrHAyITCJDA2ITu4o0DFUma5QcdWUoafQ=="
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "trackingParams": "CJMCEPvvBRgDIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "toggleMenuServiceItemRenderer": {
+            "defaultText": {
+              "runs": [
+                {
+                  "text": "Save playlist to library"
+                }
+              ]
+            },
+            "defaultIcon": {
+              "iconType": "LIBRARY_ADD"
+            },
+            "defaultServiceEndpoint": {
+              "clickTrackingParams": "CJECEIT_BRgEIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "modalEndpoint": {
+                "modal": {
+                  "modalWithTitleAndButtonRenderer": {
+                    "title": {
+                      "runs": [
+                        {
+                          "text": "Save this for later"
+                        }
+                      ]
+                    },
+                    "content": {
+                      "runs": [
+                        {
+                          "text": "Save favorites to your library after signing in"
+                        }
+                      ]
+                    },
+                    "button": {
+                      "buttonRenderer": {
+                        "style": "STYLE_BLUE_TEXT",
+                        "isDisabled": false,
+                        "text": {
+                          "runs": [
+                            {
+                              "text": "Sign in"
+                            }
+                          ]
+                        },
+                        "navigationEndpoint": {
+                          "clickTrackingParams": "CJICEPBbIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                          "signInEndpoint": {
+                            "hack": true
+                          }
+                        },
+                        "trackingParams": "CJICEPBbIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "toggledText": {
+              "runs": [
+                {
+                  "text": "Remove playlist from library"
+                }
+              ]
+            },
+            "toggledIcon": {
+              "iconType": "LIBRARY_SAVED"
+            },
+            "toggledServiceEndpoint": {
+              "clickTrackingParams": "CJECEIT_BRgEIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "likeEndpoint": {
+                "status": "INDIFFERENT",
+                "target": {
+                  "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI"
+                }
+              }
+            },
+            "trackingParams": "CJECEIT_BRgEIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Save to playlist"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "ADD_TO_PLAYLIST"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CI8CEMOUBhgFIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "modalEndpoint": {
+                "modal": {
+                  "modalWithTitleAndButtonRenderer": {
+                    "title": {
+                      "runs": [
+                        {
+                          "text": "Save this for later"
+                        }
+                      ]
+                    },
+                    "content": {
+                      "runs": [
+                        {
+                          "text": "Make playlists and share them after signing in"
+                        }
+                      ]
+                    },
+                    "button": {
+                      "buttonRenderer": {
+                        "style": "STYLE_BLUE_TEXT",
+                        "isDisabled": false,
+                        "text": {
+                          "runs": [
+                            {
+                              "text": "Sign in"
+                            }
+                          ]
+                        },
+                        "navigationEndpoint": {
+                          "clickTrackingParams": "CJACEPBbIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+                          "signInEndpoint": {
+                            "hack": true
+                          }
+                        },
+                        "trackingParams": "CJACEPBbIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "trackingParams": "CI8CEMOUBhgFIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        },
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Share"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "SHARE"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CI4CEJH7BRgGIhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+              "shareEntityEndpoint": {
+                "serializedShareEntity": "EitSRENMQUs1dXlfbGxPX1EycG9ENXJ4bDMxZTZiNURDbEZQYU01M3NtOGZJ",
+                "sharePanelType": "SHARE_PANEL_TYPE_UNIFIED_SHARE_PANEL"
+              }
+            },
+            "trackingParams": "CI4CEJH7BRgGIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+          }
+        }
+      ],
+      "trackingParams": "CI0CEKc7IhMIkMDYhO7ijQMVSZrlBx1ZShp9",
+      "accessibility": {
+        "accessibilityData": {
+          "label": "Action menu"
+        }
+      }
+    }
+  },
+  "thumbnailOverlay": {
+    "musicItemThumbnailOverlayRenderer": {
+      "background": {
+        "verticalGradient": {
+          "gradientLayerColors": [
+            "2147483648",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "content": {
+        "musicPlayButtonRenderer": {
+          "playNavigationEndpoint": {
+            "clickTrackingParams": "CIwCEMjeAiITCJDA2ITu4o0DFUma5QcdWUoafQ==",
+            "watchPlaylistEndpoint": {
+              "playlistId": "RDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI",
+              "params": "wAEB"
+            }
+          },
+          "trackingParams": "CIwCEMjeAiITCJDA2ITu4o0DFUma5QcdWUoafQ==",
+          "playIcon": {
+            "iconType": "PLAY_ARROW"
+          },
+          "pauseIcon": {
+            "iconType": "PAUSE"
+          },
+          "iconColor": 4294967295,
+          "backgroundColor": 2566914048,
+          "activeBackgroundColor": 4278190080,
+          "loadingIndicatorColor": 14745645,
+          "playingIcon": {
+            "iconType": "VOLUME_UP"
+          },
+          "iconLoadingColor": 1308622847,
+          "activeScaleFactor": 1.2,
+          "buttonSize": "MUSIC_PLAY_BUTTON_SIZE_MEDIUM",
+          "rippleTarget": "MUSIC_PLAY_BUTTON_RIPPLE_TARGET_SELF",
+          "accessibilityPlayData": {
+            "accessibilityData": {
+              "label": "Play Presenting Kendrick Lamar"
+            }
+          },
+          "accessibilityPauseData": {
+            "accessibilityData": {
+              "label": "Pause Presenting Kendrick Lamar"
+            }
+          }
+        }
+      },
+      "contentPosition": "MUSIC_ITEM_THUMBNAIL_OVERLAY_CONTENT_POSITION_BOTTOM_RIGHT",
+      "displayStyle": "MUSIC_ITEM_THUMBNAIL_OVERLAY_DISPLAY_STYLE_HOVER"
+    }
+  }
+}
