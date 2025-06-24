@@ -1,0 +1,207 @@
+{
+  "thumbnailRenderer": {
+    "musicThumbnailRenderer": {
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://lh3.googleusercontent.com/IFlc3sf6sHV3TAZ_5vhyHQiKb9D4AdSlDkiTSgsRiicnzLASXwVr1n22EEg6Vtd2XBlyJslm8xlYiA=w226-h226-p-l90-rj",
+            "width": 226,
+            "height": 226
+          },
+          {
+            "url": "https://lh3.googleusercontent.com/IFlc3sf6sHV3TAZ_5vhyHQiKb9D4AdSlDkiTSgsRiicnzLASXwVr1n22EEg6Vtd2XBlyJslm8xlYiA=w544-h544-p-l90-rj",
+            "width": 544,
+            "height": 544
+          }
+        ]
+      },
+      "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_CIRCLE",
+      "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL",
+      "trackingParams": "CGEQhL8CIhMIkMDYhO7ijQMVSZrlBx1ZShp9"
+    }
+  },
+  "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+  "title": {
+    "runs": [
+      {
+        "text": "Kanye West",
+        "navigationEndpoint": {
+          "clickTrackingParams": "CFoQoLMCGAAiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+          "browseEndpoint": {
+            "browseId": "UCRY5dYsbIN5TylSbd7gVnZg",
+            "browseEndpointContextSupportedConfigs": {
+              "browseEndpointContextMusicConfig": {
+                "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "subtitle": {
+    "runs": [
+      {
+        "text": "144M monthly audience"
+      }
+    ]
+  },
+  "navigationEndpoint": {
+    "clickTrackingParams": "CFoQoLMCGAAiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+    "browseEndpoint": {
+      "browseId": "UCRY5dYsbIN5TylSbd7gVnZg",
+      "browseEndpointContextSupportedConfigs": {
+        "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+        }
+      }
+    }
+  },
+  "trackingParams": "CFoQoLMCGAAiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+  "menu": {
+    "menuRenderer": {
+      "items": [
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Shuffle play"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "MUSIC_SHUFFLE"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CGAQmvMFGAAiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+              "watchPlaylistEndpoint": {
+                "playlistId": "RDAOfxjOmi63mKrTIaFmvquTIA",
+                "params": "wAEB8gECGAE%3D"
+              }
+            },
+            "trackingParams": "CGAQmvMFGAAiEwiQwNiE7uKNAxVJmuUHHVlKGn0="
+          }
+        },
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Start radio"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "MIX"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CF8Qm_MFGAEiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+              "watchPlaylistEndpoint": {
+                "playlistId": "RDEMfxjOmi63mKrTIaFmvquTIA",
+                "params": "wAEB"
+              }
+            },
+            "trackingParams": "CF8Qm_MFGAEiEwiQwNiE7uKNAxVJmuUHHVlKGn0="
+          }
+        },
+        {
+          "toggleMenuServiceItemRenderer": {
+            "defaultText": {
+              "runs": [
+                {
+                  "text": "Subscribe"
+                }
+              ]
+            },
+            "defaultIcon": {
+              "iconType": "SUBSCRIBE"
+            },
+            "defaultServiceEndpoint": {
+              "clickTrackingParams": "CF0QqJwGGAIiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+              "modalEndpoint": {
+                "modal": {
+                  "modalWithTitleAndButtonRenderer": {
+                    "title": {
+                      "runs": [
+                        {
+                          "text": "Subscribe to this artist"
+                        }
+                      ]
+                    },
+                    "content": {
+                      "runs": [
+                        {
+                          "text": "Sign in to subscribe to this artist and never miss a beat"
+                        }
+                      ]
+                    },
+                    "button": {
+                      "buttonRenderer": {
+                        "style": "STYLE_BLUE_TEXT",
+                        "isDisabled": false,
+                        "text": {
+                          "runs": [
+                            {
+                              "text": "Sign in"
+                            }
+                          ]
+                        },
+                        "navigationEndpoint": {
+                          "clickTrackingParams": "CF4Q8FsiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+                          "signInEndpoint": {
+                            "hack": true
+                          }
+                        },
+                        "trackingParams": "CF4Q8FsiEwiQwNiE7uKNAxVJmuUHHVlKGn0="
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "toggledText": {
+              "runs": [
+                {
+                  "text": "Unsubscribe"
+                }
+              ]
+            },
+            "toggledIcon": {
+              "iconType": "SUBSCRIBE"
+            },
+            "trackingParams": "CF0QqJwGGAIiEwiQwNiE7uKNAxVJmuUHHVlKGn0="
+          }
+        },
+        {
+          "menuNavigationItemRenderer": {
+            "text": {
+              "runs": [
+                {
+                  "text": "Share"
+                }
+              ]
+            },
+            "icon": {
+              "iconType": "SHARE"
+            },
+            "navigationEndpoint": {
+              "clickTrackingParams": "CFwQkfsFGAMiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+              "shareEntityEndpoint": {
+                "serializedShareEntity": "GhhVQ1JZNWRZc2JJTjVUeWxTYmQ3Z1ZuWmc%3D",
+                "sharePanelType": "SHARE_PANEL_TYPE_UNIFIED_SHARE_PANEL"
+              }
+            },
+            "trackingParams": "CFwQkfsFGAMiEwiQwNiE7uKNAxVJmuUHHVlKGn0="
+          }
+        }
+      ],
+      "trackingParams": "CFsQpzsiEwiQwNiE7uKNAxVJmuUHHVlKGn0=",
+      "accessibility": {
+        "accessibilityData": {
+          "label": "Action menu"
+        }
+      }
+    }
+  }
+}

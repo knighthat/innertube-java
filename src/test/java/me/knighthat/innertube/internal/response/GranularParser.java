@@ -36,5 +36,9 @@ public class GranularParser {
     public static BrowseResponse.Contents.TwoColumnBrowseResultsRenderer twoColumnBrowseResultsRenderer( @NotNull InputStreamReader reader ) {
         return GSON.fromJson( reader, BrowseResponseImpl.ContentsImpl.TwoColumnBrowseResultsRendererImpl.class );
     }
+
+    public static BrowseResponse browseResponse( @NotNull InputStreamReader reader ) {
+        return GSON.fromJson( reader, BrowseResponseImpl.class );
+    }
 // END: Static fields/functions
 }
