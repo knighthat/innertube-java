@@ -13,37 +13,37 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testBrowseArtist() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "UCprAFmT0C6O4X0ToEXpeFTQ", "", null );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "UCprAFmT0C6O4X0ToEXpeFTQ", "", null, null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseAlbum() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPREb_rGUlsaCTNv7", "", null );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPREb_rGUlsaCTNv7", "", null, null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseRadio() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMphLb_SoPBlA", "wAEB" );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMphLb_SoPBlA", "wAEB", null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseLyrics() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPLYt_4sk9YQcgV3s-1", "", null );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPLYt_4sk9YQcgV3s-1", "", null, null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseMusicHome() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "FEmusic_home", "", null );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "FEmusic_home", "", null, null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowsePlaylist() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "VLRDCLAK5uy_k6PkYWus1Mt-aKrbb0Ne8SkA2BgAk1Yy4", "", null );
+        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "VLRDCLAK5uy_k6PkYWus1Mt-aKrbb0Ne8SkA2BgAk1Yy4", "", null, null );
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 

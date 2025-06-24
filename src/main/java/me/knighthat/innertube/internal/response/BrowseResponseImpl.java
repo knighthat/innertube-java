@@ -8,13 +8,14 @@ import java.util.List;
 @Value
 class BrowseResponseImpl implements BrowseResponse {
 
-    ResponseContextImpl responseContext;
-    ContentsImpl        contents;
-    HeaderImpl          header;
-    String              trackingParams;
-    Integer             maxAgeStoreSeconds;
-    MicroformatImpl     microformat;
-    ThumbnailImpl       background;
+    ResponseContextImpl              responseContext;
+    ContentsImpl                     contents;
+    HeaderImpl                       header;
+    String                           trackingParams;
+    Integer                          maxAgeStoreSeconds;
+    MicroformatImpl                  microformat;
+    ThumbnailImpl                    background;
+    List<ResponseReceivedActionImpl> onResponseReceivedActions;
 
     @Value
     static class ContentsImpl implements Contents {
@@ -64,6 +65,19 @@ class BrowseResponseImpl implements BrowseResponse {
 
             RunsImpl title;
             String   trackingParams;
+        }
+    }
+
+    @Value
+    static class ResponseReceivedActionImpl implements ResponseReceivedAction {
+
+        AppendContinuationItemsActionImpl appendContinuationItemsAction;
+        String                            clickTrackingParams;
+
+        @Value
+        static class AppendContinuationItemsActionImpl implements AppendContinuationItemsAction {
+
+            List<MusicPlaylistShelfRendererImpl.ContentImpl> continuationItems;
         }
     }
 }

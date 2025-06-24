@@ -22,7 +22,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchMusicHome() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "FEmusic_home", "", null );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "FEmusic_home", "", null, null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -45,7 +45,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchRadio() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMphLb_SoPBlA", "wAEB" );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMphLb_SoPBlA", "wAEB", null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -68,7 +68,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchAlbum() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPREb_rGUlsaCTNv7", "", null );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPREb_rGUlsaCTNv7", "", null, null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -91,7 +91,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchArtist() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "UCprAFmT0C6O4X0ToEXpeFTQ", "", null );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "UCprAFmT0C6O4X0ToEXpeFTQ", "", null, null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -114,7 +114,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchArtistAlbum() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPADUCprAFmT0C6O4X0ToEXpeFTQ", "", "ggMIegYIAhoCAQI%3D" );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPADUCprAFmT0C6O4X0ToEXpeFTQ", "", "ggMIegYIAhoCAQI%3D", null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -137,7 +137,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchArtistSongs() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "VLOLAK5uy_lcvoZKgUhdnEreHlWY_RaEwR47D-vwdTI", "ggMCCAI%3D" );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "VLOLAK5uy_lcvoZKgUhdnEreHlWY_RaEwR47D-vwdTI", "ggMCCAI%3D", null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -160,7 +160,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchLyrics() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPLYt_4sk9YQcgV3s-1", "", null );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPLYt_4sk9YQcgV3s-1", "", null, null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (
@@ -183,7 +183,7 @@ class BrowseResponseTest implements HttpClient {
      */
     @Test
     void testFetchPlaylist() {
-        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "VLRDCLAK5uy_lc4yBYpywmmgjplkuzYxzUgLJ8UvDKUUk", null );
+        BrowseBody searchBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "VLRDCLAK5uy_lc4yBYpywmmgjplkuzYxzUgLJ8UvDKUUk", null, null );
         Request request = makeRequest( Endpoints.BROWSE, searchBody );
 
         try (

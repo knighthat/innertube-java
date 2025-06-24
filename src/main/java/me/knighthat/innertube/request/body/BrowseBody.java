@@ -15,4 +15,6 @@ public class BrowseBody implements RequestBody {
     String  playlistId;
     @Nullable
     String  params;
+    @Nullable
+    String continuation;
 }

@@ -1,7 +1,6 @@
 package me.knighthat.innertube.response;
 
 import org.jetbrains.annotations.NotNull;
-
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -27,6 +26,9 @@ public interface BrowseResponse extends Trackable, InnerTubeResponse {
 
     @Nullable
     Thumbnail getBackground();
+
+    @Nullable
+    List<? extends ResponseReceivedAction> getOnResponseReceivedActions();
 
     interface Contents {
 
@@ -100,6 +102,17 @@ public interface BrowseResponse extends Trackable, InnerTubeResponse {
 
             @NotNull
             Runs getTitle();
+        }
+    }
+
+    interface ResponseReceivedAction extends ClickTrackable {
+
+        AppendContinuationItemsAction getAppendContinuationItemsAction();
+
+        interface AppendContinuationItemsAction {
+
+            @NotNull
+            List<? extends MusicPlaylistShelfRenderer.Content> getContinuationItems();
         }
     }
 }
