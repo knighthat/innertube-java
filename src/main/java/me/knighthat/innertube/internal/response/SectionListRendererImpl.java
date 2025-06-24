@@ -28,6 +28,8 @@ class SectionListRendererImpl implements SectionListRenderer {
         @Value
         static class MusicDescriptionShelfRendererImpl implements MusicDescriptionShelfRenderer {
 
+            RunsImpl header;
+            RunsImpl subheader;
             RunsImpl          description;
             ButtonImpl        moreButton;
             String            trackingParams;
