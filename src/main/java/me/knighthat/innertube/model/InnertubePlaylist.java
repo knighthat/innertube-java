@@ -1,5 +1,6 @@
 package me.knighthat.innertube.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 import me.knighthat.innertube.response.*;
 import org.jetbrains.annotations.NotNull;
@@ -12,54 +13,22 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@EqualsAndHashCode(callSuper = true)
 @Value
-public class InnertubePlaylist implements Identifiable, Visual {
+public class InnertubePlaylist extends InnertubeItem {
 
-    @NotNull
-    String id;
-
-    @NotNull
-    String name;
-
-    @Nullable
-    String description;
-
-    @NotNull
-    @Unmodifiable
-    List<Thumbnails.Thumbnail> thumbnails;
-
-    @NotNull
-    @Unmodifiable
-    List<Continuation> continuations;
-
-    @NotNull
-    @Unmodifiable
-    List<InnertubeSong> songs;
-
-    @Nullable
-    String songContinuation;
-
-    public InnertubePlaylist( @NotNull MusicTwoRowItemRenderer renderer ) {
-        Runs.Run run = Objects.requireNonNull(
-                renderer.getTitle()
-                        .getRuns()
-                        .getFirst()
+// START: Static fields/functions
+    public static @NotNull InnertubePlaylist from( @NotNull MusicTwoRowItemRenderer renderer ) {
+        return new InnertubePlaylist(
+                renderer,
+                null,
+                Collections.emptyList(),
+                Collections.emptyList(),
+                null
         );
-
-        this.id = Objects.requireNonNull(
-                run.getNavigationEndpoint()
-                   .getBrowseEndpoint()
-                   .getBrowseId()
-        );
-        this.name = run.getText();
-        this.description = null;
-        this.thumbnails = ItemUtils.extractThumbnail( renderer.getThumbnailRenderer() );
-        this.continuations = Collections.emptyList();
-        this.songs = Collections.emptyList();
-        this.songContinuation = null;
     }
 
-    public InnertubePlaylist( BrowseResponse.Contents.@NotNull TwoColumnBrowseResultsRenderer renderer ) {
+    public static @NotNull InnertubePlaylist from( BrowseResponse.Contents.@NotNull TwoColumnBrowseResultsRenderer renderer ) {
         SectionListRenderer.Content.MusicResponsiveHeaderRenderer headerRenderer =
                 Objects.requireNonNull(
                                renderer.getTabs()
@@ -79,38 +48,90 @@ public class InnertubePlaylist implements Identifiable, Visual {
         assert playlistShelfRenderer != null;
 
         String playlistId = playlistShelfRenderer.getPlaylistId();
-        // Add "VL" in case it's not there
-        this.id = playlistId.startsWith( "VL" ) ? playlistId : "VL" + playlistId;
-        this.name = ItemUtils.getFirstText( headerRenderer.getTitle() );
-        this.description = ItemUtils.getFirstText(
-                headerRenderer.getDescription()
-                              .getMusicDescriptionShelfRenderer()
-                              .getDescription()
-        );
-        this.thumbnails = ItemUtils.extractThumbnail( headerRenderer.getThumbnail() );
-        this.continuations = Collections.unmodifiableList( sectionListRenderer.getContinuations() );
-        this.songs = playlistShelfRenderer.getContents()
-                                          // [MusicPlaylistShelfRenderer.getCollapsedItemCount] tells how many
-                                          // items inside this list are actual song items, the rest are either
-                                          // fillers or placeholders.
-                                          .subList( 0, playlistShelfRenderer.getCollapsedItemCount() )
-                                          .stream()
-                                          .map( MusicPlaylistShelfRenderer.Content::getMusicResponsiveListItemRenderer )
-                                          // Filter out null values
-                                          .flatMap( v -> v == null ? Stream.empty() : Stream.of( v ) )
-                                          .map( InnertubeSong::new )
-                                          .collect( Collectors.toUnmodifiableList() );
-
+        List<InnertubeSong> songs = playlistShelfRenderer.getContents()
+                                                         // [MusicPlaylistShelfRenderer.getCollapsedItemCount] tells how many
+                                                         // items inside this list are actual song items, the rest are either
+                                                         // fillers or placeholders.
+                                                         .subList( 0, playlistShelfRenderer.getCollapsedItemCount() )
+                                                         .stream()
+                                                         .map( MusicPlaylistShelfRenderer.Content::getMusicResponsiveListItemRenderer )
+                                                         // Filter out null values
+                                                         .flatMap( v -> v == null ? Stream.empty() : Stream.of( v ) )
+                                                         .map( InnertubeSong::from )
+                                                         .collect( Collectors.toUnmodifiableList() );
         // When a playlist with 100+ songs, YT only returns first 100 songs
         // with 101st item being the continuation string.
         MusicPlaylistShelfRenderer.Content.ContinuationItemRenderer continuationItemRenderer = playlistShelfRenderer.getContents()
                                                                                                                     .getLast()
                                                                                                                     .getContinuationItemRenderer();
-        this.songContinuation = continuationItemRenderer == null
+        String songContinuation = continuationItemRenderer == null
                 ? null
                 : continuationItemRenderer.getContinuationEndpoint()
-                                          .getContinuationCommand(
+                                          .getContinuationCommand()
+                                          .getToken();
 
-                                          ).getToken();
+        return new InnertubePlaylist(
+                // Add "VL" in case it's not there
+                playlistId.startsWith( "VL" ) ? playlistId : "VL" + playlistId,
+                ItemUtils.getFirstText( headerRenderer.getTitle() ),
+                ItemUtils.extractThumbnail( headerRenderer.getThumbnail() ),
+                ItemUtils.getFirstText(
+                        headerRenderer.getDescription()
+                                      .getMusicDescriptionShelfRenderer()
+                                      .getDescription()
+                ),
+                sectionListRenderer.getContinuations(),
+                songs,
+                songContinuation
+        );
+    }
+// END: Static fields/functions
+
+    @Nullable
+    String description;
+
+    @NotNull
+    @Unmodifiable
+    List<Continuation> continuations;
+
+    @NotNull
+    @Unmodifiable
+    List<InnertubeSong> songs;
+
+    @Nullable
+    String songContinuation;
+
+    public InnertubePlaylist(
+            @NotNull String id,
+            @NotNull String name,
+            @NotNull List<? extends Thumbnails.Thumbnail> thumbnails,
+            @Nullable String description,
+            @NotNull @Unmodifiable List<? extends Continuation> continuations,
+            @NotNull @Unmodifiable List<InnertubeSong> songs,
+            @Nullable String songContinuation
+    ) {
+        super( id, name, thumbnails );
+        this.description = description;
+        this.continuations = Collections.unmodifiableList( continuations );
+        this.songs = songs;
+        this.songContinuation = songContinuation;
+    }
+
+    public InnertubePlaylist(
+            @NotNull MusicTwoRowItemRenderer renderer,
+            @Nullable String description,
+            @NotNull @Unmodifiable List<? extends Continuation> continuations,
+            @NotNull @Unmodifiable List<InnertubeSong> songs,
+            @Nullable String songContinuation
+    ) {
+        super( renderer );
+        this.description = description;
+        this.continuations = Collections.unmodifiableList( continuations );
+        this.songs = songs;
+        this.songContinuation = songContinuation;
+    }
+
+    public @NotNull String getBrowseId() {
+        return id.startsWith( "VL" ) ? id : "VL" + id;
     }
 }

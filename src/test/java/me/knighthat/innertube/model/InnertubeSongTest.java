@@ -28,7 +28,7 @@ class InnertubeSongTest {
             ) {
                 PlaylistPanelRenderer.Content.VideoRenderer renderer = GranularParser.playlistPanelVideoRenderer( reader );
 
-                InnertubeSong song = new InnertubeSong( renderer );
+                InnertubeSong song = InnertubeSong.from( renderer );
                 Assertions.assertEquals( "a_H0K9W984E", song.getId() );
                 Assertions.assertEquals( "TU SANCHO", song.getName() );
                 Assertions.assertFalse( song.getThumbnails()
@@ -58,7 +58,7 @@ class InnertubeSongTest {
             ) {
                 MusicResponsiveListItemRenderer renderer = GranularParser.musicResponsiveListItemRenderer( reader );
 
-                InnertubeSong song = new InnertubeSong( renderer );
+                InnertubeSong song = InnertubeSong.from( renderer );
                 Assertions.assertEquals( "phLb_SoPBlA", song.getId() );
                 Assertions.assertEquals( "Not Like Us", song.getName() );
                 Assertions.assertFalse( song.getThumbnails()
@@ -88,7 +88,7 @@ class InnertubeSongTest {
             ) {
                 MusicResponsiveListItemRenderer renderer = GranularParser.musicResponsiveListItemRenderer( reader );
 
-                InnertubeSong song = new InnertubeSong( renderer );
+                InnertubeSong song = InnertubeSong.from( renderer );
                 Assertions.assertEquals( "KEG7b851Ric", song.getId() );
                 Assertions.assertEquals( "Taste", song.getName() );
                 Assertions.assertTrue( song.getThumbnails()
@@ -118,7 +118,7 @@ class InnertubeSongTest {
             ) {
                 MusicResponsiveListItemRenderer renderer = GranularParser.musicResponsiveListItemRenderer( reader );
 
-                InnertubeSong song = new InnertubeSong( renderer );
+                InnertubeSong song = InnertubeSong.from( renderer );
                 Assertions.assertEquals( "jvipPYFebWc", song.getId() );
                 Assertions.assertEquals( "Roundtable Rival", song.getName() );
                 Assertions.assertFalse( song.getThumbnails()
@@ -148,7 +148,7 @@ class InnertubeSongTest {
             ) {
                 MusicResponsiveListItemRenderer renderer = GranularParser.musicResponsiveListItemRenderer( reader );
 
-                InnertubeSong song = new InnertubeSong( renderer );
+                InnertubeSong song = InnertubeSong.from( renderer );
                 Assertions.assertEquals( "w4nihuYVTW0", song.getId() );
                 Assertions.assertEquals( "What is Love?", song.getName() );
                 Assertions.assertFalse( song.getThumbnails()

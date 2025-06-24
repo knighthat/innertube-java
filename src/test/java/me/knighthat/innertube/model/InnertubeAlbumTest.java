@@ -28,7 +28,7 @@ class InnertubeAlbumTest {
             ) {
                 MusicTwoRowItemRenderer renderer = GranularParser.musicTwoRowItemRenderer( reader );
 
-                InnertubeAlbum album = new InnertubeAlbum( renderer );
+                InnertubeAlbum album = InnertubeAlbum.from( renderer );
                 Assertions.assertEquals( "MPREb_T0ssT2HczFT", album.getId() );
                 Assertions.assertEquals( "Short n' Sweet (Deluxe)", album.getName() );
                 Assertions.assertFalse( album.getThumbnails().isEmpty() );
@@ -53,7 +53,7 @@ class InnertubeAlbumTest {
             ) {
                 MusicTwoRowItemRenderer renderer = GranularParser.musicTwoRowItemRenderer( reader );
 
-                InnertubeAlbum album = new InnertubeAlbum( renderer );
+                InnertubeAlbum album = InnertubeAlbum.from( renderer );
                 Assertions.assertEquals( "MPREb_wCND3crJyDP", album.getId() );
                 Assertions.assertEquals( "GNX", album.getName() );
                 Assertions.assertFalse( album.getThumbnails().isEmpty() );
@@ -79,7 +79,7 @@ class InnertubeAlbumTest {
             ) {
                 MusicTwoRowItemRenderer renderer = GranularParser.musicTwoRowItemRenderer( reader );
 
-                InnertubeAlbum album = new InnertubeAlbum( renderer );
+                InnertubeAlbum album = InnertubeAlbum.from( renderer );
                 Assertions.assertEquals( "MPREb_m10OjDmOhfv", album.getId() );
                 Assertions.assertEquals( "Hybrid Theory (Bonus Edition)", album.getName() );
                 Assertions.assertFalse( album.getThumbnails().isEmpty() );
@@ -105,7 +105,7 @@ class InnertubeAlbumTest {
             ) {
                 MusicResponsiveListItemRenderer renderer = GranularParser.musicResponsiveListItemRenderer( reader );
 
-                InnertubeAlbum album = new InnertubeAlbum( renderer );
+                InnertubeAlbum album = InnertubeAlbum.from( renderer );
                 Assertions.assertEquals( "MPREb_LiSIhY0SLZZ", album.getId() );
                 Assertions.assertEquals( "A Bar Song", album.getName() );
                 Assertions.assertFalse( album.getThumbnails().isEmpty() );

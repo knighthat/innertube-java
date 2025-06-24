@@ -1,18 +1,19 @@
 package me.knighthat.innertube.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 import me.knighthat.innertube.response.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@EqualsAndHashCode(callSuper = true)
 @Value
-public class InnertubeSong implements Identifiable, Visual {
+public class InnertubeSong extends InnertubeItem {
 
 // START: Static fields/functions
     /**
@@ -48,23 +49,90 @@ public class InnertubeSong implements Identifiable, Visual {
                                                       .matches() )
                      .findFirst();
     }
+
+    public static @NotNull InnertubeSong from( PlaylistPanelRenderer.Content.@NotNull VideoRenderer renderer ) {
+        Deque<Endpoint.Browse> artistsAndAlbum = ItemUtils.extractArtistsAndAlbum(
+                renderer.getLongBylineText()
+                        .getRuns()
+        );
+
+        return new InnertubeSong(
+                renderer.getVideoId(),
+                ItemUtils.getFirstText( renderer.getTitle() ),
+                renderer.getThumbnail().getThumbnails(),
+                Objects.requireNonNull(
+                        renderer.getNavigationEndpoint()
+                                .getWatchEndpoint()
+                ),
+                ItemUtils.getFirstText( renderer.getLengthText() ),
+                ItemUtils.containsExplicitBadge( renderer.getBadges() ),
+                artistsAndAlbum.pop(),
+                new ArrayList<>( artistsAndAlbum ),
+                ItemUtils.getFirstText( renderer.getShortBylineText() )
+        );
+    }
+
+    public static @NotNull InnertubeSong from( @NotNull MusicResponsiveListItemRenderer renderer ) {
+        Runs.Run titleRun = null;
+        List<Runs.Run> runs = new ArrayList<>( renderer.getFlexColumns()
+                                                       .size() );
+        for ( MusicResponsiveListItemRenderer.Colum colum : renderer.getFlexColumns() ) {
+            // Only MusicResponsiveListItemFlexColumnRenderer contains song's information
+            List<? extends Runs.Run> colRuns = colum.getMusicResponsiveListItemFlexColumnRenderer()
+                                                    .getText()
+                                                    .getRuns();
+            if ( colRuns == null || colRuns.isEmpty() )
+                continue;
+
+            for ( Runs.Run run : colRuns )
+                if ( run.getNavigationEndpoint() != null && run.getNavigationEndpoint()
+                                                               .getWatchEndpoint() != null )
+                    titleRun = run;
+
+            runs.addAll(
+                    colRuns
+            );
+        }
+
+        assert titleRun != null;
+        assert !runs.isEmpty();
+
+        Deque<Endpoint.Browse> artistsAndAlbum = ItemUtils.extractArtistsAndAlbum( runs );
+
+
+        return new InnertubeSong(
+                titleRun.getNavigationEndpoint()
+                        .getWatchEndpoint()
+                        .getVideoId(),
+                titleRun.getText(),
+                ItemUtils.extractThumbnail( renderer.getThumbnail() ),
+                titleRun.getNavigationEndpoint()
+                        .getWatchEndpoint(),
+                extractDuration( renderer ).orElse( "" ),
+                ItemUtils.containsExplicitBadge( renderer.getBadges() ),
+                artistsAndAlbum.pop(),
+                new ArrayList<>( artistsAndAlbum ),
+                runs.stream()            // Payload doesn't contain it, this method is used to get all endpoints and join it to a complete string
+                    .filter( run -> {
+                        try {
+                            Endpoint.Browse endpoint = run.getNavigationEndpoint()
+                                                          .getBrowseEndpoint();
+                            return artistsAndAlbum.contains( endpoint );
+                        } catch ( Exception ignored ) {
+                            return false;
+                        }
+                    } )
+                    .map( Runs.Run::getText )
+                    .collect( Collectors.joining( ", " ) )
+        );
+    }
 // END: Static fields/functions
-
-    @NotNull
-    String id;
-
-    @NotNull
-    String name;
 
     /**
      * Contains videoId and possibly params
      */
     @NotNull
     Endpoint.Watch watchEndpoint;
-
-    @NotNull
-    @Unmodifiable
-    List<Thumbnails.Thumbnail> thumbnails;
 
     /**
      * Plain text representation of duration, in short format
@@ -95,76 +163,23 @@ public class InnertubeSong implements Identifiable, Visual {
     @NotNull
     String authorsText;
 
-    public InnertubeSong( PlaylistPanelRenderer.Content.@NotNull VideoRenderer renderer ) {
-        Deque<Endpoint.Browse> artistsAndAlbum = ItemUtils.extractArtistsAndAlbum( renderer.getLongBylineText()
-                                                                                           .getRuns() );
-
-        this.id = renderer.getVideoId();
-        this.name = ItemUtils.getFirstText( renderer.getTitle() );
-        this.watchEndpoint = Objects.requireNonNull(
-                renderer.getNavigationEndpoint()
-                        .getWatchEndpoint()
-        );
-        this.thumbnails = Collections.unmodifiableList(
-                renderer.getThumbnail()
-                        .getThumbnails()
-        );
-        this.durationText = ItemUtils.getFirstText( renderer.getLengthText() );
-        this.explicit = ItemUtils.containsExplicitBadge( renderer.getBadges() );
-        this.album = artistsAndAlbum.pop();
-        this.authors = new ArrayList<>( artistsAndAlbum );
-        this.authorsText = ItemUtils.getFirstText( renderer.getShortBylineText() );
-    }
-
-    public InnertubeSong( @NotNull MusicResponsiveListItemRenderer renderer ) {
-        Runs.Run titleRun = null;
-        List<Runs.Run> runs = new ArrayList<>( renderer.getFlexColumns()
-                                                       .size() );
-        for ( MusicResponsiveListItemRenderer.Colum colum : renderer.getFlexColumns() ) {
-            // Only MusicResponsiveListItemFlexColumnRenderer contains song's information
-            List<? extends Runs.Run> colRuns = colum.getMusicResponsiveListItemFlexColumnRenderer()
-                                                    .getText()
-                                                    .getRuns();
-            if ( colRuns == null || colRuns.isEmpty() )
-                continue;
-
-            for ( Runs.Run run : colRuns )
-                if ( run.getNavigationEndpoint() != null && run.getNavigationEndpoint()
-                                                               .getWatchEndpoint() != null )
-                    titleRun = run;
-
-            runs.addAll(
-                    colRuns
-            );
-        }
-
-        assert titleRun != null;
-        assert !runs.isEmpty();
-
-        Deque<Endpoint.Browse> artistsAndAlbum = ItemUtils.extractArtistsAndAlbum( runs );
-
-        this.id = titleRun.getNavigationEndpoint()
-                          .getWatchEndpoint()
-                          .getVideoId();
-        this.name = titleRun.getText();
-        this.watchEndpoint = titleRun.getNavigationEndpoint()
-                                     .getWatchEndpoint();
-        this.thumbnails = ItemUtils.extractThumbnail( renderer.getThumbnail() );
-        this.durationText = extractDuration( renderer ).orElse( "" );
-        this.explicit = ItemUtils.containsExplicitBadge( renderer.getBadges() );
-        this.album = artistsAndAlbum.pop();
-        this.authors = new ArrayList<>( artistsAndAlbum );
-        this.authorsText = runs.stream()            // Payload doesn't contain it, this method is used to get all endpoints and join it to a complete string
-                               .filter( run -> {
-                                   try {
-                                       Endpoint.Browse endpoint = run.getNavigationEndpoint()
-                                                                     .getBrowseEndpoint();
-                                       return artistsAndAlbum.contains( endpoint );
-                                   } catch ( Exception ignored ) {
-                                       return false;
-                                   }
-                               } )
-                               .map( Runs.Run::getText )
-                               .collect( Collectors.joining( ", " ) );
+    public InnertubeSong(
+            @NotNull String id,
+            @NotNull String name,
+            @NotNull List<? extends Thumbnails.Thumbnail> thumbnails,
+            @NotNull Endpoint.Watch watchEndpoint,
+            @NotNull String durationText,
+            boolean explicit,
+            @Nullable Endpoint.Browse album,
+            @NotNull List<Endpoint.Browse> authors,
+            @NotNull String authorsText
+    ) {
+        super( id, name, thumbnails );
+        this.watchEndpoint = watchEndpoint;
+        this.durationText = durationText;
+        this.explicit = explicit;
+        this.album = album;
+        this.authors = authors;
+        this.authorsText = authorsText;
     }
 }

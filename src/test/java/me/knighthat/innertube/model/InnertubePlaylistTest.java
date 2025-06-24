@@ -26,7 +26,7 @@ class InnertubePlaylistTest {
             ) {
                 MusicTwoRowItemRenderer renderer = GranularParser.musicTwoRowItemRenderer( reader );
 
-                InnertubePlaylist playlist = new InnertubePlaylist( renderer );
+                InnertubePlaylist playlist = InnertubePlaylist.from( renderer );
                 Assertions.assertEquals( "VLRDCLAK5uy_llO_Q2poD5rxl31e6b5DClFPaM53sm8fI", playlist.getId() );
                 Assertions.assertEquals( "Presenting Kendrick Lamar", playlist.getName() );
                 Assertions.assertFalse( playlist.getThumbnails().isEmpty() );
@@ -53,7 +53,7 @@ class InnertubePlaylistTest {
             ) {
                 BrowseResponse.Contents.TwoColumnBrowseResultsRenderer renderer = GranularParser.twoColumnBrowseResultsRenderer( reader );
 
-                InnertubePlaylist playlist = new InnertubePlaylist( renderer );
+                InnertubePlaylist playlist = InnertubePlaylist.from( renderer );
                 Assertions.assertEquals( "VLRDCLAK5uy_nZiG9ehz_MQoWQxY5yElsLHCcG0tv9PRg", playlist.getId() );
                 Assertions.assertEquals( "Classic Rock's Greatest Hits", playlist.getName() );
                 Assertions.assertFalse( playlist.getThumbnails().isEmpty() );
