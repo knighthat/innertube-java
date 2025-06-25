@@ -1,5 +1,6 @@
 package me.knighthat.innertube.model;
 
+import me.knighthat.innertube.Constants;
 import me.knighthat.innertube.internal.response.GranularParser;
 import me.knighthat.innertube.response.BrowseResponse;
 import me.knighthat.innertube.response.MusicTwoRowItemRenderer;
@@ -53,7 +54,7 @@ class InnertubePlaylistTest {
             ) {
                 BrowseResponse.Contents.TwoColumnBrowseResultsRenderer renderer = GranularParser.twoColumnBrowseResultsRenderer( reader );
 
-                InnertubePlaylist playlist = InnertubePlaylist.from( renderer );
+                InnertubePlaylist playlist = InnertubePlaylist.from( Constants.VISITOR_DATA, renderer );
                 Assertions.assertEquals( "VLRDCLAK5uy_nZiG9ehz_MQoWQxY5yElsLHCcG0tv9PRg", playlist.getId() );
                 Assertions.assertEquals( "Classic Rock's Greatest Hits", playlist.getName() );
                 Assertions.assertFalse( playlist.getThumbnails().isEmpty() );

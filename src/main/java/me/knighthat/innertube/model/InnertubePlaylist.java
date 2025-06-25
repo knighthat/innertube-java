@@ -17,16 +17,13 @@ public class InnertubePlaylist extends InnertubeItem {
 
 // START: Static fields/functions
     public static @NotNull InnertubePlaylist from( @NotNull MusicTwoRowItemRenderer renderer ) {
-        return new InnertubePlaylist(
-                renderer,
-                null,
-                Collections.emptyList(),
-                Collections.emptyList(),
-                null
-        );
+        return new InnertubePlaylist( renderer, null, Collections.emptyList(), Collections.emptyList(), null, null );
     }
 
-    public static @NotNull InnertubePlaylist from( BrowseResponse.Contents.@NotNull TwoColumnBrowseResultsRenderer renderer ) {
+    public static @NotNull InnertubePlaylist from(
+            @NotNull String visitorData,
+            BrowseResponse.Contents.@NotNull TwoColumnBrowseResultsRenderer renderer
+    ) {
         SectionListRenderer.Content.MusicResponsiveHeaderRenderer headerRenderer =
                 Objects.requireNonNull(
                                renderer.getTabs()
@@ -60,7 +57,8 @@ public class InnertubePlaylist extends InnertubeItem {
                 ),
                 sectionListRenderer.getContinuations(),
                 continuedPlaylist.getSongs(),
-                continuedPlaylist.getContinuation()
+                continuedPlaylist.getContinuation(),
+                visitorData
         );
     }
 // END: Static fields/functions
@@ -79,34 +77,41 @@ public class InnertubePlaylist extends InnertubeItem {
     @Nullable
     String songContinuation;
 
+    @Nullable
+    String visitorData;
+
     public InnertubePlaylist(
             @NotNull String id,
             @NotNull String name,
             @NotNull List<? extends Thumbnails.Thumbnail> thumbnails,
             @Nullable String description,
-            @NotNull @Unmodifiable List<? extends Continuation> continuations,
-            @NotNull @Unmodifiable List<InnertubeSong> songs,
-            @Nullable String songContinuation
+            @NotNull List<? extends Continuation> continuations,
+            @NotNull List<InnertubeSong> songs,
+            @Nullable String songContinuation,
+            @Nullable String visitorData
     ) {
         super( id, name, thumbnails );
         this.description = description;
         this.continuations = Collections.unmodifiableList( continuations );
-        this.songs = songs;
+        this.songs = Collections.unmodifiableList( songs );
         this.songContinuation = songContinuation;
+        this.visitorData = visitorData;
     }
 
     public InnertubePlaylist(
             @NotNull MusicTwoRowItemRenderer renderer,
             @Nullable String description,
-            @NotNull @Unmodifiable List<? extends Continuation> continuations,
-            @NotNull @Unmodifiable List<InnertubeSong> songs,
-            @Nullable String songContinuation
+            @NotNull List<? extends Continuation> continuations,
+            @NotNull List<InnertubeSong> songs,
+            @Nullable String songContinuation,
+            @Nullable String visitorData
     ) {
         super( renderer );
         this.description = description;
         this.continuations = Collections.unmodifiableList( continuations );
-        this.songs = songs;
+        this.songs = Collections.unmodifiableList( songs );
         this.songContinuation = songContinuation;
+        this.visitorData = visitorData;
     }
 
     public @NotNull String getBrowseId() {

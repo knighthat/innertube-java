@@ -13,25 +13,24 @@ import java.util.List;
 @Value
 public class ContinuedPlaylist {
 
-// START: Static fields/functions
+    // START: Static fields/functions
     public static @NotNull ContinuedPlaylist from( @NotNull List<? extends MusicPlaylistShelfRenderer.Content> items ) {
         String continuation = null;
-        List<InnertubeSong> songs = new ArrayList<>( items.size() );
+        List<InnertubeSong> songs = new ArrayList<> ( items.size () );
 
         for ( MusicPlaylistShelfRenderer.Content item : items ) {
-            MusicPlaylistShelfRenderer.Content.ContinuationItemRenderer continuationItem = item.getContinuationItemRenderer();
+            MusicPlaylistShelfRenderer.Content.ContinuationItemRenderer continuationItem = item.getContinuationItemRenderer ();
             if ( continuationItem != null )
-                continuation = continuationItem.getContinuationEndpoint().getContinuationCommand().getToken();
+                continuation = continuationItem.getContinuationEndpoint ().getContinuationCommand ().getToken ();
 
-            MusicResponsiveListItemRenderer musicItem = item.getMusicResponsiveListItemRenderer();
+            MusicResponsiveListItemRenderer musicItem = item.getMusicResponsiveListItemRenderer ();
             if ( musicItem != null )
-                songs.add( InnertubeSong.from( musicItem ) );
+                songs.add ( InnertubeSong.from ( musicItem ) );
         }
 
-        return new ContinuedPlaylist( continuation, songs );
-
+        return new ContinuedPlaylist ( continuation, songs );
     }
-// END: Static fields/functions
+    // END: Static fields/functions
 
     @Nullable
     String continuation;
