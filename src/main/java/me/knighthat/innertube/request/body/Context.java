@@ -21,7 +21,7 @@ public class Context {
     public static final Context WEB_DEFAULT = new Context( Client.WEB );
 
     @NotNull
-    public final Client client;
+    Client client;
 
     @Value
     public static class Client {
@@ -95,7 +95,7 @@ public class Context {
          * "clientName" should be present in request.
          */
         @NotNull
-        public final String clientName;
+        String clientName;
 
         /**
          * Version co-responding to {@code clientName},
@@ -103,13 +103,13 @@ public class Context {
          * to prevent version mismatch.
          */
         @NotNull
-        public final String clientVersion;
+        String clientVersion;
 
         /**
          * Platform sending the request, co-response to {@code clientName}.
          */
         @NotNull
-        public final String platform;
+        String platform;
 
         /**
          * 2-letter language code
@@ -117,7 +117,7 @@ public class Context {
          * I.E. `en` equals `English`
          */
         @NotNull
-        public final String hl;
+        String hl;
 
         /**
          * 2-letter region code
@@ -125,7 +125,7 @@ public class Context {
          * I.E. `US` equals `United States`
          */
         @NotNull
-        public final String gl;
+        String gl;
 
         /**
          * Unique string for YT tracking. Required in most scenario.
@@ -133,7 +133,7 @@ public class Context {
          * Use {@code Constants.VISITOR_DATA} for default value.
          */
         @NotNull
-        public final String visitorData;
+        String visitorData;
 
         /**
          * Browser identifier.
@@ -141,13 +141,13 @@ public class Context {
          * Use {@code UserAgents} for default values
          */
         @Nullable
-        public final String userAgent;
+        String userAgent;
 
         /**
          * Should be <a href="https://music.youtube.com">...</a> in most cases
          */
         @Nullable
-        public final String referer;
+        String referer;
 
         /**
          * {@code versionName} in numeric format. Must co-response to
@@ -155,19 +155,19 @@ public class Context {
          * <p>
          * {@code 67} is numeric format of "{@code DESKTOP}"
          */
-        public final int xClientName;
+        int xClientName;
 
         /**
          * Device's brand, shouldn't be {@code null}, but can be empty
          */
         @NotNull
-        public final String deviceMake;
+        String deviceMake;
 
         /**
          * Device's model, shouldn't be {@code null}, but can be empty
          */
         @NotNull
-        public final String deviceModel;
+        String deviceModel;
 
         /**
          * Device's operating system, commonly used to
@@ -176,7 +176,7 @@ public class Context {
          * Shouldn't be {@code null} but can be empty.
          */
         @NotNull
-        public final String osName;
+        String osName;
 
         /**
          * Device's operating system's version, commonly used to
@@ -185,24 +185,24 @@ public class Context {
          * Shouldn't be {@code null} but can be empty.
          */
         @NotNull
-        public final String osVersion;
+        String osVersion;
 
         /**
          * Usually {@code https://www.youtube.com/watch?v=$videoId}
          */
         @Nullable
-        public final String originalUrl;
+        String originalUrl;
 
         /**
          * For content-negotiation, not required, but nice to have
          */
         @Nullable
-        public final String acceptHeader;
+        String acceptHeader;
 
         /**
          * Required for Android client.
          */
         @Nullable
-        public final Integer androidSdkVersion;
+        Integer androidSdkVersion;
     }
 }
