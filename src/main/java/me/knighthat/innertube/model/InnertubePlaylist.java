@@ -10,8 +10,6 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @EqualsAndHashCode(callSuper = true)
 @Value
@@ -48,27 +46,7 @@ public class InnertubePlaylist extends InnertubeItem {
         assert playlistShelfRenderer != null;
 
         String playlistId = playlistShelfRenderer.getPlaylistId();
-        List<InnertubeSong> songs = playlistShelfRenderer.getContents()
-                                                         // [MusicPlaylistShelfRenderer.getCollapsedItemCount] tells how many
-                                                         // items inside this list are actual song items, the rest are either
-                                                         // fillers or placeholders.
-                                                         .subList( 0, playlistShelfRenderer.getCollapsedItemCount() )
-                                                         .stream()
-                                                         .map( MusicPlaylistShelfRenderer.Content::getMusicResponsiveListItemRenderer )
-                                                         // Filter out null values
-                                                         .flatMap( v -> v == null ? Stream.empty() : Stream.of( v ) )
-                                                         .map( InnertubeSong::from )
-                                                         .collect( Collectors.toUnmodifiableList() );
-        // When a playlist with 100+ songs, YT only returns first 100 songs
-        // with 101st item being the continuation string.
-        MusicPlaylistShelfRenderer.Content.ContinuationItemRenderer continuationItemRenderer = playlistShelfRenderer.getContents()
-                                                                                                                    .getLast()
-                                                                                                                    .getContinuationItemRenderer();
-        String songContinuation = continuationItemRenderer == null
-                ? null
-                : continuationItemRenderer.getContinuationEndpoint()
-                                          .getContinuationCommand()
-                                          .getToken();
+        ContinuedPlaylist continuedPlaylist = ContinuedPlaylist.from( playlistShelfRenderer.getContents() );
 
         return new InnertubePlaylist(
                 // Add "VL" in case it's not there
@@ -81,8 +59,8 @@ public class InnertubePlaylist extends InnertubeItem {
                                       .getDescription()
                 ),
                 sectionListRenderer.getContinuations(),
-                songs,
-                songContinuation
+                continuedPlaylist.getSongs(),
+                continuedPlaylist.getContinuation()
         );
     }
 // END: Static fields/functions
