@@ -1,5 +1,6 @@
 package me.knighthat.innertube.request.body;
 
+import lombok.Builder;
 import lombok.Value;
 import me.knighthat.innertube.Constants;
 import me.knighthat.innertube.UserAgents;
@@ -24,6 +25,7 @@ public class Context {
     Client client;
 
     @Value
+    @Builder(toBuilder = true)
     public static class Client {
 
         @NotNull
