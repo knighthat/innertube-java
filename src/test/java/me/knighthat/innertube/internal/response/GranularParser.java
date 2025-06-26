@@ -3,13 +3,12 @@ package me.knighthat.innertube.internal.response;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
-import me.knighthat.innertube.response.BrowseResponse;
-import me.knighthat.innertube.response.MusicResponsiveListItemRenderer;
-import me.knighthat.innertube.response.MusicTwoRowItemRenderer;
-import me.knighthat.innertube.response.PlaylistPanelRenderer;
+import me.knighthat.innertube.response.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Granular parsers
@@ -39,6 +38,12 @@ public class GranularParser {
 
     public static BrowseResponse browseResponse( @NotNull InputStreamReader reader ) {
         return GSON.fromJson( reader, BrowseResponseImpl.class );
+    }
+
+    public static List<MusicPlaylistShelfRenderer.Content> musicPlaylistShelfRendererContent( @NotNull InputStreamReader reader ) {
+        return Arrays.asList (
+                GSON.fromJson ( reader, MusicPlaylistShelfRendererImpl.ContentImpl[].class )
+        );
     }
 // END: Static fields/functions
 }
