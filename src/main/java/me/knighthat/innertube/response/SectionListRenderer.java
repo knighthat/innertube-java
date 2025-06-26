@@ -140,6 +140,7 @@ public interface SectionListRenderer extends Trackable {
             @NotNull
             List<? extends Badge> getSubtitleBadge();
 
+            @Nullable
             Runs getSecondSubtitle();
 
             interface Button {
