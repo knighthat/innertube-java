@@ -2,6 +2,8 @@ package me.knighthat.innertube.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+import me.knighthat.innertube.Constants;
+import me.knighthat.innertube.PublicAccessible;
 import me.knighthat.innertube.response.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +15,7 @@ import java.util.Objects;
 
 @EqualsAndHashCode(callSuper = true)
 @Value
-public class InnertubePlaylist extends InnertubeItem {
+public class InnertubePlaylist extends InnertubeItem implements PublicAccessible {
 
 // START: Static fields/functions
     public static @NotNull InnertubePlaylist from( @NotNull MusicTwoRowItemRenderer renderer ) {
@@ -116,5 +118,21 @@ public class InnertubePlaylist extends InnertubeItem {
 
     public @NotNull String getBrowseId() {
         return id.startsWith( "VL" ) ? id : "VL" + id;
+    }
+
+    @Override
+    public @NotNull String getShareUrl() {
+        String playlistId = getBrowseId().startsWith( "VL" )
+                ? getBrowseId().replaceFirst( "VL", "" )
+                : getBrowseId();
+        return Constants.YOUTUBE_URL + "/playlist?list=" + playlistId;
+    }
+
+    @Override
+    public @NotNull String getYouTubeMusicShareUrl() {
+        String playlistId = getBrowseId().startsWith( "VL" )
+                ? getBrowseId().replaceFirst( "VL", "" )
+                : getBrowseId();
+        return Constants.YOUTUBE_MUSIC_URL + "playlist?list=" + playlistId;
     }
 }
