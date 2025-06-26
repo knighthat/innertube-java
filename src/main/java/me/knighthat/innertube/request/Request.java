@@ -3,6 +3,7 @@ package me.knighthat.innertube.request;
 import lombok.Builder;
 import lombok.Value;
 import me.knighthat.innertube.request.body.RequestBody;
+import org.intellij.lang.annotations.MagicConstant;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
@@ -15,7 +16,15 @@ import java.util.Map;
 @Builder(builderClassName = "Builder")
 public class Request {
 
+// START: Static fields/functions
     @NotNull
+    public static final String GET  = "GET";
+    @NotNull
+    public static final String POST = "POST";
+// END: Static fields/functions
+
+    @NotNull
+    @MagicConstant(valuesFromClass = Request.class)
     String                    httpMethod;
     @NotNull
     String                    url;
