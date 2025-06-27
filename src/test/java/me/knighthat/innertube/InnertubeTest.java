@@ -35,7 +35,9 @@ class InnertubeTest {
         // Fabricating & sending request within [Assertions.assertDoesNotThrow]
         // to avoid try/catch
         Response response = Assertions.assertDoesNotThrow( () -> {
-            NextBody body = new NextBody( Context.WEB_DEFAULT, "lYBUbBu4W08", null, null );
+            NextBody body = NextBody.builder( Context.WEB_DEFAULT )
+                                    .videoId( "lYBUbBu4W08" )
+                                    .build();
             return Innertube.youtube(
                     Request.POST, Endpoints.NEXT, body, me.knighthat.innertube.Constants.JSON_HEADERS
             );

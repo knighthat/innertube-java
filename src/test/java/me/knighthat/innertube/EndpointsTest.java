@@ -62,19 +62,26 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testNextSongOnWebRemix() {
-        NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "nZjTtuNR3Og", "", null );
+        NextBody nextBody = NextBody.builder( Context.WEB_REMIX_DEFAULT )
+                                    .videoId( "nZjTtuNR3Og" )
+                                    .build();
         Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
     @Test
     void testNextSongOnWeb() {
-        NextBody nextBody = new NextBody( Context.WEB_DEFAULT, "nZjTtuNR3Og", "", null );
+        NextBody nextBody = NextBody.builder( Context.WEB_DEFAULT )
+                                    .videoId( "nZjTtuNR3Og" )
+                                    .build();
         Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
     @Test
     void testNextPlaylist() {
-        NextBody nextBody = new NextBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMnZjTtuNR3Og", "wAEB" );
+        NextBody nextBody = NextBody.builder( Context.WEB_REMIX_DEFAULT )
+                                    .playlistId( "RDAMVMnZjTtuNR3Og" )
+                                    .params( "wAEB" )
+                                    .build();
         Assertions.assertTrue( post( Endpoints.NEXT, nextBody ) );
     }
 
