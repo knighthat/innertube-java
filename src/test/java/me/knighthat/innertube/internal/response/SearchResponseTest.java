@@ -22,7 +22,9 @@ class SearchResponseTest implements HttpClient {
      */
     @Test
     void testFetchSearch() {
-        SearchBody searchBody = new SearchBody( Context.WEB_REMIX_DEFAULT, "take me to church", null );
+        SearchBody searchBody = SearchBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .query( "take me to church" )
+                                          .build();
         Request request = makeRequest( Endpoints.SEARCH, searchBody );
 
         try (
