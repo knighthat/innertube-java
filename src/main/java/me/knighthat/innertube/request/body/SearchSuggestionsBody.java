@@ -39,8 +39,8 @@ public class SearchSuggestionsBody implements RequestBody {
 
     private static class BuilderImpl implements Builder {
 
-        @NotNull Context context;
-        @NotNull String  input;
+        Context context;
+        String  input;
 
         public BuilderImpl( @NotNull Context context ) {
             this.context = context;
@@ -54,6 +54,7 @@ public class SearchSuggestionsBody implements RequestBody {
 
         @Override
         public @NotNull SearchSuggestionsBody build() {
+            assert context != null && input != null;
             return new SearchSuggestionsBody( context, input );
         }
     }

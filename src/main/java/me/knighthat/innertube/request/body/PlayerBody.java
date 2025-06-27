@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 @Value
 public class PlayerBody implements RequestBody {
 
-// START: Static fields/functions
+    // START: Static fields/functions
     @Contract(value = "_->new", pure = true)
     public static @NotNull PlayerBody.Builder builder( @NotNull Context context ) {
         return new BuilderImpl( context );
@@ -82,12 +82,12 @@ public class PlayerBody implements RequestBody {
 
     private static class BuilderImpl implements Builder {
 
-        @NotNull  Context                    context;
-        @NotNull  String                     videoId;
-        @Nullable String                     params;
-        @Nullable Boolean                    racyCheckOk;
-        @Nullable Boolean                    contentCheckOk;
-        @Nullable ServiceIntegrityDimensions serviceIntegrityDimensions;
+        Context                    context;
+        String                     videoId;
+        String                     params;
+        Boolean                    racyCheckOk;
+        Boolean                    contentCheckOk;
+        ServiceIntegrityDimensions serviceIntegrityDimensions;
 
         public BuilderImpl( @NotNull Context context ) {
             this.context = context;
@@ -128,6 +128,7 @@ public class PlayerBody implements RequestBody {
 
         @Override
         public @NotNull PlayerBody build() {
+            assert context != null && videoId != null;
             return new PlayerBody( context, videoId, params, racyCheckOk, contentCheckOk, serviceIntegrityDimensions );
         }
     }

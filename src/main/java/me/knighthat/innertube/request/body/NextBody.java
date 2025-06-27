@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public class NextBody implements RequestBody {
     // FIXME: Missing continuation to get related songs in "Up next"
 
-// START: Static fields/functions
+    // START: Static fields/functions
     @Contract(value = "_->new", pure = true)
     public static @NotNull NextBody.Builder builder( @NotNull Context context ) {
         return new NextBody.BuilderImpl( context );
@@ -65,10 +65,10 @@ public class NextBody implements RequestBody {
 
     private static class BuilderImpl implements Builder {
 
-        @NotNull  Context context;
-        @Nullable String  videoId;
-        @Nullable String  playlistId;
-        @Nullable String  params;
+        Context context;
+        String  videoId;
+        String  playlistId;
+        String  params;
 
         public BuilderImpl( @NotNull Context context ) {
             this.context = context;
@@ -97,6 +97,9 @@ public class NextBody implements RequestBody {
 
         @Override
         public @NotNull NextBody build() {
+            assert context != null;
+            // Either of them must be a non-null value
+            assert videoId != null || playlistId != null;
             return new NextBody( context, videoId, playlistId, params );
         }
     }

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 @Value
 public class SearchBody implements RequestBody {
 
-// START: Static fields/functions
+    // START: Static fields/functions
     @Contract(value = "_->new", pure = true)
     public static @NotNull SearchBody.Builder builder( @NotNull Context context ) {
         return new BuilderImpl( context );
@@ -56,9 +56,9 @@ public class SearchBody implements RequestBody {
 
     private static class BuilderImpl implements Builder {
 
-        @NotNull  Context context;
-        @NotNull  String  query;
-        @Nullable String  params;
+        Context context;
+        String  query;
+        String  params;
 
         public BuilderImpl( @NotNull Context context ) {
             this.context = context;
@@ -79,6 +79,7 @@ public class SearchBody implements RequestBody {
 
         @Override
         public @NotNull SearchBody build() {
+            assert context != null && query != null;
             return new SearchBody( context, query, params );
         }
     }

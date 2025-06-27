@@ -73,11 +73,11 @@ public class BrowseBody implements RequestBody {
 
     private static class TypeBuilderImpl implements Builder, TypeBuilder {
 
-        @NotNull  Context context;
-        @Nullable String  browseId;
-        @Nullable String  playlistId;
-        @Nullable String  params;
-        @Nullable String  continuation;
+        Context context;
+        String  browseId;
+        String  playlistId;
+        String  params;
+        String  continuation;
 
         TypeBuilderImpl( @NotNull Context context ) {
             this.context = context;
@@ -91,11 +91,6 @@ public class BrowseBody implements RequestBody {
         public @NotNull Builder params( @Nullable String params ) {
             this.params = params;
             return this;
-        }
-
-        @Override
-        public @NotNull BrowseBody build() {
-            return new BrowseBody( context, browseId, playlistId, params, continuation );
         }
 
         @Override
@@ -114,6 +109,14 @@ public class BrowseBody implements RequestBody {
         public @NotNull Builder continuation( @NotNull String continuation ) {
             this.continuation = continuation;
             return this;
+        }
+
+        @Override
+        public @NotNull BrowseBody build() {
+            assert context != null;
+            // Either 1 of these 3 is not null
+            assert browseId != null || playlistId != null || continuation != null;
+            return new BrowseBody( context, browseId, playlistId, params, continuation );
         }
     }
 }
