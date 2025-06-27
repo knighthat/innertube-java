@@ -103,7 +103,9 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testSearchSuggestion() {
-        SearchSuggestionsBody searchSuggestionsBody = new SearchSuggestionsBody( Context.WEB_REMIX_DEFAULT, "figure 09" );
+        SearchSuggestionsBody searchSuggestionsBody = SearchSuggestionsBody.builder( Context.WEB_REMIX_DEFAULT )
+                                                                           .input( "figure 09" )
+                                                                           .build();
         Assertions.assertTrue( post( Endpoints.SEARCH_SUGGESTIONS, searchSuggestionsBody ) );
     }
 }

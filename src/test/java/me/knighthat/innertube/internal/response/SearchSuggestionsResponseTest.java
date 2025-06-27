@@ -22,7 +22,9 @@ class SearchSuggestionsResponseTest implements HttpClient {
      */
     @Test
     void testFetchSearchSuggestions() {
-        SearchSuggestionsBody searchBody = new SearchSuggestionsBody( Context.WEB_REMIX_DEFAULT, "take me to church" );
+        SearchSuggestionsBody searchBody = SearchSuggestionsBody.builder( Context.WEB_REMIX_DEFAULT )
+                                                                .input( "take me to church" )
+                                                                .build();
         Request request = makeRequest( Endpoints.SEARCH_SUGGESTIONS, searchBody );
 
         try (

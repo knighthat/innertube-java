@@ -50,7 +50,9 @@ class InnertubeTest {
     @Test
     void testYouTubeMusic() {
         Response response = Assertions.assertDoesNotThrow( () -> {
-            SearchSuggestionsBody body = new SearchSuggestionsBody( Context.WEB_REMIX_DEFAULT, "million dollar baby" );
+            SearchSuggestionsBody body = SearchSuggestionsBody.builder( Context.WEB_REMIX_DEFAULT )
+                                                              .input( "million dollar baby" )
+                                                              .build();
             return Innertube.youtubeMusic(
                     Request.POST, Endpoints.SEARCH_SUGGESTIONS, body, me.knighthat.innertube.Constants.JSON_HEADERS
             );
