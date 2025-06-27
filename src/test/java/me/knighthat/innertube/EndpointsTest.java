@@ -87,7 +87,9 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testPlayer() {
-        PlayerBody playerBody = new PlayerBody( Context.WEB_REMIX_DEFAULT, "phLb_SoPBlA", null, true, true, null );
+        PlayerBody playerBody = PlayerBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .videoId( "phLb_SoPBlA" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.PLAYER, playerBody ) );
     }
 
