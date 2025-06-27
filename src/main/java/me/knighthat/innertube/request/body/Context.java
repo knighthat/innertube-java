@@ -1,13 +1,14 @@
 package me.knighthat.innertube.request.body;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
 import me.knighthat.innertube.Constants;
 import me.knighthat.innertube.UserAgents;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Locale;
+import me.knighthat.innertube.request.Localization;
 
 @Value
 public class Context {
@@ -26,15 +27,16 @@ public class Context {
 
     @Value
     @Builder(toBuilder = true)
+    @AllArgsConstructor
     public static class Client {
 
+// START: Static fields/functions
         @NotNull
         public static final Client WEB_REMIX = new Client(
                 "WEB_REMIX",
                 "1.20250416.01.00",
                 "DESKTOP",
-                Locale.getDefault().getLanguage(),
-                Locale.getDefault().getCountry(),
+                Localization.EN_US,
                 Constants.VISITOR_DATA,
                 UserAgents.CHROME_WINDOWS,
                 Constants.YOUTUBE_MUSIC_URL,
@@ -53,8 +55,7 @@ public class Context {
                 "IOS",
                 "20.14.2",
                 "MOBILE",
-                Locale.getDefault().getLanguage(),
-                Locale.getDefault().getCountry(),
+                Localization.EN_US,
                 Constants.VISITOR_DATA,
                 UserAgents.IOS,
                 Constants.YOUTUBE_MUSIC_URL,
@@ -73,8 +74,7 @@ public class Context {
                 "WEB",
                 "2.20250523.01.00",
                 "DESKTOP",
-                Locale.getDefault().getLanguage(),
-                Locale.getDefault().getCountry(),
+                Localization.EN_US,
                 Constants.VISITOR_DATA,
                 UserAgents.CHROME_WINDOWS,
                 Constants.YOUTUBE_URL,
@@ -87,6 +87,7 @@ public class Context {
                 Constants.ACCEPT_HEADERS,
                 null
         );
+// END: Static fields/functions
 
         /**
          * Name of client to present to YouTube,
@@ -114,7 +115,11 @@ public class Context {
         String platform;
 
         /**
-         * 2-letter language code
+         * Stands for {@code host language}, used to tell YT/YTM
+         * in which the response to be.
+         * <p>
+         * Must follow <a href="https://tools.ietf.org/html/bcp47">BCP 47</a>
+         * standard (i.e. en, en-US, etc)
          * <p>
          * I.E. `en` equals `English`
          */
@@ -122,9 +127,12 @@ public class Context {
         String hl;
 
         /**
-         * 2-letter region code
+         * Stands for {@code geolocation}.
          * <p>
-         * I.E. `US` equals `United States`
+         * Can be used to access trending songs, playlists form a specific region
+         * <p>
+         * Must follow <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
+         * standard - 2-letter country code (i.e. US, VN, FR, etc.)
          */
         @NotNull
         String gl;
@@ -206,5 +214,49 @@ public class Context {
          */
         @Nullable
         Integer androidSdkVersion;
+
+        public Client(
+                @NotNull String clientName,
+                @NotNull String clientVersion,
+                @NotNull String platform,
+                @NotNull Localization localization,
+                @NotNull String visitorData,
+                @Nullable String userAgent,
+                @Nullable String referer,
+                int xClientName,
+                @NotNull String deviceMake,
+                @NotNull String deviceModel,
+                @NotNull String osName,
+                @NotNull String osVersion,
+                @Nullable String originalUrl,
+                @Nullable String acceptHeader,
+                @Nullable Integer androidSdkVersion
+        ) {
+            this.clientName = clientName;
+            this.clientVersion = clientVersion;
+            this.platform = platform;
+            this.hl = localization.getLanguageCode();
+            this.gl = localization.getRegionCode();
+            this.visitorData = visitorData;
+            this.userAgent = userAgent;
+            this.referer = referer;
+            this.xClientName = xClientName;
+            this.deviceMake = deviceMake;
+            this.deviceModel = deviceModel;
+            this.osName = osName;
+            this.osVersion = osVersion;
+            this.originalUrl = originalUrl;
+            this.acceptHeader = acceptHeader;
+            this.androidSdkVersion = androidSdkVersion;
+        }
+
+        public static class ClientBuilder {
+
+            public @NotNull ClientBuilder localization( @NotNull Localization localization ) {
+                this.hl = localization.getLanguageCode();
+                this.gl = localization.getRegionCode();
+                return this;
+            }
+        }
     }
 }
