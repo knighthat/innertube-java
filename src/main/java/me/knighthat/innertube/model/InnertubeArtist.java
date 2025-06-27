@@ -32,7 +32,7 @@ public class InnertubeArtist extends InnertubeItem implements PublicAccessible {
         try {
             Endpoint.Browse browse = renderer.getTitle()
                                              .getRuns()
-                                             .getFirst()
+                                             .get( 0 )
                                              .getNavigationEndpoint()
                                              .getBrowseEndpoint();
 
@@ -74,7 +74,7 @@ public class InnertubeArtist extends InnertubeItem implements PublicAccessible {
         List<? extends SectionListRenderer.Content> contents = response.getContents()
                                                                        .getSingleColumnBrowseResultsRenderer()
                                                                        .getTabs()
-                                                                       .getFirst()
+                                                                       .get( 0 )
                                                                        .getTabRenderer()
                                                                        .getContent()
                                                                        .getSectionListRenderer()
@@ -128,7 +128,7 @@ public class InnertubeArtist extends InnertubeItem implements PublicAccessible {
                     Endpoint navEndpoint = Objects.requireNonNull(
                             sectionHeader.getTitle()
                                          .getRuns()
-                                         .getFirst()
+                                         .get( 0 )
                                          .getNavigationEndpoint()
                     );
                     Endpoint.Browse browse = Objects.requireNonNull(

@@ -30,18 +30,18 @@ public class InnertubePlaylist extends InnertubeItem implements PublicAccessible
         SectionListRenderer.Content.MusicResponsiveHeaderRenderer headerRenderer =
                 Objects.requireNonNull(
                                renderer.getTabs()
-                                       .getFirst()
+                                       .get( 0 )
                                        .getTabRenderer()
                                        .getContent()
                                        .getSectionListRenderer()
                        )
                        .getContents()
-                       .getFirst()
+                       .get( 0 )
                        .getMusicResponsiveHeaderRenderer();
         assert headerRenderer != null;
         SectionListRenderer sectionListRenderer = Objects.requireNonNull( renderer.getSecondaryContents() ).getSectionListRenderer();
         MusicPlaylistShelfRenderer playlistShelfRenderer = sectionListRenderer.getContents()
-                                                                              .getFirst()
+                                                                              .get( 0 )
                                                                               .getMusicPlaylistShelfRenderer();
         assert playlistShelfRenderer != null;
 

@@ -12,9 +12,9 @@ class ItemUtils {
 
 // START: Static fields/functions
     static @NotNull String getFirstText( @NotNull Runs runs ) {
-        return Objects.requireNonNull( runs.getRuns()
-                                           .getFirst()
-                                           .getText() );
+        return Objects.requireNonNull(
+                runs.getRuns().get( 0 ).getText()
+        );
     }
 
     /**

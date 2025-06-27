@@ -39,7 +39,7 @@ public abstract class InnertubeItem {
         Runs.Run run = Objects.requireNonNull(
                 renderer.getTitle()
                         .getRuns()
-                        .getFirst()
+                        .get( 0 )
         );
 
         Endpoint navigationEndpoint = Objects.requireNonNull( run.getNavigationEndpoint() );

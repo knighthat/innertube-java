@@ -45,7 +45,7 @@ public class InnertubeAlbum extends InnertubeItem {
         assert columns.size() >= 2;
 
         Runs title = Objects.requireNonNull(
-                columns.getFirst().getMusicResponsiveListItemFlexColumnRenderer()
+                columns.get( 0 ).getMusicResponsiveListItemFlexColumnRenderer()
         ).getText();
         assert title != null;
 
