@@ -128,7 +128,7 @@ public interface SectionListRenderer extends Trackable {
             @NotNull
             Runs getSubtitle();
 
-            @NotNull
+            @Nullable
             Description getDescription();
 
             @Nullable

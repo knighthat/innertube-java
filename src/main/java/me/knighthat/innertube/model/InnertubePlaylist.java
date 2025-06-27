@@ -47,6 +47,16 @@ public class InnertubePlaylist extends InnertubeItem implements PublicAccessible
 
         String playlistId = playlistShelfRenderer.getPlaylistId();
         ContinuedPlaylist continuedPlaylist = ContinuedPlaylist.from( playlistShelfRenderer.getContents() );
+        String description = null;
+
+        try {
+            description = ItemUtils.getFirstText(
+                    headerRenderer.getDescription()
+                                  .getMusicDescriptionShelfRenderer()
+                                  .getDescription()
+            );
+        } catch ( NullPointerException ignored ) {
+        }
 
         return new InnertubePlaylist(
                 // Add "VL" in case it's not there
@@ -54,11 +64,7 @@ public class InnertubePlaylist extends InnertubeItem implements PublicAccessible
                 ItemUtils.getFirstText( headerRenderer.getTitle() ),
                 ItemUtils.extractThumbnail( headerRenderer.getThumbnail() ),
                 headerRenderer.getSecondSubtitle(),
-                ItemUtils.getFirstText(
-                        headerRenderer.getDescription()
-                                      .getMusicDescriptionShelfRenderer()
-                                      .getDescription()
-                ),
+                description,
                 sectionListRenderer.getContinuations(),
                 continuedPlaylist.getSongs(),
                 continuedPlaylist.getContinuation(),

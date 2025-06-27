@@ -54,6 +54,8 @@ class InnertubePlaylistTest {
             InnertubePlaylist playlist = InnertubePlaylist.from( Constants.VISITOR_DATA, renderer );
             Assertions.assertEquals( "VLRDCLAK5uy_nZiG9ehz_MQoWQxY5yElsLHCcG0tv9PRg", playlist.getId() );
             Assertions.assertEquals( "Classic Rock's Greatest Hits", playlist.getName() );
+
+            Assertions.assertNotNull( playlist.getDescription() );
             Assertions.assertEquals(
                     "Essential hits from the classic rock era, featuring long hair, big solos and singers who graduated from frontman school with honors!",
                     playlist.getDescription()
@@ -103,6 +105,8 @@ class InnertubePlaylistTest {
             InnertubePlaylist playlist = InnertubePlaylist.from( Constants.VISITOR_DATA, renderer );
             Assertions.assertEquals( "VLRDCLAK5uy_mPolD_J22gS1SKxufARWcTZd1UrAH_0ZI", playlist.getId() );
             Assertions.assertEquals( "deep chill", playlist.getName() );
+
+            Assertions.assertNotNull( playlist.getDescription() );
             Assertions.assertEquals(
                     "Your eternal home for deep house, chill electronic, ambient",
                     playlist.getDescription()
@@ -133,6 +137,53 @@ class InnertubePlaylistTest {
 
             Assertions.assertFalse( playlist.getSongs().isEmpty() );
             Assertions.assertEquals( 100, playlist.getSongs().size() );
+
+            // visitorData is not being tested because it's a constant inserted from statement above
+        } catch ( IOException e ) {
+            Assertions.fail( "failed to instantiate InnertubePlaylist with " + fileName );
+        }
+    }
+
+    /**
+     * This test was contributed after crash when user opens playlist
+     * from a quick pick section.
+     */
+    @Test
+    void testPlaylistTwoColumnBrowseResultsRenderer3() {
+        final String fileName = "ytm/browse/playlist_twoColumnBrowseResultsRenderer3.json";
+        try (
+                InputStream inStream = LOADER.getResourceAsStream( fileName ) ;
+                InputStreamReader reader = new InputStreamReader( inStream )
+        ) {
+            BrowseResponse.Contents.TwoColumnBrowseResultsRenderer renderer = GranularParser.twoColumnBrowseResultsRenderer( reader );
+
+            InnertubePlaylist playlist = InnertubePlaylist.from( Constants.VISITOR_DATA, renderer );
+            Assertions.assertEquals( "VLPLtILsETdHuj5rynRpGqVfPuiOs9mCZxn4", playlist.getId() );
+            Assertions.assertEquals( "2010-late2016 ish Anime OP/ED", playlist.getName() );
+
+            Assertions.assertNull( playlist.getDescription() );
+
+            Assertions.assertNotNull( playlist.getSubtitle() );
+            Assertions.assertEquals(
+                    "448 views • 74 tracks • 5 hours, 6 minutes",
+                    playlist.getSubtitleText()
+            );
+
+            Assertions.assertFalse( playlist.getThumbnails().isEmpty() );
+            Assertions.assertEquals( 3, playlist.getThumbnails().size() );
+
+            String playlistContinuation = Assertions.assertDoesNotThrow(
+                    () -> playlist.getContinuations().getFirst().getNextContinuationData().getContinuation()
+            );
+            Assertions.assertEquals(
+                    "4qmFsgI0EiRWTFBMdElMc0VUZEh1ajVyeW5ScEdxVmZQdWlPczltQ1p4bjQaDGtnRURDTTBHOEFFQQ%3D%3D",
+                    playlistContinuation
+            );
+
+            Assertions.assertNull( playlist.getSongContinuation() );
+
+            Assertions.assertFalse( playlist.getSongs().isEmpty() );
+            Assertions.assertEquals( 74, playlist.getSongs().size() );
 
             // visitorData is not being tested because it's a constant inserted from statement above
         } catch ( IOException e ) {
