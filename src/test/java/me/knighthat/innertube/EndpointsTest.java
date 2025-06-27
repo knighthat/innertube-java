@@ -13,37 +13,50 @@ class EndpointsTest implements HttpClient {
 
     @Test
     void testBrowseArtist() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "UCprAFmT0C6O4X0ToEXpeFTQ", "", null, null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .browseId( "UCprAFmT0C6O4X0ToEXpeFTQ" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseAlbum() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPREb_rGUlsaCTNv7", "", null, null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .browseId( "MPREb_rGUlsaCTNv7" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseRadio() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "", "RDAMVMphLb_SoPBlA", "wAEB", null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .playlistId( "RDAMVMphLb_SoPBlA" )
+                                          .params( "wAEB" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseLyrics() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "MPLYt_4sk9YQcgV3s-1", "", null, null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .browseId( "MPLYt_4sk9YQcgV3s-1" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowseMusicHome() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "FEmusic_home", "", null, null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .browseId( "FEmusic_home" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
     @Test
     void testBrowsePlaylist() {
-        BrowseBody browseBody = new BrowseBody( Context.WEB_REMIX_DEFAULT, "VLRDCLAK5uy_k6PkYWus1Mt-aKrbb0Ne8SkA2BgAk1Yy4", "", null, null );
+        BrowseBody browseBody = BrowseBody.builder( Context.WEB_REMIX_DEFAULT )
+                                          .browseId( "VLRDCLAK5uy_k6PkYWus1Mt-aKrbb0Ne8SkA2BgAk1Yy4" )
+                                          .build();
         Assertions.assertTrue( post( Endpoints.BROWSE, browseBody ) );
     }
 
