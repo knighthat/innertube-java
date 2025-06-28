@@ -6,7 +6,7 @@ gson = "2.13.1"
 okhttp3 = "4.12.0"
 jetbrains-annotations = "24.1.0"
 lombok = "1.18.38"
-junit5 = "5.11.3"
+junit5 = "5.13.2"
 
 [libraries]
 # Annotations
